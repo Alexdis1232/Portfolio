@@ -1,3 +1,7 @@
+"use client";
+
+import { ScrollReveal, ScrollRevealP } from "@/components/ScrollReveal";
+
 type CareerEntry = {
   company: string;
   years: string;
@@ -45,12 +49,12 @@ function CompanyLogo({ src, alt }: { src: string; alt: string }) {
 export function Career() {
   return (
     <section id="info" className="bg-white pb-0 pt-0">
-      <p className="mb-[10px] text-sm text-[#C7C7C7]">Карьера</p>
-      <div className="mb-10 h-px w-full bg-[#C7C7C7]" />
+      <ScrollRevealP className="mb-[10px] text-sm text-[#C7C7C7]">Карьера</ScrollRevealP>
+      <ScrollReveal className="mb-10 h-px w-full bg-[#C7C7C7]" />
 
       <div className="flex flex-col gap-3">
         {careerData.map((entry) => (
-          <div
+          <ScrollReveal
             key={entry.company}
             className="grid h-[76px] grid-cols-1 items-center gap-6 text-[16px] sm:grid-cols-2"
           >
@@ -66,7 +70,7 @@ export function Career() {
               <p className="font-medium text-black">{entry.role}</p>
               <p className="mt-0.5 text-[#C7C7C7]">{entry.platform}</p>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </section>

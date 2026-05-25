@@ -16,12 +16,14 @@ export function Hero() {
           <br />
           с 3 годами опыта в B2C и B2B
           <br />
-          продуктах: E-commerce и PetTech.
+          продуктах: E-commerce
+          <br />
+          и PetTech.
         </h1>
 
         <div className="shrink-0 justify-self-end">
           <motion.img
-            src="/photome.jpg"
+            src="/photoMe.png"
             alt="Саша"
             width={280}
             height={280}

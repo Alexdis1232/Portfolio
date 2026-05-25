@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 type ProjectInfo = {
   label: string;
@@ -125,15 +126,9 @@ export function Projects() {
 
       <div className="flex flex-col gap-0">
         {projects.map((project) => (
-          <motion.div
-            key={project.number}
-            initial={{ opacity: 0.3, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <ScrollReveal key={project.number}>
             <ProjectCard project={project} />
-          </motion.div>
+          </ScrollReveal>
         ))}
       </div>
     </section>

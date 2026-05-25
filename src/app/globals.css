@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Sexsmith";
-  src: url("/Sexsmith.otf") format("opentype");
+  src: url("/fonts/Sexsmith.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -15,10 +15,20 @@
   --foreground: #000000;
 }
 
+*,
+*::before,
+*::after,
+a,
+button,
+input,
+textarea,
+select {
+  cursor: none !important;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  cursor: none;
 }
 
 h1.hero-title {
@@ -31,3 +41,4 @@ h1.hero-title {
   -webkit-backdrop-filter: blur(16px);
   border-radius: 999px;
 }
+

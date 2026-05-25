@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { CustomCursor } from "@/components/CustomCursor";
+import dynamic from "next/dynamic";
+
+const GradualBlur = dynamic(() => import("@/components/GradualBlur"), { ssr: false });
 import { Container } from "@/components/layout/Container";
 import { Navbar } from "@/components/layout/Navbar";
 import "./globals.css";
@@ -36,6 +39,17 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
         </Container>
+        <GradualBlur
+          target="page"
+          position="bottom"
+          height="90px"
+          strength={3}
+          divCount={8}
+          curve="bezier"
+          exponential={true}
+          animated="scroll"
+          opacity={1}
+        />
       </body>
     </html>
   );
