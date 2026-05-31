@@ -1,33 +1,26 @@
 "use client";
 
-import { ScrollReveal } from "@/components/ScrollReveal";
+import { motion } from "framer-motion";
+import { scrollReveal } from "@/components/ScrollReveal";
 
 export function PhotoCollage() {
   return (
-    <div
+    <motion.div
       id="photo-collage"
-      className="bg-white"
-      style={{
-        width: "100vw",
-        position: "relative",
-        left: "50%",
-        transform: "translateX(-50%)",
-        marginTop: -65,
-      }}
+      className="photo-collage relative mx-auto w-full"
+      initial={scrollReveal.initial}
+      whileInView={scrollReveal.whileInView}
+      transition={scrollReveal.transition}
+      viewport={scrollReveal.viewport}
+      style={{ transformOrigin: "center" }}
     >
-      <ScrollReveal>
-        <img
-          src="/collageblock.png?v=3"
-          alt=""
-          loading="lazy"
-          decoding="async"
-          style={{
-            display: "block",
-            width: "100%",
-            height: "auto",
-          }}
-        />
-      </ScrollReveal>
-    </div>
+      <img
+        src="/collageblock.png?v=5"
+        alt=""
+        loading="eager"
+        decoding="async"
+        className="block h-auto w-full"
+      />
+    </motion.div>
   );
 }

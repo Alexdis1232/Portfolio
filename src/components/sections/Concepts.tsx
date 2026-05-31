@@ -1,30 +1,81 @@
 "use client";
 
-import type { CSSProperties, ReactNode } from "react";
-import { ScrollReveal, ScrollRevealH1 } from "@/components/ScrollReveal";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import { ScrollRevealH1, scrollReveal } from "@/components/ScrollReveal";
+import { motion } from "framer-motion";
+import { PRIMARY_COL_WIDTH, PRIMARY_WIDE_WIDTH } from "@/config/layout";
 
 const mediaClassName =
   "m-0 block h-full min-h-0 w-full flex-1 rounded-[20px] object-cover p-0";
 
-const primaryTallMediaClassName =
-  "m-0 block w-full shrink-0 rounded-[20px] object-cover p-0";
+const primaryImageClassName = "m-0 block h-full w-full object-cover p-0";
 
-const PRIMARY_TALL_IMAGE_HEIGHT = 488.5;
+const PRIMARY_IMAGE_FRAME_HEIGHT = 488;
+
+function getFrameRadiusClass(number: string) {
+  const squareCards = new Set(["(06)", "(07)", "(11)", "(12)", "(13)"]);
+
+  return number === "(08)"
+    ? "rounded-[26px] lg:rounded-[35px]"
+    : squareCards.has(number)
+      ? "rounded-[28px] lg:rounded-[40px]"
+      : "rounded-[26px] lg:rounded-[40px]";
+}
+
+function PrimaryImageFrame({
+  children,
+  number,
+}: {
+  children: ReactNode;
+  number: string;
+}) {
+  return (
+    <div
+      className={`relative w-full shrink-0 overflow-hidden bg-[#F5F5F5] ${getFrameRadiusClass(number)} ${frameResponsiveClass[number] ?? ""}`}
+    >
+      {children}
+    </div>
+  );
+}
 
 type BentoLayout = "square" | "wide" | "tall";
 type FrameLayout = "square" | "wide" | "screen";
 
-const BENTO_COL_WIDTH = 267.34;
-const LANGUAGE_COACH_FRAME_HEIGHT = 488.51;
-const BENTO_SQUARE_FRAME_HEIGHT = BENTO_COL_WIDTH;
-const BENTO_WIDE_FRAME_WIDTH = 558.68;
-const BENTO_WIDE_FRAME_HEIGHT = 120;
+const BENTO_SQUARE_FRAME_SIZE = PRIMARY_COL_WIDTH;
+const BENTO_WIDE_FRAME_HEIGHT = 108;
+/** Сдвиг кадра (08) влево / вверх в px — меняй здесь */
+const BENTO_08_VIDEO_OFFSET_MOBILE = { x: -60, y: -65 };
+const BENTO_08_VIDEO_OFFSET_DESKTOP = { x: -60, y: -62 };
+const BENTO_08_VIDEO_SCALE = 2.0;
 
-const bentoFrameSize: Record<string, { width: string | number; height: number }> = {
-  "(06)": { width: "100%", height: BENTO_SQUARE_FRAME_HEIGHT },
-  "(07)": { width: "100%", height: BENTO_SQUARE_FRAME_HEIGHT },
-  "(08)": { width: BENTO_WIDE_FRAME_WIDTH, height: BENTO_WIDE_FRAME_HEIGHT },
-  "(09)": { width: "100%", height: LANGUAGE_COACH_FRAME_HEIGHT },
+const mobileTall = "max-lg:w-full max-lg:aspect-[161/294]";
+const mobileSquare = "max-lg:w-full max-lg:aspect-square";
+const mobileWide = "max-lg:w-full max-lg:aspect-[338/278]";
+const mobileWideShort = "max-lg:w-full max-lg:aspect-[338/108]";
+
+/** Mobile: 161×294 / 161×161 / wide; lg: desktop sizes */
+const frameResponsiveClass: Record<string, string> = {
+  "(01)": `${mobileTall} lg:w-[281px] lg:h-[488px] lg:aspect-auto`,
+  "(02)": `${mobileTall} lg:w-[281px] lg:h-[488px] lg:aspect-auto`,
+  "(03)": `${mobileTall} lg:w-[281px] lg:h-[488px] lg:aspect-auto`,
+  "(04)": `${mobileTall} lg:w-[281px] lg:h-[488px] lg:aspect-auto`,
+  "(05)": `${mobileWide} lg:w-[586px] lg:h-[488px] lg:aspect-auto`,
+  "(06)": `${mobileSquare} lg:w-[281px] lg:h-[281px] lg:aspect-auto`,
+  "(07)": `${mobileSquare} lg:w-[281px] lg:h-[281px] lg:aspect-auto`,
+  "(08)": `${mobileWideShort} lg:h-[108px] lg:aspect-auto`,
+  "(09)": `${mobileTall} lg:w-[281px] lg:h-[488px] lg:aspect-auto`,
+  "(10)": `${mobileTall} lg:w-[281px] lg:h-[488px] lg:aspect-auto`,
+  "(11)": `${mobileSquare} lg:w-[281px] lg:h-[281px] lg:aspect-auto`,
+  "(12)": `${mobileSquare} lg:w-[281px] lg:h-[281px] lg:aspect-auto`,
+  "(13)": `${mobileSquare} lg:w-[281px] lg:h-[281px] lg:aspect-auto`,
+  "(14)": `${mobileWide} lg:w-[586px] lg:h-[488px] lg:aspect-auto`,
+};
+
+const bentoFrameSize: Record<string, { width: number | string; height: number }> = {
+  "(06)": { width: BENTO_SQUARE_FRAME_SIZE, height: BENTO_SQUARE_FRAME_SIZE },
+  "(07)": { width: BENTO_SQUARE_FRAME_SIZE, height: BENTO_SQUARE_FRAME_SIZE },
+  "(08)": { width: PRIMARY_WIDE_WIDTH, height: BENTO_WIDE_FRAME_HEIGHT },
+  "(09)": { width: BENTO_SQUARE_FRAME_SIZE, height: PRIMARY_IMAGE_FRAME_HEIGHT },
 };
 
 type ConceptCard = {
@@ -49,7 +100,7 @@ const primaryConcepts: ConceptCard[] = [
   { image: "/03.png", title: "Meet Point", number: "(03)", subtitle: "Screen" },
   {
     image: "/04.png",
-    title: "Quick Trip Planner (AI)",
+    title: "Quick Trip",
     number: "(04)",
     subtitle: "Screen",
   },
@@ -60,6 +111,10 @@ const primaryConcepts: ConceptCard[] = [
     subtitle: "Screen",
   },
 ];
+
+const primaryByNumber = Object.fromEntries(
+  primaryConcepts.map((concept) => [concept.number, concept]),
+);
 
 const bentoConcepts: ConceptCard[] = [
   {
@@ -138,13 +193,12 @@ const moreByNumber = Object.fromEntries(
   moreConcepts.map((concept) => [concept.number, concept]),
 );
 
-const MORE_SCREEN_WIDTH = 267.33;
-const MORE_WIDE_WIDTH = 558.67;
-const MORE_TALL_HEIGHT = 488.5;
-
-const moreFrameSize: Record<string, { width: number; height: number }> = {
-  "(10)": { width: MORE_SCREEN_WIDTH, height: MORE_TALL_HEIGHT },
-  "(14)": { width: MORE_WIDE_WIDTH, height: MORE_TALL_HEIGHT },
+const moreFrameSize: Record<string, { width: number | string; height: number }> = {
+  "(10)": { width: PRIMARY_COL_WIDTH, height: PRIMARY_IMAGE_FRAME_HEIGHT },
+  "(11)": { width: PRIMARY_COL_WIDTH, height: PRIMARY_COL_WIDTH },
+  "(12)": { width: PRIMARY_COL_WIDTH, height: PRIMARY_COL_WIDTH },
+  "(13)": { width: PRIMARY_COL_WIDTH, height: PRIMARY_COL_WIDTH },
+  "(14)": { width: PRIMARY_WIDE_WIDTH, height: PRIMARY_IMAGE_FRAME_HEIGHT },
 };
 
 const moreMediaClass: Record<string, string> = {
@@ -153,6 +207,18 @@ const moreMediaClass: Record<string, string> = {
   "(12)": "h-full w-full object-contain",
   "(13)": "h-full w-full object-contain",
   "(14)": "h-full w-full object-cover",
+};
+
+const displayNumberMap: Record<string, string> = {
+  "(04)": "(03)",
+  "(06)": "(04)",
+  "(07)": "(05)",
+  "(09)": "(06)",
+  "(03)": "(07)",
+  "(12)": "(11)",
+  "(11)": "(10)",
+  "(10)": "(11)",
+  "(05)": "(12)",
 };
 
 function ConceptFrame({
@@ -165,20 +231,23 @@ function ConceptFrame({
   children: ReactNode;
 }) {
   const frameClass =
-    "relative flex w-full shrink-0 items-center justify-center overflow-hidden bg-[#F5F5F5] p-0";
+    "relative flex shrink-0 items-center justify-center overflow-hidden bg-[#F5F5F5] p-0";
   const frameSize = moreFrameSize[number];
 
-  if (frameSize) {
+  if (frameSize && typeof frameSize.width === "number") {
     return (
       <div
-        className={frameClass}
+        className={`${frameClass} w-full ${getFrameRadiusClass(number)} ${frameResponsiveClass[number] ?? ""}`}
         style={{
-          width: frameSize.width,
-          height: frameSize.height,
-          borderRadius: 40,
+          border: number === "(12)" ? "1px solid #E0E0E0" : undefined,
+          boxSizing: "border-box",
         }}
       >
-        {children}
+        {number === "(12)" ? (
+          <div className="relative h-full w-full overflow-hidden">{children}</div>
+        ) : (
+          children
+        )}
       </div>
     );
   }
@@ -186,8 +255,7 @@ function ConceptFrame({
   if (frame === "wide") {
     return (
       <div
-        className={`${frameClass} w-full rounded-[40px] sm:aspect-[5/2]`}
-        style={{ borderRadius: 40 }}
+        className={`${frameClass} w-full ${getFrameRadiusClass(number)} sm:aspect-[5/2]`}
       >
         {children}
       </div>
@@ -196,12 +264,7 @@ function ConceptFrame({
 
   return (
     <div
-      className={`${frameClass} aspect-square w-full rounded-[40px]`}
-      style={{
-        borderRadius: 40,
-        border: number === "(12)" ? "1px solid #E0E0E0" : undefined,
-        boxSizing: "border-box",
-      }}
+      className={`${frameClass} aspect-square w-full ${getFrameRadiusClass(number)}`}
     >
       {children}
     </div>
@@ -218,20 +281,51 @@ function BentoFrame({
   children: ReactNode;
 }) {
   const frameClass =
-    "relative flex w-full shrink-0 items-center justify-center overflow-hidden bg-[#F5F5F5] p-0";
-  const frameSize = bentoFrameSize[number];
+    "relative flex shrink-0 items-center justify-center overflow-hidden bg-[#F5F5F5] p-0";
 
   return (
     <div
-      className={frameClass}
-      style={{
-        width: frameSize?.width ?? "100%",
-        height: frameSize?.height,
-        maxWidth: layout === "tall" ? BENTO_COL_WIDTH : undefined,
-        borderRadius: number === "(08)" ? 35 : 40,
-      }}
+      className={`${frameClass} w-full ${getFrameRadiusClass(number)} ${frameResponsiveClass[number] ?? ""}`}
     >
       {children}
+    </div>
+  );
+}
+
+function Bento08Video({ src }: { src: string }) {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const sync = () => setIsDesktop(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
+
+  const { x, y } = isDesktop
+    ? BENTO_08_VIDEO_OFFSET_DESKTOP
+    : BENTO_08_VIDEO_OFFSET_MOBILE;
+
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-[#F5F5F5]">
+      <div
+        className="absolute inset-0"
+        style={{
+          transform: `translate(${x}px, ${y}px) scale(${BENTO_08_VIDEO_SCALE})`,
+          transformOrigin: "center center",
+        }}
+      >
+        <video
+          src={src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="block h-full w-full object-cover"
+        />
+      </div>
     </div>
   );
 }
@@ -274,6 +368,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
           loop
           muted
           playsInline
+          preload="metadata"
           className={mediaClass}
           style={moreMediaStyle}
         />
@@ -294,10 +389,16 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
   }
 
   if (concept.bento) {
+    if (concept.number === "(08)" && concept.video) {
+      return (
+        <BentoFrame layout={concept.bento} number={concept.number}>
+          <Bento08Video src={concept.video} />
+        </BentoFrame>
+      );
+    }
+
     const mediaClass =
-      concept.number === "(08)"
-        ? "h-full w-full object-contain"
-        : concept.number === "(06)"
+      concept.number === "(06)"
           ? "h-full w-full object-cover"
           : concept.number === "(07)"
             ? "h-full w-full object-cover"
@@ -308,8 +409,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
     const bentoMediaStyle: CSSProperties | undefined =
       concept.number === "(09)"
         ? {
-            width: BENTO_COL_WIDTH,
-            height: LANGUAGE_COACH_FRAME_HEIGHT,
+            width: "100%",
+            height: "100%",
             objectFit: "cover",
           }
         : concept.number === "(07)"
@@ -317,17 +418,9 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              transform: "scale(2.75)",
+              transform: "scale(2.75) translateY(-5px)",
               transformOrigin: "center",
             }
-          : concept.number === "(08)"
-            ? {
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-                transform: "scale(5.5) translate(-12px, -11.5px)",
-                transformOrigin: "center center",
-              }
             : undefined;
 
     const content = concept.video ? (
@@ -337,6 +430,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
         loop
         muted
         playsInline
+        preload="metadata"
         className={mediaClass}
         style={bentoMediaStyle}
       />
@@ -364,37 +458,57 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
         loop
         muted
         playsInline
+        preload="metadata"
         className={mediaClassName}
         style={{ width: "100%", borderRadius: "20px", objectFit: "cover" }}
       />
     );
   }
 
-  const isPrimaryTallImage =
-    concept.number === "(04)" || concept.number === "(05)";
+  const isPrimaryImage =
+    concept.number === "(01)" ||
+    concept.number === "(02)" ||
+    concept.number === "(03)" ||
+    concept.number === "(04)" ||
+    concept.number === "(05)";
 
-  const primaryMediaStyle: CSSProperties | undefined = isPrimaryTallImage
-    ? {
-        height: PRIMARY_TALL_IMAGE_HEIGHT,
-        width: "100%",
-        objectFit: "cover",
-      }
-    : undefined;
+  if (isPrimaryImage) {
+    return (
+      <PrimaryImageFrame number={concept.number}>
+        <img
+          src={concept.image}
+          alt={concept.title}
+          className={primaryImageClassName}
+        />
+      </PrimaryImageFrame>
+    );
+  }
 
   return (
     <img
       src={concept.image}
       alt={concept.title}
-      className={isPrimaryTallImage ? primaryTallMediaClassName : mediaClassName}
-      style={primaryMediaStyle}
+      className={mediaClassName}
     />
   );
 }
 
 function ConceptCardItem({ concept }: { concept: ConceptCard }) {
+  const squareCards = new Set(["(06)", "(07)", "(11)", "(12)", "(13)"]);
+  const cardRadiusClass = squareCards.has(concept.number)
+    ? "rounded-[28px] lg:rounded-[40px]"
+    : concept.number === "(08)"
+      ? "rounded-[26px] lg:rounded-[35px]"
+      : "rounded-[26px] lg:rounded-[40px]";
+
   return (
-    <article className="flex flex-col">
-      <ConceptCardMedia concept={concept} />
+    <article className="flex min-w-0 w-full flex-col">
+      <motion.div
+        className={`origin-center w-full overflow-hidden ${cardRadiusClass}`}
+        {...scrollReveal}
+      >
+        <ConceptCardMedia concept={concept} />
+      </motion.div>
       <div
         className="flex shrink-0 items-baseline justify-between gap-4"
         style={{ marginTop: "12px" }}
@@ -407,7 +521,7 @@ function ConceptCardItem({ concept }: { concept: ConceptCard }) {
           }}
         >
           <h2
-            className="font-sexsmith text-left text-[28px] font-normal text-[#0F0F0F]"
+            className="font-sexsmith text-left text-[22px] font-normal text-[#0F0F0F] sm:text-[28px]"
             style={{ fontFamily: "'Sexsmith', serif", margin: 0 }}
           >
             {concept.title}
@@ -419,7 +533,9 @@ function ConceptCardItem({ concept }: { concept: ConceptCard }) {
             {concept.subtitle}
           </p>
         </div>
-        <span className="shrink-0 text-[16px] text-[#0F0F0F]">{concept.number}</span>
+        <span className="shrink-0 text-[16px] text-[#0F0F0F]">
+          {displayNumberMap[concept.number] ?? concept.number}
+        </span>
       </div>
     </article>
   );
@@ -427,79 +543,165 @@ function ConceptCardItem({ concept }: { concept: ConceptCard }) {
 
 function ConceptCardWrapper({
   concept,
+  className = "",
   style,
+  mobileCentered = true,
 }: {
-  concept: ConceptCard;
+  concept: ConceptCard | undefined;
+  className?: string;
   style?: CSSProperties;
+  mobileCentered?: boolean;
 }) {
+  if (!concept) return null;
+
+  const isWideMobile =
+    concept.number === "(05)" ||
+    concept.number === "(08)" ||
+    concept.number === "(14)";
+
   return (
-    <ScrollReveal style={style}>
+    <div
+      className={`min-w-0 ${mobileCentered && !isWideMobile ? "max-lg:mx-auto" : ""} ${className}`}
+      style={style}
+    >
       <ConceptCardItem concept={concept} />
-    </ScrollReveal>
+    </div>
+  );
+}
+
+function ConceptsMobileLayout() {
+  return (
+    <div className="space-y-4 lg:hidden">
+      <div className="grid w-full grid-cols-2 gap-4">
+        <ConceptCardWrapper concept={primaryByNumber["(01)"]} mobileCentered={false} />
+        <ConceptCardWrapper concept={primaryByNumber["(02)"]} mobileCentered={false} />
+      </div>
+
+      <div className="grid w-full grid-cols-2 items-start gap-4">
+        {/* 2 ряд: Quick Trip (04) 161×294 + Quran book (06) 161×161 */}
+        <ConceptCardWrapper concept={primaryByNumber["(04)"]} mobileCentered={false} />
+        <ConceptCardWrapper concept={bentoByNumber["(06)"]} mobileCentered={false} />
+
+        {/* 3 ряд: Heart (07) под Quick Trip + Language Coach (09) высокая */}
+        <ConceptCardWrapper concept={bentoByNumber["(07)"]} mobileCentered={false} />
+        <ConceptCardWrapper
+          concept={bentoByNumber["(09)"]}
+          mobileCentered={false}
+          style={{ marginTop: "calc((100vw - 2rem) * -0.39)" }}
+        />
+
+        {/* 4 ряд: Meet Point (03) под Heart + Ring bell (12) квадрат */}
+        <ConceptCardWrapper concept={primaryByNumber["(03)"]} mobileCentered={false} />
+        <ConceptCardWrapper concept={moreByNumber["(12)"]} mobileCentered={false} />
+
+        {/* 5 ряд: Voice assistant (11) под Meet Point + Smart Home (10) */}
+        <ConceptCardWrapper concept={moreByNumber["(11)"]} mobileCentered={false} />
+        <ConceptCardWrapper
+          concept={moreByNumber["(10)"]}
+          mobileCentered={false}
+          style={{ marginTop: "calc((100vw - 2rem) * -0.39)" }}
+        />
+
+        {/* 6 ряд: Discover places (05) на всю ширину */}
+        <ConceptCardWrapper
+          concept={primaryByNumber["(05)"]}
+          className="col-span-2 w-full"
+          mobileCentered={false}
+        />
+
+        {/* Остальные мобильные можно добавить ниже при необходимости */}
+      </div>
+    </div>
+  );
+}
+
+function ConceptsDesktopLayout() {
+  return (
+    <div className="hidden lg:block">
+      <div className="grid grid-cols-3 items-start gap-6">
+        {primaryConcepts.map((concept) => (
+          <ConceptCardWrapper
+            key={concept.number}
+            concept={concept}
+            mobileCentered={false}
+            className={concept.number === "(05)" ? "col-span-2" : undefined}
+          />
+        ))}
+      </div>
+
+      <div className="mt-6 grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)] items-start gap-6">
+        <div className="flex min-w-0 flex-col gap-6">
+          <div className="grid grid-cols-2 gap-6">
+            <ConceptCardWrapper
+              concept={bentoByNumber["(06)"]}
+              mobileCentered={false}
+            />
+            <ConceptCardWrapper
+              concept={bentoByNumber["(07)"]}
+              mobileCentered={false}
+            />
+          </div>
+          <ConceptCardWrapper
+            concept={bentoByNumber["(08)"]}
+            mobileCentered={false}
+            style={{ marginTop: -1 }}
+          />
+        </div>
+        <ConceptCardWrapper
+          concept={bentoByNumber["(09)"]}
+          mobileCentered={false}
+          className="self-start"
+        />
+      </div>
+
+      <div className="mt-6 grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-start gap-6">
+        <div className="flex min-w-0 flex-col gap-6">
+          <ConceptCardWrapper
+            concept={moreByNumber["(10)"]}
+            mobileCentered={false}
+          />
+          <ConceptCardWrapper
+            concept={moreByNumber["(13)"]}
+            mobileCentered={false}
+            className="self-start"
+          />
+        </div>
+        <div className="flex min-w-0 flex-col gap-6">
+          <div className="grid grid-cols-2 gap-6">
+            <ConceptCardWrapper
+              concept={moreByNumber["(11)"]}
+              mobileCentered={false}
+              className="self-start"
+            />
+            <ConceptCardWrapper
+              concept={moreByNumber["(12)"]}
+              mobileCentered={false}
+              className="self-start"
+            />
+          </div>
+          <ConceptCardWrapper
+            concept={moreByNumber["(14)"]}
+            mobileCentered={false}
+            className="self-start"
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 
 export function Concepts() {
   return (
-    <section id="concepts" className="bg-white pb-0 pt-16">
+    <section id="concepts" className="pb-0 pt-12 sm:pt-16">
       <ScrollRevealH1
-        className="mb-10 font-sexsmith text-[48px] font-normal text-[#0F0F0F]"
+        className="mb-[28px] font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:mb-[52px] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}
       >
         Концепты
       </ScrollRevealH1>
 
-      <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-3">
-        {primaryConcepts.map((concept) => (
-          <ConceptCardWrapper
-            key={concept.number}
-            concept={concept}
-            style={
-              concept.number === "(05)"
-                ? { gridColumn: "span 2", alignSelf: "start" }
-                : concept.number === "(04)"
-                  ? { alignSelf: "start" }
-                  : undefined
-            }
-          />
-        ))}
-      </div>
-
-      <div className="mt-6 grid grid-cols-1 items-start gap-6 sm:grid-cols-[558.68px_267.34px]">
-        <div className="flex flex-col gap-6">
-          <div className="grid grid-cols-2 gap-6">
-            <ConceptCardWrapper
-              concept={bentoByNumber["(06)"]}
-            />
-            <ConceptCardWrapper concept={bentoByNumber["(07)"]} />
-          </div>
-          <ConceptCardWrapper concept={bentoByNumber["(08)"]} />
-        </div>
-        <ConceptCardWrapper
-          concept={bentoByNumber["(09)"]}
-          style={{ width: BENTO_COL_WIDTH }}
-        />
-      </div>
-
-      <div className="mt-6 grid grid-cols-1 items-start gap-6 sm:grid-cols-[267.33px_558.67px]">
-        <div className="flex flex-col gap-6">
-          <ConceptCardWrapper
-            concept={moreByNumber["(10)"]}
-            style={{ width: MORE_SCREEN_WIDTH }}
-          />
-          <ConceptCardWrapper concept={moreByNumber["(13)"]} />
-        </div>
-        <div className="flex flex-col gap-6">
-          <div className="grid grid-cols-2 gap-6">
-            <ConceptCardWrapper concept={moreByNumber["(11)"]} />
-            <ConceptCardWrapper concept={moreByNumber["(12)"]} />
-          </div>
-          <ConceptCardWrapper
-            concept={moreByNumber["(14)"]}
-            style={{ width: MORE_WIDE_WIDTH }}
-          />
-        </div>
-      </div>
+      <ConceptsMobileLayout />
+      <ConceptsDesktopLayout />
     </section>
   );
 }

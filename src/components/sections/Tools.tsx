@@ -41,26 +41,26 @@ const tools: ToolItem[] = [
     description: "Генерирую код по макетам для тестирования интерфейсов",
     number: "(05)",
     logo: "/cursor.png",
-    iconSize: 64,
+    iconSize: 54,
     iconRadius: 16,
   },
 ];
 
 export function Tools() {
   return (
-    <section id="tools" className="mt-[60px] bg-white pb-32">
+    <section id="tools" className="mt-10 pb-20 sm:mt-[60px] sm:pb-32">
       <ScrollRevealH1
-        className="font-sexsmith text-[48px] font-normal text-[#0F0F0F]"
+        className="font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}
       >
         Инструменты
       </ScrollRevealH1>
 
-      <div className="mt-[54px] flex flex-col">
+      <div className="mt-8 flex flex-col sm:mt-[54px]">
         {tools.map((tool, index) => (
           <ScrollReveal
             key={tool.number}
-            className={`flex cursor-pointer items-center justify-between gap-6 py-6 ${
+            className={`flex cursor-pointer items-center justify-between gap-4 py-5 sm:gap-6 sm:py-6 ${
               index > 0 ? "border-t border-[#C7C7C7]" : ""
             }`}
           >
@@ -68,31 +68,31 @@ export function Tools() {
               <img
                 src={tool.logo}
                 alt={tool.name}
-                width={tool.iconSize ?? 66}
-                height={tool.iconSize ?? 66}
+                width={tool.iconSize ?? 54}
+                height={tool.iconSize ?? 54}
                 className="shrink-0 object-cover"
                 style={{
-                  width: tool.iconSize ?? 66,
-                  height: tool.iconSize ?? 66,
+                  width: tool.iconSize ?? 54,
+                  height: tool.iconSize ?? 54,
                   borderRadius: tool.iconRadius ?? 12,
                 }}
               />
               <div className="flex min-w-0 flex-col gap-[2px]">
                 <h2
-                  className="font-sexsmith text-[28px] font-normal leading-tight text-[#0F0F0F]"
+                  className="font-sexsmith text-[22px] font-normal leading-tight text-[#0F0F0F] sm:text-[28px]"
                   style={{ fontFamily: "'Sexsmith', serif", margin: 0 }}
                 >
                   {tool.name}
                 </h2>
                 <p
-                  className="text-[15px] leading-snug text-[#C7C7C7]"
+                  className="text-[13px] leading-snug text-[#C7C7C7]"
                   style={{ margin: 0 }}
                 >
                   {tool.description}
                 </p>
               </div>
             </div>
-            <span className="shrink-0 text-[16px] text-[#0F0F0F]">{tool.number}</span>
+            <span className="shrink-0 text-[13px] text-[#0F0F0F]">{tool.number}</span>
           </ScrollReveal>
         ))}
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollReveal, ScrollRevealP } from "@/components/ScrollReveal";
+import { LoadFadeIn, ScrollReveal } from "@/components/ScrollReveal";
 
 type CareerEntry = {
   company: string;
@@ -48,27 +48,28 @@ function CompanyLogo({ src, alt }: { src: string; alt: string }) {
 
 export function Career() {
   return (
-    <section id="info" className="bg-white pb-0 pt-0">
-      <ScrollRevealP className="mb-[10px] text-sm text-[#C7C7C7]">Карьера</ScrollRevealP>
-      <ScrollReveal className="mb-10 h-px w-full bg-[#C7C7C7]" />
+    <section id="info" className="pb-0 pt-0">
+      <LoadFadeIn>
+        <p className="mb-[10px] text-sm text-[#C7C7C7]">Карьера</p>
+        <div className="mb-10 h-px w-full bg-[#C7C7C7]" />
+      </LoadFadeIn>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-0">
         {careerData.map((entry) => (
-          <ScrollReveal
-            key={entry.company}
-            className="grid h-[76px] grid-cols-1 items-center gap-6 text-[16px] sm:grid-cols-2"
-          >
-            <div className="flex items-center gap-4">
-              <CompanyLogo src={entry.logo} alt={entry.company} />
-              <div>
-                <p className="font-medium text-black">{entry.company}</p>
-                <p className="mt-0.5 text-[#C7C7C7]">{entry.years}</p>
+          <ScrollReveal key={entry.company} className="w-full">
+            <div className="grid h-[76px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-[13px] sm:gap-6">
+              <div className="flex items-center gap-4">
+                <CompanyLogo src={entry.logo} alt={entry.company} />
+                <div className="min-w-0">
+                  <p className="truncate font-medium text-black">{entry.company}</p>
+                  <p className="mt-0.5 truncate text-[#C7C7C7]">{entry.years}</p>
+                </div>
               </div>
-            </div>
 
-            <div className="sm:text-right">
-              <p className="font-medium text-black">{entry.role}</p>
-              <p className="mt-0.5 text-[#C7C7C7]">{entry.platform}</p>
+              <div className="text-right">
+                <p className="whitespace-nowrap font-medium text-black">{entry.role}</p>
+                <p className="mt-0.5 whitespace-nowrap text-[#C7C7C7]">{entry.platform}</p>
+              </div>
             </div>
           </ScrollReveal>
         ))}

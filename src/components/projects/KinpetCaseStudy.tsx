@@ -1,0 +1,300 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import {
+  LoadFadeIn,
+  ScrollReveal,
+  ScrollRevealH2,
+} from "@/components/ScrollReveal";
+import { KinpetKeysImage } from "@/components/projects/KinpetKeysImage";
+
+const KinpetBeforeAfterSlider = dynamic(
+  () =>
+    import("@/components/projects/KinpetBeforeAfterSlider").then(
+      (mod) => mod.KinpetBeforeAfterSlider,
+    ),
+  { ssr: false },
+);
+
+const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
+
+const projectInfo = [
+  { label: "Роль", value: "Продуктовый дизайнер" },
+  { label: "Направление", value: "B2C" },
+  { label: "Формат", value: "desktop" },
+  { label: "Год", value: "©2024" },
+];
+
+const contextBlocks = [
+  {
+    label: "Что делала:",
+    text: "Работала над ключевым сценарием — поиском питомца.",
+  },
+  {
+    label: "Проблема:",
+    text: "Анализ выявил, что 45% пользователей покидают первый экран, не переходя к просмотру объявлений — сценарий обрывается на старте.",
+  },
+  {
+    label: "Цель:",
+    text: "Увеличить конверсию в просмотр объявлений.",
+  },
+  {
+    label: "Решение:",
+    text: "Снизить процент пользователей, покидающих первый экран, и увеличить CTR в просмотр объявлений — за счёт упрощения точки входа в поиск.",
+  },
+];
+
+const insightItems = [
+  "Пользователи не понимают, с чего начать поиск — есть те, кто ещё не определился с выбором, они теряются.",
+  "Пользователи ожидают, что поиск на первом экране сразу даст точный результат, к примеру, сразу найти щенка или им нужен питомец специально для вязки.",
+];
+
+const hypothesisItems = [
+  "Если помочь неопределившимся пользователям с выбором питомца прямо на старте — они не потеряются и дойдут до просмотра объявлений.",
+  "Если добавить в поиск тип объявления Купить / Бесплатно, а также поле с возрастом питомца на первый экран, то это увеличит удовлетворенность и уменьшит откат пользователей.",
+  "Повышение релевантности объявлений за счёт добавление фильтра на главной приведёт к снижению отказов на странице результатов и росту конверсии в целевое действие.",
+];
+
+export function KinpetCaseStudy() {
+  return (
+    <article className="pb-16 sm:pb-24">
+      <LoadFadeIn className="pt-[100px]">
+        <img
+          src="/kinpet.png"
+          alt="Kinpet"
+          width={80}
+          height={80}
+          className="h-[80px] w-[80px] rounded-2xl object-cover"
+        />
+
+        <div className="mt-[74px] grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12">
+          <div className="min-w-0">
+            <h1
+              className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px] lg:text-[52px]"
+              style={sexsmithStyle}
+            >
+              Сервис Kinpet
+            </h1>
+
+            <p className="mt-6 max-w-[640px] text-[15px] leading-[1.6] text-[#0F0F0F]">
+              Kinpet — веб-сервис, где публикуют объявления о продаже собак и
+              кошек, а также отдают питомцев бесплатно в добрые руки. С широким
+              выбором пород и возрастов из любого уголка России.
+            </p>
+          </div>
+
+          <div className="flex shrink-0 flex-col gap-4 lg:gap-5">
+            {projectInfo.map((item) => (
+              <div key={item.label}>
+                <p className="text-[12px] text-[#C7C7C7]">{item.label}</p>
+                <p className="mt-1 text-[15px] leading-snug text-[#0F0F0F]">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </LoadFadeIn>
+
+      <ScrollReveal className="mt-10 sm:mt-12">
+        <KinpetKeysImage className="rounded-[24px] sm:rounded-[40px]" />
+      </ScrollReveal>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Контекст
+        </ScrollRevealH2>
+
+        <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
+          {contextBlocks.map((block) => (
+            <ScrollReveal key={block.label} className="w-full">
+              <p className="text-[15px] sm:text-[18px] font-bold leading-[1.4] text-[#0F0F0F]">
+                {block.label}
+              </p>
+              <p className="mt-2 text-[15px] sm:text-[18px] leading-[1.6] text-[#0F0F0F]">
+                {block.text}
+              </p>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      <ScrollReveal className="mt-10">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/before.png"
+          alt="Kinpet — главная до редизайна"
+          width={890}
+          height={536}
+          loading="lazy"
+          decoding="async"
+          className="block h-auto w-full max-w-full"
+        />
+        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+          Главная / ДО
+        </p>
+      </ScrollReveal>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Исследование
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="w-full text-[15px] sm:text-[18px] leading-[1.6] text-[#0F0F0F]">
+            Чтобы понять, почему пользователи уходят с первого экрана поиска, я
+            провела{" "}
+            <span className="font-bold">глубинные интервью</span> с целевой
+            аудиторией. И вот, какие инсайты я получила:
+          </p>
+        </ScrollReveal>
+      </section>
+
+      <ScrollReveal className="mt-10 sm:mt-12">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/interview.png"
+          alt="Ответы пользователей на глубинных интервью"
+          width={890}
+          height={536}
+          loading="lazy"
+          decoding="async"
+          className="block h-auto w-full max-w-full"
+        />
+        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+          Ответы пользователей
+        </p>
+      </ScrollReveal>
+
+      <section className="mt-[44px] flex w-full flex-col gap-8 sm:mt-[60px] sm:gap-10">
+        {insightItems.map((text) => (
+          <ScrollReveal key={text} className="flex w-full items-start gap-4 sm:gap-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+              <img
+                src="/lump.png"
+                alt=""
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+              />
+            </div>
+            <p className="min-w-0 flex-1 text-[15px] sm:text-[18px] leading-[1.6] text-[#0F0F0F]">
+              {text}
+            </p>
+          </ScrollReveal>
+        ))}
+
+        <ScrollReveal className="w-full">
+          <p className="text-[15px] sm:text-[18px] leading-[1.6] text-[#0F0F0F]">
+            Далее я провела{" "}
+            <span className="font-bold">количественный немодерируемый опрос</span>
+            , чтобы выяснить: на что пользователи в первую очередь
+            ориентируются при поиске питомца.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className="w-full">
+          <p className="text-[15px] sm:text-[18px] leading-[1.6] text-[#0F0F0F]">
+            Опрос показал, что кроме типа питомца и города, 67% пользователей
+            ориентируются на цену, а 48% — на возраст, что играет ключевую
+            роль при выборе питомца.
+          </p>
+        </ScrollReveal>
+      </section>
+
+      <ScrollReveal className="mt-10 sm:mt-12">
+        <div className="overflow-hidden rounded-[24px] border border-[#E0E0E0] sm:rounded-[40px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/opros.png"
+            alt="Результаты опроса — на что ориентируются при поиске питомца"
+            width={890}
+            height={536}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full"
+          />
+        </div>
+        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+          Ответы пользователей
+        </p>
+      </ScrollReveal>
+
+      <section className="mt-[44px] flex w-full flex-col gap-8 sm:mt-[60px] sm:gap-10">
+        <ScrollReveal className="w-full">
+          <p className="text-[15px] sm:text-[18px] leading-[1.6] text-[#0F0F0F]">
+            На основе всех данных составила{" "}
+            <span className="font-bold">гипотезы:</span>
+          </p>
+        </ScrollReveal>
+
+        {hypothesisItems.map((text) => (
+          <ScrollReveal key={text} className="flex w-full items-start gap-4 sm:gap-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+              <img
+                src="/lump.png"
+                alt=""
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+              />
+            </div>
+            <p className="min-w-0 flex-1 text-[15px] sm:text-[18px] leading-[1.6] text-[#0F0F0F]">
+              {text}
+            </p>
+          </ScrollReveal>
+        ))}
+      </section>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Решение
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[18px]">
+            Поиск. Фильтры
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-4 sm:mt-6">
+          <p className="text-[15px] leading-[1.6] text-[#0F0F0F] sm:text-[18px]">
+            Был пересобран первый экран так, чтобы пользователь мог сразу задать
+            нужный контекст поиска. Добавили фильтр — чтобы пользователь сразу
+            мог заложить нужные ему параметры, добавили выбор типа объявления и
+            возраст, так как именно эти параметры определяют выбор для
+            большинства пользователей.
+          </p>
+        </ScrollReveal>
+      </section>
+
+      <ScrollReveal className="mt-16 sm:mt-20">
+        <div className="overflow-hidden rounded-[24px] sm:rounded-[40px]">
+          <KinpetBeforeAfterSlider />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/filters.png"
+            alt="Kinpet — фильтры на главной после редизайна"
+            width={890}
+            height={536}
+            loading="lazy"
+            decoding="async"
+            className="mt-1.5 block h-auto w-full max-w-full"
+          />
+        </div>
+        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+          Главная / ПОСЛЕ
+        </p>
+      </ScrollReveal>
+    </article>
+  );
+}

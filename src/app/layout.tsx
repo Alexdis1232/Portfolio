@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { AudioUnlock } from "@/components/AudioUnlock";
 import { CustomCursor } from "@/components/CustomCursor";
 import dynamic from "next/dynamic";
 
@@ -32,23 +33,24 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${inter.variable} ${playfair.variable} min-h-screen bg-white font-sans text-black antialiased`}
+        className={`${inter.variable} ${playfair.variable} min-h-screen bg-white font-sans text-[15px] text-black antialiased sm:text-base`}
       >
+        <AudioUnlock />
         <CustomCursor />
+        <Navbar />
         <Container>
-          <Navbar />
-          <main>{children}</main>
+          <main className="pt-[88px] sm:pt-28">{children}</main>
         </Container>
         <GradualBlur
           target="page"
           position="bottom"
-          height="90px"
-          strength={3}
-          divCount={8}
+          height="72px"
+          strength={2}
+          divCount={4}
           curve="bezier"
-          exponential={true}
+          exponential={false}
           animated="scroll"
-          opacity={1}
+          opacity={0.85}
         />
       </body>
     </html>

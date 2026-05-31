@@ -27,13 +27,10 @@ const FadeContent = ({
     const startPct = (1 - threshold) * 100;
     const getSeconds = (val) => (typeof val === 'number' && val > 10 ? val / 1000 : val);
 
-    gsap.set(el, {
-      autoAlpha: initialOpacity,
-      filter: blur ? 'blur(10px)' : 'blur(0px)',
-    });
+    gsap.set(el, { autoAlpha: initialOpacity });
 
     const tl = gsap.timeline({ paused: true, delay: getSeconds(delay) });
-    tl.to(el, { autoAlpha: 1, filter: 'blur(0px)', duration: getSeconds(duration), ease });
+    tl.to(el, { autoAlpha: 1, duration: getSeconds(duration), ease });
 
     const playIfVisible = () => {
       const rect = el.getBoundingClientRect();
@@ -44,9 +41,8 @@ const FadeContent = ({
     const st = ScrollTrigger.create({
       trigger: el,
       start: `top ${startPct}%`,
-      once: false,
-      onEnter: () => tl.restart(true),
-      onEnterBack: () => tl.restart(true),
+      once: true,
+      onEnter: () => tl.play(),
     });
 
     playIfVisible();

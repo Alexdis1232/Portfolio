@@ -1,80 +1,31 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { useCallback } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useButtonClickSound } from "@/hooks/useButtonClickSound";
+import { useProjectHoverSound } from "@/hooks/useProjectHoverSound";
+import { projects, type Project } from "@/data/projects";
 
-type ProjectInfo = {
-  label: string;
-  value: string;
-};
+const PROJECT_HERO_WIDTH = 470;
+const PROJECT_HERO_HEIGHT = 389;
 
-type Project = {
-  heroImage: string;
-  heroAlt: string;
-  logo: string;
-  company: string;
-  number: string;
-  title: string;
-  info: ProjectInfo[];
-};
-
-const projects: Project[] = [
-  {
-    heroImage: "/faberlichero.png",
-    heroAlt: "Faberlic project preview",
-    logo: "/faberlic.png",
-    company: "Faberlic",
-    number: "(01)",
-    title: "Application for order processing and business management",
-    info: [
-      { label: "Роль", value: "Продуктовый дизайнер" },
-      { label: "Девайс", value: "desktop" },
-      { label: "Направление", value: "B2B, B2C" },
-    ],
-  },
-  {
-    heroImage: "/kabinetpvhero.png",
-    heroAlt: "Кабинет ПВ project preview",
-    logo: "/kabinetpv.png",
-    company: "Кабинет ПВ",
-    number: "(02)",
-    title: "Как редизайн сценария снял нагрузку сотрудникам на 75%",
-    info: [
-      { label: "Роль", value: "Продуктовый дизайнер" },
-      { label: "Девайс", value: "©2025" },
-      { label: "Направление", value: "B2E" },
-    ],
-  },
-  {
-    heroImage: "/kinpethero.png",
-    heroAlt: "Kinpet project preview",
-    logo: "/kinpet.png",
-    company: "Kinpet",
-    number: "(03)",
-    title: "Как мы повысили конверсию в подбор питомца на 25%",
-    info: [
-      { label: "Роль", value: "Продуктовый дизайнер" },
-      { label: "Девайс", value: "Desktop" },
-      { label: "Направление", value: "B2C" },
-    ],
-  },
-];
-
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCardContent({ project }: { project: Project }) {
   return (
-    <article className="grid grid-cols-1 items-start gap-8 py-[42px] lg:grid-cols-[470px_1fr] lg:gap-12">
+    <>
       <motion.img
         src={project.heroImage}
         alt={project.heroAlt}
-        width={470}
-        height={389}
+        width={PROJECT_HERO_WIDTH}
+        height={PROJECT_HERO_HEIGHT}
         whileHover={{ rotate: 10 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="h-[389px] w-full max-w-[470px] rounded-[40px] object-cover lg:w-[470px]"
+        className="aspect-[470/389] h-auto w-full rounded-[24px] object-cover sm:rounded-[40px] lg:h-[389px] lg:w-[470px] lg:max-w-none lg:shrink-0"
       />
 
-      <div className="flex min-h-[389px] flex-col justify-between">
-        <div>
+      <div className="flex min-w-0 w-full flex-col justify-between lg:min-h-[389px]">
+        <div className="min-w-0">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <img
@@ -84,49 +35,96 @@ function ProjectCard({ project }: { project: Project }) {
                 height={34}
                 className="h-[34px] w-[34px] rounded-lg object-cover"
               />
-              <span className="text-[16px] text-[#0F0F0F]">{project.company}</span>
+              <span className="text-[15px] text-[#0F0F0F]">{project.company}</span>
             </div>
-            <span className="shrink-0 text-[16px] text-[#0F0F0F]">
+            <span className="shrink-0 text-[15px] text-[#0F0F0F]">
               {project.number}
             </span>
           </div>
 
           <h3
-            className="mt-[18px] font-sexsmith text-[28px] font-normal leading-[1.2] text-[#0F0F0F]"
+            className="mt-[18px] break-words font-sexsmith text-[22px] font-normal leading-[1.2] text-[#0F0F0F] sm:text-[28px]"
             style={{ fontFamily: "'Sexsmith', serif" }}
           >
-            {project.title}
+            {project.number === "(03)" ? (
+              <>
+                Как мы повысили конверсию в подбор
+                <br className="lg:hidden" />
+                питомца на 25%
+              </>
+            ) : (
+              project.title
+            )}
           </h3>
         </div>
 
-        <div className="flex flex-nowrap gap-10">
+        <div className="mt-8 flex w-full flex-nowrap items-start justify-between gap-2 lg:mt-0">
           {project.info.map((col) => (
-            <div key={col.label} className="shrink-0">
+            <div key={col.label} className="min-w-0 shrink-0">
               <p className="text-[12px] text-[#C7C7C7]">{col.label}</p>
-              <p className="mt-1 whitespace-nowrap text-[15px] text-[#0F0F0F]">
+              <p className="mt-1 whitespace-nowrap text-[15px] leading-snug text-[#0F0F0F]">
                 {col.value}
               </p>
             </div>
           ))}
         </div>
       </div>
-    </article>
+    </>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  const playClick = useButtonClickSound();
+  const playHover = useProjectHoverSound();
+
+  const handlePointerDown = useCallback(() => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      playClick();
+    }
+  }, [playClick]);
+
+  const cardClassName =
+    "grid w-full min-w-0 grid-cols-1 items-start gap-6 py-[18px] sm:gap-8 lg:grid-cols-[470px_minmax(0,1fr)] lg:gap-[36px] lg:py-[42px]";
+
+  if (project.slug) {
+    return (
+      <Link
+        href={`/projects/${project.slug}`}
+        className={`${cardClassName} press-bounce block text-inherit no-underline active:scale-[0.98]`}
+        onPointerDown={handlePointerDown}
+        onMouseEnter={playHover}
+      >
+        <ProjectCardContent project={project} />
+      </Link>
+    );
+  }
+
+  return (
+    <motion.article
+      className={cardClassName}
+      onPointerDown={handlePointerDown}
+      onMouseEnter={playHover}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 300, damping: 26 }}
+    >
+      <ProjectCardContent project={project} />
+    </motion.article>
   );
 }
 
 export function Projects() {
   return (
-    <section id="projects" className="bg-white pb-0 pt-16">
+    <section id="projects" className="w-full pb-0 pt-12 sm:pt-16">
       <h2
-        className="mb-[10px] font-sexsmith text-[48px] font-normal text-[#0F0F0F]"
+        className="mb-[10px] font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}
       >
         Проекты
       </h2>
 
-      <div className="flex flex-col gap-0">
+      <div className="flex w-full flex-col gap-0">
         {projects.map((project) => (
-          <ScrollReveal key={project.number}>
+          <ScrollReveal key={project.number} className="w-full">
             <ProjectCard project={project} />
           </ScrollReveal>
         ))}

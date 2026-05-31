@@ -1,31 +1,22 @@
 "use client";
 
-import { useRef, useEffect, type ReactNode, type CSSProperties } from "react";
-import {
-  motion,
-  useInView,
-  useAnimation,
-  type HTMLMotionProps,
-} from "framer-motion";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
 
-const hidden = { opacity: 0.3, scale: 0.8, filter: "blur(8px)" };
-const visible = { opacity: 1, scale: 1, filter: "blur(0px)" };
-const transition = { duration: 0.6, ease: "easeOut" as const };
+/** Scale + fade при скролле */
+export const scrollReveal = {
+  initial: { opacity: 1, scale: 0.96 },
+  whileInView: { opacity: 1, scale: 1 },
+  viewport: { once: true, amount: 0.08 },
+  transition: { duration: 0.6, ease: "easeOut" as const },
+};
 
-function useRepeatingReveal() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.2, once: false });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    controls.set(hidden);
-    void controls.start({ ...visible, transition });
-  }, [isInView, controls]);
-
-  return { ref, controls };
-}
+/** Только fade при первой загрузке (Hero, навбар и т.п.) */
+export const loadFadeIn = {
+  initial: { opacity: 1 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.6, ease: "easeOut" as const },
+};
 
 type ScrollRevealProps = HTMLMotionProps<"div"> & {
   children?: ReactNode;
@@ -37,15 +28,29 @@ export function ScrollReveal({
   style,
   ...rest
 }: ScrollRevealProps) {
-  const { ref, controls } = useRepeatingReveal();
-
   return (
     <motion.div
-      ref={ref}
       className={className}
+      style={{ transformOrigin: "center", ...style }}
+      {...scrollReveal}
+      {...rest}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function LoadFadeIn({
+  children,
+  className,
+  style,
+  ...rest
+}: ScrollRevealProps) {
+  return (
+    <motion.div
+      className={`reveal-fade-in ${className ?? ""}`.trim()}
       style={style}
-      initial={hidden}
-      animate={controls}
+      {...loadFadeIn}
       {...rest}
     >
       {children}
@@ -56,15 +61,24 @@ export function ScrollReveal({
 type HeadingProps = HTMLMotionProps<"h1"> & { children: ReactNode };
 
 export function ScrollRevealH1({ children, className, style, ...rest }: HeadingProps) {
-  const { ref, controls } = useRepeatingReveal();
-
   return (
     <motion.h1
-      ref={ref}
       className={className}
+      style={{ transformOrigin: "center", ...style }}
+      {...scrollReveal}
+      {...rest}
+    >
+      {children}
+    </motion.h1>
+  );
+}
+
+export function LoadFadeInH1({ children, className, style, ...rest }: HeadingProps) {
+  return (
+    <motion.h1
+      className={`reveal-fade-in ${className ?? ""}`.trim()}
       style={style}
-      initial={hidden}
-      animate={controls}
+      {...loadFadeIn}
       {...rest}
     >
       {children}
@@ -78,15 +92,11 @@ export function ScrollRevealH2({
   style,
   ...rest
 }: HTMLMotionProps<"h2"> & { children: ReactNode }) {
-  const { ref, controls } = useRepeatingReveal();
-
   return (
     <motion.h2
-      ref={ref}
       className={className}
-      style={style}
-      initial={hidden}
-      animate={controls}
+      style={{ transformOrigin: "center", ...style }}
+      {...scrollReveal}
       {...rest}
     >
       {children}
@@ -100,15 +110,11 @@ export function ScrollRevealP({
   style,
   ...rest
 }: HTMLMotionProps<"p"> & { children: ReactNode }) {
-  const { ref, controls } = useRepeatingReveal();
-
   return (
     <motion.p
-      ref={ref}
       className={className}
-      style={style}
-      initial={hidden}
-      animate={controls}
+      style={{ transformOrigin: "center", ...style }}
+      {...scrollReveal}
       {...rest}
     >
       {children}

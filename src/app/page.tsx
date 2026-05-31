@@ -1,4 +1,3 @@
-import FadeContent from "@/components/FadeContent";
 import { Hero } from "@/components/sections/Hero";
 import { PhotoCollage } from "@/components/sections/PhotoCollage";
 import { Career } from "@/components/sections/Career";
@@ -10,19 +9,11 @@ import { Contact } from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
-      <FadeContent blur={true} duration={800} delay={100} initialOpacity={0}>
-        <Hero />
-      </FadeContent>
-      <FadeContent blur={true} duration={800} delay={200} initialOpacity={0}>
-        <Career />
-      </FadeContent>
-      <FadeContent blur={true} duration={800} delay={300} initialOpacity={0}>
-        <Projects />
-      </FadeContent>
+      <Hero />
+      <Career />
+      <Projects />
       <Concepts />
-      <FadeContent blur={true} duration={800} delay={500} initialOpacity={0}>
-        <Tools />
-      </FadeContent>
+      <Tools />
       <PhotoCollage />
       <Contact />
     </>
