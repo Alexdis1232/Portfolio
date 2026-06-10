@@ -1,38 +1,34 @@
 "use client";
 
-import { Magnet } from "@/components/Magnet";
 import { LoadFadeIn, LoadFadeInH1 } from "@/components/ScrollReveal";
-import { HeroSpeechBubble } from "./HeroSpeechBubble";
 
 export function Hero() {
   return (
-    <section className="hero-section pb-12 sm:pb-16">
-      <div className="grid grid-cols-1 items-center gap-8 pt-8 sm:gap-12 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 lg:pt-24">
-        <LoadFadeIn className="relative mx-auto shrink-0 lg:order-2 lg:mx-0 lg:translate-x-6 lg:justify-self-end">
-          <Magnet padding={60} magnetStrength={4}>
-            <img
-              src="/photomecat.png?v=2"
-              alt="Саша"
-              width={280}
-              height={280}
-              style={{ objectFit: "cover" }}
-              className="h-auto w-full max-w-[242px] grayscale lg:max-w-[330px]"
+    <section className="hero-section pb-0">
+      <div className="flex w-full flex-col items-start pt-[42px] sm:pt-[74px] lg:pt-[106px]">
+        <LoadFadeIn>
+          <div className="h-[180px] w-[180px] shrink-0 overflow-hidden rounded-[40px]">
+            <video
+              src="/mevideo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="h-full w-full scale-[1.4] object-cover"
             />
-          </Magnet>
-          <HeroSpeechBubble />
+          </div>
         </LoadFadeIn>
 
         <LoadFadeInH1
-          className="hero-title min-w-0 max-w-full text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[40px] lg:order-1 lg:pr-2 lg:text-[52px]"
+          className="hero-title mt-[80px] w-full text-left text-[65px] font-normal leading-[1.1] text-[#0F0F0F]"
           style={{ fontFamily: "'Sexsmith', serif", letterSpacing: "0.01em" }}
         >
-          Я Саша — Продуктовый
+          Я Саша — Продуктовый дизайнер
           <br />
-          дизайнер mobile-first,
+          mobile-first, с 3 годами опыта в
           <br />
-          с 3 годами опыта в B2C и B2B
-          <br />
-          продуктах: E-commerce
+          B2C и B2B продуктах: E-commerce
           <br />
           и PetTech.
         </LoadFadeInH1>

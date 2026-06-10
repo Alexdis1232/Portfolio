@@ -48,7 +48,7 @@ function CompanyLogo({ src, alt }: { src: string; alt: string }) {
 
 export function Career() {
   return (
-    <section id="info" className="pb-0 pt-0">
+    <section id="info" className="pb-0 pt-[80px]">
       <LoadFadeIn>
         <p className="mb-[10px] text-sm text-[#C7C7C7]">Карьера</p>
         <div className="mb-10 h-px w-full bg-[#C7C7C7]" />
