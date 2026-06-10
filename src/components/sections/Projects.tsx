@@ -48,7 +48,7 @@ function ProjectCardContent({ project }: { project: Project }) {
           >
             {project.number === "(03)" ? (
               <>
-                Как мы повысили конверсию в подбор
+                Как мы повысили конверсию в подбор{" "}
                 <br className="lg:hidden" />
                 питомца на 25%
               </>

@@ -100,7 +100,7 @@ export function KinpetCaseStudy() {
         <KinpetKeysImage className="rounded-[24px] sm:rounded-[40px]" />
       </ScrollReveal>
 
-      <section className="mt-16 sm:mt-20">
+      <section className="mt-[52px] sm:mt-[68px]">
         <ScrollRevealH2
           className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
           style={sexsmithStyle}

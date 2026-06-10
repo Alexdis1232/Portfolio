@@ -14,10 +14,10 @@ export function HeroSpeechBubble() {
   return (
     <div
       ref={rootRef}
-      className="pointer-events-none absolute right-[-6%] top-[6%] z-10 translate-x-[15px] translate-y-[63px] sm:right-[-4%] sm:top-[8%] lg:translate-x-0"
+      className="pointer-events-none absolute left-[calc(100%-10px)] top-[22px] z-10 translate-x-[45px] sm:top-[26px]"
       aria-hidden
     >
-      <div className="relative origin-top-left scale-100 lg:scale-[1.2]">
+      <div className="relative origin-top-left">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/cursorb.svg"
