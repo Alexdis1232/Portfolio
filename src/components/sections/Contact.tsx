@@ -51,7 +51,10 @@ export function Contact() {
               target={item.label === "email" ? undefined : "_blank"}
               rel={item.label === "email" ? undefined : "noopener noreferrer"}
               className={contactButtonClass}
-              onPointerDown={playClick}
+              onPointerDown={(event) => {
+                if (event.button !== 0) return;
+                playClick();
+              }}
               onMouseEnter={() => {
                 playHover();
                 setHoveredButton(item.label);

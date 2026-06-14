@@ -24,7 +24,10 @@ function NavLink({
     <Link
       href={href}
       className={`${navButtonClass} shrink-0`}
-      onPointerDown={onPress}
+      onPointerDown={(event) => {
+        if (event.button !== 0) return;
+        onPress();
+      }}
     >
       {label}
     </Link>
@@ -67,7 +70,10 @@ export function Navbar() {
           <a
             href="/cv.pdf"
             className={`${cvButtonClass} shrink-0`}
-            onPointerDown={playClick}
+            onPointerDown={(event) => {
+              if (event.button !== 0) return;
+              playClick();
+            }}
           >
             CV
           </a>

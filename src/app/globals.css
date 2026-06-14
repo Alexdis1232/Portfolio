@@ -11,15 +11,13 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  *,
-  *::before,
-  *::after,
-  a,
-  button,
-  input,
-  textarea,
-  select {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
     cursor: none !important;
+  }
+
+  .custom-cursor-root {
+    display: block;
   }
 }
 
@@ -67,6 +65,32 @@ main {
 
 h1.hero-title {
   font-family: "Sexsmith", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+.hero-video-frame {
+  clip-path: inset(0 round 28px);
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@media (min-width: 640px) {
+  .hero-video-frame {
+    clip-path: inset(0 round 34px);
+  }
+}
+
+.hero-video-inner {
+  transform: translateY(-8px) scale(0.6);
+  transform-origin: top left;
+}
+
+.hero-video {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .navbar-glass {

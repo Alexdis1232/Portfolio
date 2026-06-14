@@ -2,15 +2,12 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import dynamic from "next/dynamic";
 import { AudioUnlock } from "@/components/AudioUnlock";
+import { CustomCursor } from "@/components/CustomCursor";
 import { Container } from "@/components/layout/Container";
 import { Navbar } from "@/components/layout/Navbar";
 import "./globals.css";
 
 const GradualBlur = dynamic(() => import("@/components/GradualBlur"), { ssr: false });
-const CustomCursor = dynamic(
-  () => import("@/components/CustomCursor").then((mod) => mod.CustomCursor),
-  { ssr: false },
-);
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],

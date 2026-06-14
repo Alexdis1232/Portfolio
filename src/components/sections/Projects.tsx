@@ -50,7 +50,7 @@ function ProjectCardContent({ project }: { project: Project }) {
               <>
                 Как мы повысили конверсию в подбор{" "}
                 <br className="lg:hidden" />
-                питомца на 25%
+                питомца на 8%
               </>
             ) : (
               project.title
@@ -78,9 +78,7 @@ function ProjectCard({ project }: { project: Project }) {
   const playHover = useProjectHoverSound();
 
   const handlePointerDown = useCallback(() => {
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-      playClick();
-    }
+    playClick();
   }, [playClick]);
 
   const cardClassName =

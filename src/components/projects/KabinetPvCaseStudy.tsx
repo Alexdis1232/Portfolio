@@ -1,0 +1,135 @@
+"use client";
+
+import { LoadFadeIn, ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
+
+const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
+
+const textToImageGap = "mt-10 sm:mt-12";
+
+const projectInfo = [
+  { label: "Роль", value: "Продуктовый дизайнер" },
+  { label: "Направление", value: "B2E" },
+  { label: "Формат", value: "mobile" },
+  { label: "Год", value: "©2025" },
+];
+
+const contextBlocks = [
+  {
+    label: "Что делала:",
+    text: "Работала над сценарием создания претензий к товарам для сотрудников пункта выдачи.",
+  },
+  {
+    label: "Проблема:",
+    text: "Функционал создания претензий отсутствовал в приложении, а десктопная версия была устаревшей и неудобной — это увеличивало время выполнения задач и нагрузку на сотрудников ПВ.",
+  },
+  {
+    label: "Цель:",
+    text: "Сократить время выполнения задачи, перенеся сценарий создания претензий в мобильное приложение и переосмыслив процесс.",
+  },
+  {
+    label: "Решение:",
+    text: "Разработать сценарий создания претензий в мобильном приложении — переосмыслить, перенеся десктопную версию, чтобы сотрудники могли выполнять задачи быстрее и с меньшим количеством шагов.",
+  },
+];
+
+export function KabinetPvCaseStudy() {
+  return (
+    <article className="pb-16 sm:pb-24">
+      <LoadFadeIn className="pt-[100px]">
+        <img
+          src="/kabinetpv.png"
+          alt="Кабинет ПВ"
+          width={80}
+          height={80}
+          className="h-[80px] w-[80px] rounded-2xl object-cover"
+        />
+
+        <div className="mt-[74px] grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-12">
+          <div className="min-w-0">
+            <h1
+              className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px] lg:text-[52px]"
+              style={sexsmithStyle}
+            >
+              Кабинет ПВ
+            </h1>
+
+            <p className="mt-6 max-w-[640px] text-[15px] leading-[1.65] text-[#0F0F0F]">
+              Кабинет ПВ — приложение для сотрудников пунктов выдачи Faberlic.
+              Оно помогает оформлять заказы и возвраты, подписывать документы в
+              электронном виде и использовать сканер штрихкодов для
+              идентификации заказов.
+            </p>
+          </div>
+
+          <div className="flex shrink-0 flex-col gap-4 lg:gap-5">
+            {projectInfo.map((item) => (
+              <div key={item.label}>
+                <p className="text-[12px] text-[#C7C7C7]">{item.label}</p>
+                <p className="mt-1 text-[15px] leading-snug text-[#0F0F0F]">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </LoadFadeIn>
+
+      <ScrollReveal className={textToImageGap}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/kabinet%20pv%20keys.png"
+          alt="Кабинет ПВ — ключевые экраны мобильного приложения"
+          width={890}
+          height={536}
+          loading="lazy"
+          decoding="async"
+          className="block h-auto w-full max-w-full rounded-[24px] sm:rounded-[40px]"
+        />
+      </ScrollReveal>
+
+      <section className="mt-[52px] sm:mt-[68px]">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Контекст
+        </ScrollRevealH2>
+
+        <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
+          {contextBlocks.map((block) => (
+            <ScrollReveal key={block.label} className="w-full">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+                {block.label}
+              </p>
+              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+                {block.text}
+              </p>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <ScrollReveal className="mt-8 sm:mt-10">
+          <div className="rounded-[20px] bg-[#F5F5F5] px-4 py-5 sm:rounded-[24px] sm:px-6 sm:py-6">
+            <div className="flex items-center gap-3 sm:gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/bulavka.png"
+                alt=""
+                width={36}
+                height={36}
+                className="h-6 w-6 shrink-0 object-contain sm:h-[36px] sm:w-[36px]"
+              />
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+                Ограничения
+              </p>
+            </div>
+            <p className="mt-3 text-[15px] leading-[1.65] text-[#0F0F0F] sm:text-[19px]">
+              Изменение бэкенда было недоступно — решение разрабатывалось в
+              рамках существующей логики и данных.
+            </p>
+          </div>
+        </ScrollReveal>
+      </section>
+    </article>
+  );
+}

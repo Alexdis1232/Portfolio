@@ -48,7 +48,7 @@ const tools: ToolItem[] = [
 
 export function Tools() {
   return (
-    <section id="tools" className="mt-10 pb-20 sm:mt-[60px] sm:pb-32">
+    <section id="tools" className="mt-[65px] pb-20 sm:mt-[85px] sm:pb-32">
       <ScrollRevealH1
         className="font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}

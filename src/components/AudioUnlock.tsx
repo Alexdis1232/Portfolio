@@ -1,24 +1,22 @@
 "use client";
 
 import { useEffect } from "react";
-import { unlockAudio } from "@/lib/audioUnlock";
+import { primeButtonClickSound } from "@/lib/buttonClickSound";
 
 export function AudioUnlock() {
   useEffect(() => {
     const unlock = () => {
-      void unlockAudio();
+      primeButtonClickSound();
     };
 
-    window.addEventListener("pointerdown", unlock, { once: true });
+    window.addEventListener("pointerdown", unlock, { capture: true });
     window.addEventListener("keydown", unlock, { once: true });
-    window.addEventListener("mousemove", unlock, { once: true });
-    window.addEventListener("touchstart", unlock, { once: true });
+    window.addEventListener("touchstart", unlock, { capture: true, passive: true });
 
     return () => {
-      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("pointerdown", unlock, { capture: true });
       window.removeEventListener("keydown", unlock);
-      window.removeEventListener("mousemove", unlock);
-      window.removeEventListener("touchstart", unlock);
+      window.removeEventListener("touchstart", unlock, { capture: true });
     };
   }, []);
 

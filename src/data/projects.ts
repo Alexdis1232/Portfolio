@@ -29,6 +29,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "kabinetpv",
     heroImage: "/kabinetpvhero.png",
     heroAlt: "Кабинет ПВ project preview",
     logo: "/kabinetpv.png",
@@ -48,7 +49,7 @@ export const projects: Project[] = [
     logo: "/kinpet.png",
     company: "Kinpet",
     number: "(03)",
-    title: "Как мы повысили конверсию в подбор питомца на 25%",
+    title: "Как мы повысили конверсию в подбор питомца на 8%",
     info: [
       { label: "Год", value: "©2024" },
       { label: "Девайс", value: "Desktop" },
