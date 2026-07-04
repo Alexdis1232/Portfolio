@@ -1,6 +1,7 @@
 "use client";
 
 import { LoadFadeIn, ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
+import { ZoomableArea } from "@/components/ZoomableArea";
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
@@ -34,6 +35,7 @@ const contextBlocks = [
 
 export function KabinetPvCaseStudy() {
   return (
+    <ZoomableArea>
     <article className="pb-16 sm:pb-24">
       <LoadFadeIn className="pt-[100px]">
         <img
@@ -131,5 +133,6 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
       </section>
     </article>
+    </ZoomableArea>
   );
 }
