@@ -1,9 +1,101 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
+import { createPortal } from "react-dom";
 import { ScrollRevealH1, scrollReveal } from "@/components/ScrollReveal";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { PRIMARY_COL_WIDTH, PRIMARY_WIDE_WIDTH } from "@/config/layout";
+
+type LightboxMedia = { type: "image" | "video"; src: string; alt: string };
+
+const LightboxContext = createContext<(media: LightboxMedia) => void>(() => {});
+
+function LightboxProvider({ children }: { children: ReactNode }) {
+  const [media, setMedia] = useState<LightboxMedia | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const open = useCallback((next: LightboxMedia) => setMedia(next), []);
+  const close = useCallback(() => setMedia(null), []);
+
+  useEffect(() => {
+    if (!media) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [media, close]);
+
+  return (
+    <LightboxContext.Provider value={open}>
+      {children}
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {media && (
+              <motion.div
+                className="fixed inset-0 z-[999] flex cursor-zoom-out items-center justify-center bg-black/80 p-4 backdrop-blur-sm sm:p-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={close}
+              >
+                <button
+                  type="button"
+                  aria-label="Закрыть"
+                  onClick={close}
+                  className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl leading-none text-white transition hover:bg-white/20"
+                >
+                  ×
+                </button>
+                <motion.div
+                  className="max-h-full max-w-full"
+                  initial={{ scale: 0.94, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.94, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {media.type === "video" ? (
+                    <video
+                      src={media.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="max-h-[88vh] max-w-full rounded-[20px] object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={media.src}
+                      alt={media.alt}
+                      className="max-h-[88vh] max-w-full rounded-[20px] object-contain"
+                    />
+                  )}
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body,
+        )}
+    </LightboxContext.Provider>
+  );
+}
 
 const mediaClassName =
   "m-0 block h-full min-h-0 w-full flex-1 rounded-[20px] object-cover p-0";
@@ -501,11 +593,22 @@ function ConceptCardItem({ concept }: { concept: ConceptCard }) {
       ? "rounded-[26px] lg:rounded-[35px]"
       : "rounded-[26px] lg:rounded-[40px]";
 
+  const openLightbox = useContext(LightboxContext);
+  const lightboxSrc = concept.video ?? concept.gif ?? concept.image;
+
   return (
     <article className="flex min-w-0 w-full flex-col">
       <motion.div
-        className={`origin-center w-full overflow-hidden ${cardRadiusClass}`}
+        className={`origin-center w-full cursor-zoom-in overflow-hidden ${cardRadiusClass}`}
         {...scrollReveal}
+        onClick={() =>
+          lightboxSrc &&
+          openLightbox({
+            type: concept.video ? "video" : "image",
+            src: lightboxSrc,
+            alt: concept.title,
+          })
+        }
       >
         <ConceptCardMedia concept={concept} />
       </motion.div>
@@ -700,8 +803,10 @@ export function Concepts() {
         Концепты
       </ScrollRevealH1>
 
-      <ConceptsMobileLayout />
-      <ConceptsDesktopLayout />
+      <LightboxProvider>
+        <ConceptsMobileLayout />
+        <ConceptsDesktopLayout />
+      </LightboxProvider>
     </section>
   );
 }
