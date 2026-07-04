@@ -1,11 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 const CURSOR_SIZE = 15;
+const CURSOR_VIEW_SIZE = 90;
+export const CURSOR_VIEW_HOVER_EVENT = "cursor:view-hover";
 
 export function CustomCursor() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const [viewHover, setViewHover] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setViewHover(false);
+  }, [pathname]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -29,11 +39,17 @@ export function CustomCursor() {
       if (!rafId) rafId = requestAnimationFrame(paint);
     };
 
+    const handleViewHover = (event: Event) => {
+      setViewHover(Boolean((event as CustomEvent<boolean>).detail));
+    };
+
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener(CURSOR_VIEW_HOVER_EVENT, handleViewHover);
 
     return () => {
       document.body.classList.remove("custom-cursor-active");
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener(CURSOR_VIEW_HOVER_EVENT, handleViewHover);
       if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
@@ -41,23 +57,43 @@ export function CustomCursor() {
   return (
     <div
       ref={rootRef}
-      className="custom-cursor-root pointer-events-none fixed left-0 top-0 z-[99999] opacity-0 will-change-transform"
+      className="custom-cursor-root pointer-events-none fixed left-0 top-0 z-[99999] flex items-center justify-center opacity-0 will-change-transform"
       aria-hidden
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/road.svg"
-        alt=""
-        width={CURSOR_SIZE}
-        height={CURSOR_SIZE}
-        draggable={false}
-        decoding="async"
-        className="block"
-        style={{
-          width: CURSOR_SIZE,
-          height: CURSOR_SIZE,
+      <motion.div
+        initial={false}
+        animate={{
+          width: viewHover ? CURSOR_VIEW_SIZE : CURSOR_SIZE,
+          height: viewHover ? CURSOR_VIEW_SIZE : CURSOR_SIZE,
+          backgroundColor: viewHover ? "#0F0F0F" : "rgba(15,15,15,0)",
         }}
-      />
+        transition={{ type: "spring", stiffness: 260, damping: 15, mass: 0.7 }}
+        className="relative flex items-center justify-center rounded-full"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <motion.img
+          src="/road.svg"
+          alt=""
+          width={CURSOR_SIZE}
+          height={CURSOR_SIZE}
+          draggable={false}
+          decoding="async"
+          initial={false}
+          animate={{ opacity: viewHover ? 0 : 1, scale: viewHover ? 0.4 : 1 }}
+          transition={{ duration: 0.15 }}
+          className="absolute"
+          style={{ width: CURSOR_SIZE, height: CURSOR_SIZE }}
+        />
+
+        <motion.span
+          initial={false}
+          animate={{ opacity: viewHover ? 1 : 0, scale: viewHover ? 1 : 0.4 }}
+          transition={{ duration: 0.15, delay: viewHover ? 0.1 : 0 }}
+          className="absolute whitespace-nowrap text-[12px] font-medium lowercase tracking-wide text-white"
+        >
+          перейти
+        </motion.span>
+      </motion.div>
     </div>
   );
 }
