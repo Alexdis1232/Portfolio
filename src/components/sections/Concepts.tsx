@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
   type CSSProperties,
   type ReactNode,
@@ -591,20 +592,47 @@ function ConceptCardItem({ concept }: { concept: ConceptCard }) {
   const openLightbox = useContext(LightboxContext);
   const lightboxSrc = concept.video ?? concept.gif ?? concept.image;
 
+  // Долгое нажатие: зум открывается только если палец/мышь удержаны на месте.
+  const LONG_PRESS_MS = 350;
+  const MOVE_CANCEL_PX = 12;
+  const pressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pressStart = useRef<{ x: number; y: number } | null>(null);
+
+  const cancelPress = useCallback(() => {
+    if (pressTimer.current) {
+      clearTimeout(pressTimer.current);
+      pressTimer.current = null;
+    }
+    pressStart.current = null;
+  }, []);
+
   return (
     <article className="flex min-w-0 w-full flex-col">
       <motion.div
-        className={`origin-center w-full cursor-zoom-in touch-none select-none overflow-hidden ${cardRadiusClass}`}
+        className={`origin-center w-full cursor-zoom-in select-none overflow-hidden ${cardRadiusClass}`}
         {...scrollReveal}
         onPointerDown={(e) => {
           if (!lightboxSrc) return;
-          e.preventDefault();
-          openLightbox({
-            type: concept.video ? "video" : "image",
-            src: lightboxSrc,
-            alt: concept.title,
-          });
+          pressStart.current = { x: e.clientX, y: e.clientY };
+          cancelPress();
+          pressTimer.current = setTimeout(() => {
+            openLightbox({
+              type: concept.video ? "video" : "image",
+              src: lightboxSrc,
+              alt: concept.title,
+            });
+          }, LONG_PRESS_MS);
         }}
+        onPointerMove={(e) => {
+          if (!pressStart.current) return;
+          const dx = Math.abs(e.clientX - pressStart.current.x);
+          const dy = Math.abs(e.clientY - pressStart.current.y);
+          if (dx > MOVE_CANCEL_PX || dy > MOVE_CANCEL_PX) cancelPress();
+        }}
+        onPointerUp={cancelPress}
+        onPointerCancel={cancelPress}
+        onPointerLeave={cancelPress}
+        onContextMenu={(e) => e.preventDefault()}
       >
         <ConceptCardMedia concept={concept} />
       </motion.div>
