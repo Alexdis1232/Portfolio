@@ -7,6 +7,7 @@ import {
   ScrollRevealH2,
 } from "@/components/ScrollReveal";
 import { KinpetKeysImage } from "@/components/projects/KinpetKeysImage";
+import { ZoomableArea } from "@/components/ZoomableArea";
 
 const KinpetBeforeAfterSlider = dynamic(
   () =>
@@ -78,6 +79,7 @@ const resultItems = [
 
 export function KinpetCaseStudy() {
   return (
+    <ZoomableArea>
     <article className="pb-16 sm:pb-24">
       <LoadFadeIn className="pt-[100px]">
         <img
@@ -534,5 +536,6 @@ export function KinpetCaseStudy() {
         </ScrollReveal>
       </section>
     </article>
+    </ZoomableArea>
   );
 }
