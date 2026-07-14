@@ -182,13 +182,13 @@ export function KinpetCaseStudy() {
       <section className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
         {insightItems.map((text) => (
           <ScrollReveal key={text} className="flex w-full items-start gap-4 sm:gap-5">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
               <img
                 src="/lump.png"
                 alt=""
                 width={28}
                 height={28}
-                className="h-7 w-7 object-contain"
+                className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
               />
             </div>
             <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
@@ -261,13 +261,13 @@ export function KinpetCaseStudy() {
 
         {hypothesisItems.map((text) => (
           <ScrollReveal key={text} className="flex w-full items-start gap-4 sm:gap-5">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
               <img
                 src="/lump.png"
                 alt=""
                 width={28}
                 height={28}
-                className="h-7 w-7 object-contain"
+                className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
               />
             </div>
             <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
