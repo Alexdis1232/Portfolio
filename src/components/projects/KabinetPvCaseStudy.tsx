@@ -28,6 +28,10 @@ const contextBlocks = [
     text: "Функционал создания претензий отсутствовал в приложении, а десктопная версия была устаревшей и неудобной — это увеличивало время выполнения задач и нагрузку на сотрудников ПВ.",
   },
   {
+    label: "Задача:",
+    text: "Перенести функционал создания претензий из устаревшей десктопной версии в мобильное приложение для сотрудников пункта выдачи.",
+  },
+  {
     label: "Цель:",
     text: "Сократить время выполнения задачи, перенеся сценарий создания претензий в мобильное приложение и переосмыслив процесс.",
   },
@@ -133,21 +137,6 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
       </section>
 
-      <section className="mt-[52px] sm:mt-[68px]">
-        <ScrollRevealH2
-          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-          style={sexsmithStyle}
-        >
-          Задача
-        </ScrollRevealH2>
-
-        <ScrollReveal className="mt-10 sm:mt-12">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
-            Перенести функционал создания претензий из устаревшей десктопной
-            версии в мобильное приложение для сотрудников пункта выдачи.
-          </p>
-        </ScrollReveal>
-      </section>
     </article>
     </ZoomableArea>
   );
