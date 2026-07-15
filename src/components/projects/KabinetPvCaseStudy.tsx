@@ -27,10 +27,6 @@ const contextBlocks = [
     label: "Цель:",
     text: "Сократить время выполнения задачи, перенеся сценарий создания претензий в мобильное приложение и переосмыслив процесс.",
   },
-  {
-    label: "Решение:",
-    text: "Разработать сценарий создания претензий в мобильном приложении — переосмыслить, перенеся десктопную версию, чтобы сотрудники могли выполнять задачи быстрее и с меньшим количеством шагов.",
-  },
 ];
 
 export function KabinetPvCaseStudy() {
@@ -144,6 +140,22 @@ export function KabinetPvCaseStudy() {
         <ScrollReveal className="mt-10 sm:mt-12">
           <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
             Сотрудники ПВЗ, консультанты Faberlic
+          </p>
+        </ScrollReveal>
+      </section>
+
+      <section className="mt-[52px] sm:mt-[68px]">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Задача
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-10 sm:mt-12">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            Перенести функционал создания претензий из устаревшей десктопной
+            версии в мобильное приложение для сотрудников пункта выдачи.
           </p>
         </ScrollReveal>
       </section>
