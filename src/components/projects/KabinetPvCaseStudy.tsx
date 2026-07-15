@@ -137,6 +137,34 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
       </section>
 
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Исследование
+        </ScrollRevealH2>
+
+        <div className="mt-6 flex w-full flex-col gap-6 sm:mt-8">
+          <ScrollReveal className="w-full">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Прямые интервью не проводились — в качестве источника данных
+              использовалась обратная связь от сотрудников ПВЗ, предоставленная
+              командой поддержки. На основе этих данных были выявлены основные
+              болевые точки сценария.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal className="w-full">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Чтобы не нагружать сотрудников лишними сессиями, решила совместить
+              — модерируемые юзабилити-тесты провела после первой итерации, когда
+              уже было что показать.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
     </article>
     </ZoomableArea>
   );
