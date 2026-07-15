@@ -104,6 +104,36 @@ export function KinpetCaseStudy() {
               кошек, а также отдают питомцев бесплатно в добрые руки. С широким
               выбором пород и возрастов из любого уголка России.
             </p>
+
+            <div className="mt-8 grid max-w-[640px] grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-2">
+              {resultItems.map((item) => (
+                <div
+                  key={item.key}
+                  className="rounded-[20px] bg-[#F5F5F5] px-4 py-5 text-left sm:rounded-[24px] sm:px-6 sm:py-6"
+                >
+                  <p className="text-[13px] leading-[1.4] text-[#0F0F0F] sm:text-[19px] sm:leading-[1.65]">
+                    {item.label}
+                  </p>
+                  <div className="mt-2 flex items-center gap-2 sm:mt-3 sm:gap-3">
+                    <span
+                      className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+                      style={sexsmithStyle}
+                    >
+                      {item.from}
+                    </span>
+                    <span className="flex shrink-0 items-center self-center text-[22px] leading-none text-[#0F0F0F] sm:text-[30px]">
+                      →
+                    </span>
+                    <span
+                      className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+                      style={sexsmithStyle}
+                    >
+                      {item.to}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="flex shrink-0 flex-col gap-4 lg:gap-5">
@@ -116,36 +146,6 @@ export function KinpetCaseStudy() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-8 grid w-full grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-2">
-          {resultItems.map((item) => (
-            <div
-              key={item.key}
-              className="rounded-[20px] bg-[#F5F5F5] px-4 py-5 text-left sm:rounded-[24px] sm:px-6 sm:py-6"
-            >
-              <p className="text-[13px] leading-[1.4] text-[#0F0F0F] sm:text-[19px] sm:leading-[1.65]">
-                {item.label}
-              </p>
-              <div className="mt-2 flex items-center gap-2 sm:mt-3 sm:gap-3">
-                <span
-                  className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-                  style={sexsmithStyle}
-                >
-                  {item.from}
-                </span>
-                <span className="flex shrink-0 items-center self-center text-[22px] leading-none text-[#0F0F0F] sm:text-[30px]">
-                  →
-                </span>
-                <span
-                  className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-                  style={sexsmithStyle}
-                >
-                  {item.to}
-                </span>
-              </div>
-            </div>
-          ))}
         </div>
       </LoadFadeIn>
 
