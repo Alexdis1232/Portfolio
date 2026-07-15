@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { KinpetCaseStudy } from "@/components/projects/KinpetCaseStudy";
 
 export const metadata: Metadata = {
-  title: "Kinpet — Саша",
+  title: "Kinpet",
   description:
     "Кейс Kinpet: как мы повысили конверсию в подбор питомца на 8%",
 };
