@@ -67,8 +67,8 @@ export function Navbar() {
             </div>
           </div>
 
-          <a
-            href="/cv.pdf"
+          <Link
+            href="/cv"
             className={`${cvButtonClass} shrink-0`}
             onPointerDown={(event) => {
               if (event.button !== 0) return;
@@ -76,7 +76,7 @@ export function Navbar() {
             }}
           >
             CV
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
