@@ -38,7 +38,7 @@ export default function CvPage() {
           href="/resume.pdf"
           download
           aria-label="Скачать PDF"
-          className="press-bounce flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-[#e8e8e8] active:bg-[#dcdcdc] sm:hidden"
+          className="press-bounce flex h-12 w-12 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white active:bg-white/10 sm:hidden"
           onPointerDown={(event) => {
             if (event.button !== 0) return;
             playClick();
