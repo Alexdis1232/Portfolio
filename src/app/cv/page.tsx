@@ -12,9 +12,18 @@ export default function CvPage() {
         <Link
           href="/"
           aria-label="На главную"
-          className="flex h-14 w-14 items-center justify-center rounded-full text-[40px] font-light leading-none text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:h-16 sm:w-16 sm:text-[48px]"
+          className="flex h-14 w-14 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:h-16 sm:w-16"
         >
-          ×
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            className="h-11 w-11 sm:h-12 sm:w-12"
+          >
+            <path d="M4 4l16 16M20 4L4 20" />
+          </svg>
         </Link>
 
         <a href="/resume.pdf" download className={downloadButtonClass}>
