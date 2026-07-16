@@ -33,10 +33,37 @@ export default function CvPage() {
           </svg>
         </Link>
 
+        {/* Мобилка: белый круг с иконкой скачивания */}
         <a
           href="/resume.pdf"
           download
-          className={downloadButtonClass}
+          aria-label="Скачать PDF"
+          className="press-bounce flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-[#e8e8e8] active:bg-[#dcdcdc] sm:hidden"
+          onPointerDown={(event) => {
+            if (event.button !== 0) return;
+            playClick();
+          }}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-6 w-6"
+          >
+            <path d="M12 4v11" />
+            <path d="M8 11l4 4 4-4" />
+            <path d="M5 19h14" />
+          </svg>
+        </a>
+
+        {/* Десктоп: белая кнопка с текстом */}
+        <a
+          href="/resume.pdf"
+          download
+          className={`${downloadButtonClass} hidden sm:flex`}
           onPointerDown={(event) => {
             if (event.button !== 0) return;
             playClick();
