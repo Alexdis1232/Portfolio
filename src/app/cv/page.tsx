@@ -20,7 +20,7 @@ export default function CvPage() {
             stroke="currentColor"
             strokeWidth="1.6"
             strokeLinecap="round"
-            className="h-11 w-11 sm:h-12 sm:w-12"
+            className="h-7 w-7 sm:h-8 sm:w-8"
           >
             <path d="M4 4l16 16M20 4L4 20" />
           </svg>
