@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 const downloadButtonClass =
-  "press-bounce flex items-center justify-center rounded-full bg-white text-black transition-colors duration-200 ease-in-out hover:bg-[#e8e8e8] active:bg-[#dcdcdc] h-12 px-6 text-[13px] sm:px-8 sm:py-4 sm:text-[16px]";
+  "press-bounce flex items-center justify-center rounded-full bg-white text-black transition-colors duration-200 ease-in-out hover:bg-[#e8e8e8] active:bg-[#dcdcdc] h-12 px-6 text-[13px] sm:h-auto sm:px-8 sm:py-6 sm:text-[18px]";
 
 export default function CvPage() {
   return (
