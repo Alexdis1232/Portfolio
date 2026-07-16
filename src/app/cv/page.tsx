@@ -16,13 +16,13 @@ export default function CvPage() {
           ← главная
         </Link>
 
-        <a href="/cv.pdf" download className={downloadButtonClass}>
+        <a href="/resume.pdf" download className={downloadButtonClass}>
           Скачать PDF ↓
         </a>
       </header>
 
       <iframe
-        src="/cv.pdf"
+        src="/resume.pdf"
         title="CV — резюме"
         className="w-full max-w-[720px] rounded-[12px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]"
         style={{ height: "90vh" }}
