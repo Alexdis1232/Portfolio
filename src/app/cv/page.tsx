@@ -12,7 +12,7 @@ export default function CvPage() {
         <Link
           href="/"
           aria-label="На главную"
-          className="flex h-14 w-14 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:h-16 sm:w-16"
+          className="flex h-12 w-12 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:h-[72px] sm:w-[72px]"
         >
           <svg
             viewBox="0 0 24 24"
