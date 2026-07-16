@@ -21,12 +21,14 @@ export default function CvPage() {
         </a>
       </header>
 
-      <iframe
-        src="/resume.pdf"
-        title="CV — резюме"
-        className="w-full max-w-[720px] rounded-[12px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]"
-        style={{ height: "90vh" }}
-      />
+      <div className="max-h-[90vh] w-full max-w-[720px] overflow-y-auto rounded-[12px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/resume.png"
+          alt="Резюме — Александра Антонюк"
+          className="block w-full"
+        />
+      </div>
     </div>
   );
 }
