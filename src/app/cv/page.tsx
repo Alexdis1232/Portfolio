@@ -11,9 +11,10 @@ export default function CvPage() {
       <header className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
         <Link
           href="/"
-          className="text-[15px] text-white/80 transition-colors hover:text-white sm:text-[18px]"
+          aria-label="На главную"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-[26px] leading-none text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:h-11 sm:w-11 sm:text-[30px]"
         >
-          ← главная
+          ×
         </Link>
 
         <a href="/resume.pdf" download className={downloadButtonClass}>
