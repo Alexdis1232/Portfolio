@@ -51,7 +51,7 @@ export default function CvPage() {
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-6 w-6"
+            className="h-7 w-7"
           >
             <path d="M12 4v11" />
             <path d="M8 11l4 4 4-4" />
