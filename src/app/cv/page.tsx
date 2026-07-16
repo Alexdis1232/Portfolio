@@ -12,7 +12,7 @@ export default function CvPage() {
         <Link
           href="/"
           aria-label="На главную"
-          className="flex h-10 w-10 items-center justify-center rounded-full text-[26px] leading-none text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:h-11 sm:w-11 sm:text-[30px]"
+          className="flex h-14 w-14 items-center justify-center rounded-full text-[40px] font-light leading-none text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:h-16 sm:w-16 sm:text-[48px]"
         >
           ×
         </Link>
