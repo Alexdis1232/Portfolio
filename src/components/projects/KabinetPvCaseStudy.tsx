@@ -37,6 +37,29 @@ const contextBlocks = [
   },
 ];
 
+const oldVersionProblems = [
+  {
+    image: "/pretenzia.png",
+    title: "Точка входа не очевидна",
+    text: "Создание претензии спрятано в выпадающем меню внутри карточки заказа — сотрудник не сразу понимает где это искать.",
+  },
+  {
+    image: "/forma.png",
+    title: "Всё на одном экране",
+    text: "Форма открывается модальным окном со всеми полями одновременно — тип, товар, действие, количество, причина, описание. Высокая когнитивная нагрузка, легко пропустить обязательное поле.",
+  },
+  {
+    image: "/sohranit.png",
+    title: "Неочевидная логика сохранения",
+    text: "При выходе из формы претензия сохранялась автоматически без подтверждения. Сотрудник не понимал сохранилось ли и куда потом искать черновик.",
+  },
+  {
+    image: "/spisok.png",
+    title: "Нет разделения по статусам",
+    text: "Черновики и отправленные претензии в одном списке. Непонятно что требует действия прямо сейчас.",
+  },
+];
+
 export function KabinetPvCaseStudy() {
   return (
     <ZoomableArea>
@@ -162,6 +185,36 @@ export function KabinetPvCaseStudy() {
               уже было что показать.
             </p>
           </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Проблемы старой версии
+        </ScrollRevealH2>
+
+        <div className="mt-8 flex w-full flex-col gap-12 sm:mt-10 sm:gap-16">
+          {oldVersionProblems.map((item) => (
+            <ScrollReveal key={item.image} className="w-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+              />
+              <p className="mt-4 text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+                {item.title}
+              </p>
+              <p className="mt-2 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-3 sm:text-[19px]">
+                {item.text}
+              </p>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
