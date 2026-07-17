@@ -185,19 +185,17 @@ export function KabinetPvCaseStudy() {
               уже было что показать.
             </p>
           </ScrollReveal>
+
+          <ScrollReveal className="w-full">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Параллельно изучила старую десктопную версию сценария — и сразу
+              стало понятно откуда берутся проблемы.
+            </p>
+          </ScrollReveal>
         </div>
-      </section>
 
-      <section className="mt-16 sm:mt-20">
-        <ScrollRevealH2
-          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-          style={sexsmithStyle}
-        >
-          Проблемы старой версии
-        </ScrollRevealH2>
-
-        <div className="mt-8 flex w-full flex-col gap-12 sm:mt-10 sm:gap-16">
-          {oldVersionProblems.map((item) => (
+        <div className="mt-10 flex w-full flex-col gap-12 sm:mt-12 sm:gap-16">
+          {oldVersionProblems.map((item, index) => (
             <ScrollReveal key={item.image} className="w-full">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -208,7 +206,7 @@ export function KabinetPvCaseStudy() {
                 className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
               />
               <p className="mt-4 text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
-                {item.title}
+                {index + 1}. {item.title}
               </p>
               <p className="mt-2 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-3 sm:text-[19px]">
                 {item.text}
