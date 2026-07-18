@@ -197,20 +197,20 @@ export function KabinetPvCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-12 sm:mt-12 sm:gap-16">
           {oldVersionProblems.map((item, index) => (
             <ScrollReveal key={item.image} className="w-full">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+                {index + 1}. {item.title}
+              </p>
+              <p className="mt-2 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-3 sm:text-[19px]">
+                {item.text}
+              </p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.image}
                 alt={item.title}
                 loading="lazy"
                 decoding="async"
-                className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+                className="mt-4 block h-auto w-full max-w-full rounded-[16px] sm:mt-6 sm:rounded-[24px]"
               />
-              <p className="mt-4 text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
-                {index + 1}. {item.title}
-              </p>
-              <p className="mt-2 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-3 sm:text-[19px]">
-                {item.text}
-              </p>
             </ScrollReveal>
           ))}
         </div>
