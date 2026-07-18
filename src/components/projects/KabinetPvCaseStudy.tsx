@@ -40,21 +40,25 @@ const contextBlocks = [
 const oldVersionProblems = [
   {
     image: "/pretenzia.png",
+    caption: "Карточка заказа",
     title: "Точка входа не очевидна",
     text: "Создание претензии спрятано в выпадающем меню внутри карточки заказа — сотрудник не сразу понимает где это искать.",
   },
   {
     image: "/forma.png",
+    caption: "Форма создания претензии",
     title: "Всё на одном экране",
     text: "Форма открывается модальным окном со всеми полями одновременно — тип, товар, действие, количество, причина, описание. Высокая когнитивная нагрузка, легко пропустить обязательное поле.",
   },
   {
     image: "/sohranit.png",
+    caption: "Заполненная форма",
     title: "Неочевидная логика сохранения",
     text: "При выходе из формы претензия сохранялась автоматически без подтверждения. Сотрудник не понимал сохранилось ли и куда потом искать черновик.",
   },
   {
     image: "/spisok.png",
+    caption: "Список претензий",
     title: "Нет разделения по статусам",
     text: "Черновики и отправленные претензии в одном списке. Непонятно что требует действия прямо сейчас.",
   },
@@ -194,7 +198,7 @@ export function KabinetPvCaseStudy() {
           </ScrollReveal>
         </div>
 
-        <div className="mt-10 flex w-full flex-col gap-12 sm:mt-12 sm:gap-16">
+        <div className="mt-10 flex w-full flex-col gap-16 sm:mt-12 sm:gap-20">
           {oldVersionProblems.map((item, index) => (
             <ScrollReveal key={item.image} className="w-full">
               <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
@@ -209,8 +213,11 @@ export function KabinetPvCaseStudy() {
                 alt={item.title}
                 loading="lazy"
                 decoding="async"
-                className="mt-4 block h-auto w-full max-w-full rounded-[16px] sm:mt-6 sm:rounded-[24px]"
+                className="mt-10 block h-auto w-full max-w-full rounded-[16px] sm:mt-12 sm:rounded-[24px]"
               />
+              <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+                {item.caption}
+              </p>
             </ScrollReveal>
           ))}
         </div>
