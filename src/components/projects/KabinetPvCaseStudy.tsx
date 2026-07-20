@@ -184,14 +184,6 @@ export function KabinetPvCaseStudy() {
 
           <ScrollReveal className="w-full">
             <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
-              Чтобы не нагружать сотрудников лишними сессиями, решила совместить
-              — модерируемые юзабилити-тесты провела после первой итерации, когда
-              уже было что показать.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal className="w-full">
-            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
               Параллельно изучила старую десктопную версию сценария — и сразу
               стало понятно откуда берутся проблемы.
             </p>
