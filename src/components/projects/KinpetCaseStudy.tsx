@@ -307,16 +307,13 @@ export function KinpetCaseStudy() {
       </section>
 
       <ScrollReveal className={textToImageGap}>
-        <div className="flex flex-col gap-3 overflow-hidden rounded-[24px] sm:rounded-[40px]">
-          <KinpetBeforeAfterSlider />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/filters.png"
-            alt="Kinpet — фильтры на главной после редизайна"
-            width={890}
-            height={536}
-            loading="lazy"
-            decoding="async"
+        <div className="overflow-hidden rounded-[24px] bg-[#E8E8E8] sm:rounded-[40px]">
+          <video
+            src="/video_after_kinpet.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
             className="block h-auto w-full max-w-full"
           />
         </div>
