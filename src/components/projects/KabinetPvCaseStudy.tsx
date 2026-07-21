@@ -232,20 +232,11 @@ export function KabinetPvCaseStudy() {
             </ScrollReveal>
           ))}
         </div>
-      </section>
 
-      <section className="mt-16 sm:mt-20">
-        <ScrollRevealH2
-          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-          style={sexsmithStyle}
-        >
-          Гипотезы
-        </ScrollRevealH2>
-
-        <ScrollReveal className="mt-6 sm:mt-8">
+        <ScrollReveal className="mt-16 sm:mt-20">
           <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
-            Далее, разобравшись с проблемами и их следствиями, я вывела такие
-            гипотезы:
+            Далее, разобравшись с проблемами и их следствиями, я вывела такие{" "}
+            <span className="font-bold">гипотезы:</span>
           </p>
         </ScrollReveal>
 
@@ -265,14 +256,9 @@ export function KabinetPvCaseStudy() {
                   className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
                 />
               </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
-                  {h.title}
-                </p>
-                <p className="mt-2 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-3 sm:text-[19px]">
-                  {h.text}
-                </p>
-              </div>
+              <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+                {h.text}
+              </p>
             </ScrollReveal>
           ))}
         </div>
