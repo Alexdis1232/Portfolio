@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import DecryptedText from "@/components/DecryptedText";
 import { ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
 import { useButtonClickSound } from "@/hooks/useButtonClickSound";
@@ -8,17 +8,41 @@ import { useContactHoverSound } from "@/hooks/useContactHoverSound";
 const contactButtonClass =
   "press-bounce nav-hover flex h-auto w-full flex-1 items-center justify-center rounded-full bg-gray-pill py-4 text-[13px] lowercase text-black transition-colors duration-200 ease-in-out active:bg-[#E8E8E8] sm:h-[75px] sm:py-0 sm:text-[18px]";
 
+const EMAIL = "antonyuk10@gmail.com";
+
 const contactLinks = [
   { label: "telegram", href: "https://t.me/podrazhayu" },
-  { label: "email", href: "mailto:antonyuk10@gmail.com" },
+  { label: "email", href: `mailto:${EMAIL}` },
   { label: "linkedin", href: "https://www.linkedin.com/in/" },
 ];
 
 export function Contact() {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
   const [hoverTrigger, setHoverTrigger] = useState(0);
+  const [copied, setCopied] = useState(false);
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const playClick = useButtonClickSound();
   const playHover = useContactHoverSound();
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = EMAIL;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+      } catch {}
+      document.body.removeChild(ta);
+    }
+    setCopied(true);
+    if (copyTimer.current) clearTimeout(copyTimer.current);
+    copyTimer.current = setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <section
@@ -51,6 +75,12 @@ export function Contact() {
               target={item.label === "email" ? undefined : "_blank"}
               rel={item.label === "email" ? undefined : "noopener noreferrer"}
               className={contactButtonClass}
+              onClick={(event) => {
+                if (item.label === "email") {
+                  event.preventDefault();
+                  void copyEmail();
+                }
+              }}
               onPointerDown={(event) => {
                 if (event.button !== 0) return;
                 playClick();
@@ -69,6 +99,17 @@ export function Contact() {
 
         <p className="text-[14px] text-[#C7C7C7]">Alexandra Antonyuk ♥ 2025</p>
       </ScrollReveal>
+
+      <div
+        aria-live="polite"
+        className={`pointer-events-none fixed inset-x-0 bottom-6 z-[999] flex justify-center px-4 transition-all duration-300 ${
+          copied ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+        }`}
+      >
+        <div className="rounded-full bg-[#0F0F0F] px-5 py-3 text-[14px] text-white shadow-lg">
+          Почта скопирована
+        </div>
+      </div>
     </section>
   );
 }
