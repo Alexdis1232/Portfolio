@@ -64,6 +64,25 @@ const oldVersionProblems = [
   },
 ];
 
+const hypotheses = [
+  {
+    title: "Дробление сценария на шаги снизит нагрузку",
+    text: "Если разбить длинную форму на отдельные экраны — выбор товара, тип претензии, причина — сотрудник будет сфокусирован на одной задаче за раз и реже допускать ошибки.",
+  },
+  {
+    title: "Разделение статусов ускорит работу",
+    text: "Если разделить черновики и утверждённые претензии на отдельные вкладки — сотрудник сразу видит что требует внимания и не тратит время на поиск нужной записи.",
+  },
+  {
+    title: "Уведомление о статусе сохранения снизит тревогу",
+    text: "Вместо отдельной кнопки «Сохранить в черновик» оставили автосохранение, но добавили тост-уведомление при выходе — сотрудник видит что данные сохранились и может спокойно вернуться к претензии позже.",
+  },
+  {
+    title: "Быстрое утверждение из списка сократит время на рутину",
+    text: "Если добавить возможность утверждать претензии прямо из списка — без необходимости открывать каждую по отдельности — сотрудник сможет обрабатывать несколько претензий быстрее.",
+  },
+];
+
 export function KabinetPvCaseStudy() {
   return (
     <ZoomableArea>
@@ -210,6 +229,50 @@ export function KabinetPvCaseStudy() {
               <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
                 {item.caption}
               </p>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Гипотезы
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            Далее, разобравшись с проблемами и их следствиями, я вывела такие
+            гипотезы:
+          </p>
+        </ScrollReveal>
+
+        <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
+          {hypotheses.map((h) => (
+            <ScrollReveal
+              key={h.title}
+              className="flex w-full items-start gap-4 sm:gap-5"
+            >
+              <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/lump.png"
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+                  {h.title}
+                </p>
+                <p className="mt-2 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-3 sm:text-[19px]">
+                  {h.text}
+                </p>
+              </div>
             </ScrollReveal>
           ))}
         </div>
