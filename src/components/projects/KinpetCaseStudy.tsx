@@ -75,9 +75,8 @@ const resultItems = [
   },
   {
     key: "conversion",
-    label: "CR в просмотр объявлений",
-    from: "58%",
-    to: "64%",
+    label: "CR в объявления",
+    value: "+8%",
   },
 ];
 
@@ -505,32 +504,43 @@ export function KinpetCaseStudy() {
         </div>
 
         <ScrollReveal className="mt-10 sm:mt-12">
-          <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid w-full grid-cols-2 gap-3">
             {resultItems.map((item) => (
               <div
                 key={item.key}
-                className="rounded-[20px] bg-[#F5F5F5] px-4 py-5 text-left sm:rounded-[24px] sm:px-6 sm:py-6"
+                className="min-w-0 rounded-[20px] bg-[#F5F5F5] px-3 py-4 text-left sm:rounded-[24px] sm:px-6 sm:py-6"
               >
-                <p className="text-[13px] leading-[1.4] text-[#0F0F0F] sm:text-[19px] sm:leading-[1.65]">
+                <p className="text-[12px] leading-[1.4] text-[#0F0F0F] sm:text-[19px] sm:leading-[1.65]">
                   {item.label}
                 </p>
-                <div className="mt-2 flex items-center gap-2 sm:mt-3 sm:gap-3">
-                  <span
-                    className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-                    style={sexsmithStyle}
-                  >
-                    {item.from}
-                  </span>
-                  <span className="flex shrink-0 items-center self-center text-[22px] leading-none text-[#0F0F0F] sm:text-[30px]">
-                    →
-                  </span>
-                  <span
-                    className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-                    style={sexsmithStyle}
-                  >
-                    {item.to}
-                  </span>
-                </div>
+                {item.value ? (
+                  <div className="mt-2 sm:mt-3">
+                    <span
+                      className="font-sexsmith text-[26px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+                      style={sexsmithStyle}
+                    >
+                      {item.value}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="mt-2 flex items-center gap-1.5 sm:mt-3 sm:gap-3">
+                    <span
+                      className="font-sexsmith text-[26px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+                      style={sexsmithStyle}
+                    >
+                      {item.from}
+                    </span>
+                    <span className="flex shrink-0 items-center self-center text-[16px] leading-none text-[#0F0F0F] sm:text-[30px]">
+                      →
+                    </span>
+                    <span
+                      className="font-sexsmith text-[26px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+                      style={sexsmithStyle}
+                    >
+                      {item.to}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
