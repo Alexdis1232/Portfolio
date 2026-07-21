@@ -32,17 +32,10 @@ const tools: ToolItem[] = [
   },
   {
     name: "Claude",
-    description: "Использую для исследований и проработки решений",
+    description:
+      "Использую для исследований проработки решений, прототипирований и проверки тестирований",
     number: "(04)",
     logo: "/claude.png",
-  },
-  {
-    name: "Cursor",
-    description: "Генерирую код по макетам для тестирования интерфейсов",
-    number: "(05)",
-    logo: "/cursor.png",
-    iconSize: 54,
-    iconRadius: 16,
   },
 ];
 
