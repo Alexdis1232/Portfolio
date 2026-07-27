@@ -346,7 +346,7 @@ export function KinpetCaseStudy() {
             />
           </div>
           <p className="mt-[15px] text-center text-[15px] leading-none text-[#C7C7C7]">
-            Точка входа
+            Подбор питомца
           </p>
         </ScrollReveal>
 
