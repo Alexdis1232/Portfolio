@@ -335,119 +335,19 @@ export function KinpetCaseStudy() {
 
         <ScrollReveal>
           <div className="overflow-hidden rounded-[24px] sm:rounded-[40px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/tochka%20vhoda.png"
-              alt="Kinpet — сценарий «Подбор питомца» на главной"
-              width={890}
-              height={536}
-              loading="lazy"
-              decoding="async"
+            <video
+              src="/poisck%20pitomtsa.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
               className="block h-auto w-full max-w-full"
             />
           </div>
-          <div className="mt-[15px] flex flex-col gap-[24px]">
-            <p className="m-0 text-center text-[15px] leading-none text-[#C7C7C7]">
-              Точка входа
-            </p>
-            <div className="overflow-hidden rounded-[24px] sm:rounded-[40px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/podbor%20pitomtsa.png"
-                alt="Kinpet — экран «Подберём для вас питомца мечты»"
-                width={890}
-                height={536}
-                loading="lazy"
-                decoding="async"
-                className="block h-auto w-full max-w-full"
-              />
-            </div>
-          </div>
-          <div className="mt-3 flex flex-col gap-3">
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
-              <div className="min-w-0 overflow-hidden rounded-[24px] sm:rounded-[40px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/vozrast.png"
-                  alt="Kinpet — шаг «Желаемый возраст питомца»"
-                  width={435}
-                  height={536}
-                  loading="lazy"
-                  decoding="async"
-                  className="block h-auto w-full max-w-full"
-                />
-              </div>
-              <div className="min-w-0 overflow-hidden rounded-[24px] sm:rounded-[40px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/gorod.png"
-                  alt="Kinpet — шаг «Место, где я ищу питомца»"
-                  width={435}
-                  height={536}
-                  loading="lazy"
-                  decoding="async"
-                  className="block h-auto w-full max-w-full"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
-              <div className="min-w-0 overflow-hidden rounded-[24px] sm:rounded-[40px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/poroda.png"
-                  alt="Kinpet — шаг «Я ищу собаку породы»"
-                  width={435}
-                  height={536}
-                  loading="lazy"
-                  decoding="async"
-                  className="block h-auto w-full max-w-full"
-                />
-              </div>
-              <div className="min-w-0 overflow-hidden rounded-[24px] sm:rounded-[40px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/pol.png"
-                  alt="Kinpet — шаг «Я ищу» (выбор пола)"
-                  width={435}
-                  height={536}
-                  loading="lazy"
-                  decoding="async"
-                  className="block h-auto w-full max-w-full"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
-                <div className="min-w-0 overflow-hidden rounded-[24px] sm:rounded-[40px]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/byudzhet.png"
-                    alt="Kinpet — шаг «Мой бюджет на покупку»"
-                    width={435}
-                    height={536}
-                    loading="lazy"
-                    decoding="async"
-                    className="block h-auto w-full max-w-full"
-                  />
-                </div>
-                <div className="min-w-0 overflow-hidden rounded-[24px] sm:rounded-[40px]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/rassilka.png"
-                    alt="Kinpet — шаг «Мы подобрали для вас питомцев»"
-                    width={435}
-                    height={536}
-                    loading="lazy"
-                    decoding="async"
-                    className="block h-auto w-full max-w-full"
-                  />
-                </div>
-              </div>
-              <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
-                Подбор питомца
-              </p>
-            </div>
-          </div>
+          <p className="mt-[15px] text-center text-[15px] leading-none text-[#C7C7C7]">
+            Точка входа
+          </p>
         </ScrollReveal>
 
         <ScrollReveal>
@@ -456,22 +356,6 @@ export function KinpetCaseStudy() {
             подсказок и без необходимости принимать сложные решения на старте.
             После прохождения опроса он попадает на страницу с релевантными
             объявлениями.
-          </p>
-
-          <div className={`${textToImageGap} overflow-hidden rounded-[24px] sm:rounded-[40px]`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/obyavleniya.png?v=1"
-              alt="Kinpet — страница объявлений после подбора питомца"
-              width={890}
-              height={536}
-              loading="lazy"
-              decoding="async"
-              className="block h-auto w-full max-w-full"
-            />
-          </div>
-          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
-            Объявления
           </p>
         </ScrollReveal>
       </section>
