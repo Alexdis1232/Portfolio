@@ -264,6 +264,41 @@ export function KabinetPvCaseStudy() {
         </div>
       </section>
 
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Решение
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            Сценарий был разбит на отдельные шаги чтобы снизить когнитивную
+            нагрузку — сотрудник решает одну задачу за раз и не держит в голове
+            всю форму целиком. Претензии разделены по статусам чтобы было понятно
+            что требует действия прямо сейчас.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
+            <video
+              src="/cabinet_pv_video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="block h-auto w-full max-w-full"
+            />
+          </div>
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Оформление претензии
+          </p>
+        </ScrollReveal>
+      </section>
+
     </article>
     </ZoomableArea>
   );
