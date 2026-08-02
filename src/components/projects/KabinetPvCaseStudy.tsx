@@ -283,6 +283,7 @@ export function KabinetPvCaseStudy() {
 
         <ScrollReveal className={textToImageGap}>
           <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
+            {/* mobile: квадрат (телефон крупнее) */}
             <video
               src="/cabinet_pv_video.mp4"
               autoPlay
@@ -290,7 +291,17 @@ export function KabinetPvCaseStudy() {
               muted
               playsInline
               preload="metadata"
-              className="block h-auto w-full max-w-full"
+              className="block h-auto w-full max-w-full sm:hidden"
+            />
+            {/* desktop: горизонтальное */}
+            <video
+              src="/cabinet_pv_video_desktop.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="hidden h-auto w-full max-w-full sm:block"
             />
           </div>
           <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
