@@ -127,16 +127,18 @@ export function KabinetPvCaseStudy() {
       </LoadFadeIn>
 
       <ScrollReveal className={textToImageGap}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/kabinet%20pv%20keys.png"
-          alt="Кабинет ПВ — ключевые экраны мобильного приложения"
-          width={890}
-          height={536}
-          loading="lazy"
-          decoding="async"
-          className="block h-auto w-full max-w-full rounded-[24px] sm:rounded-[40px]"
-        />
+        <div className="aspect-square overflow-hidden rounded-[24px] sm:aspect-auto sm:rounded-[40px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/kabinet%20pv%20keys.png"
+            alt="Кабинет ПВ — ключевые экраны мобильного приложения"
+            width={890}
+            height={536}
+            loading="lazy"
+            decoding="async"
+            className="block h-full w-full object-cover object-center sm:h-auto"
+          />
+        </div>
       </ScrollReveal>
 
       <section className="mt-[52px] sm:mt-[68px]">
