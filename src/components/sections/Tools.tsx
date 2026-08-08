@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollReveal, ScrollRevealH1 } from "@/components/ScrollReveal";
+import { ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
 
 type ToolItem = {
   name: string;
@@ -42,19 +42,19 @@ const tools: ToolItem[] = [
 export function Tools() {
   return (
     <section id="tools" className="mt-[65px] pb-20 sm:mt-[85px] sm:pb-32">
-      <ScrollRevealH1
+      <ScrollRevealH2
         className="font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}
       >
         Инструменты
-      </ScrollRevealH1>
+      </ScrollRevealH2>
 
       <div className="mt-8 flex flex-col sm:mt-[54px]">
         {tools.map((tool, index) => (
           <ScrollReveal
             key={tool.number}
             className={`flex cursor-pointer items-center justify-between gap-4 py-5 sm:gap-6 sm:py-6 ${
-              index > 0 ? "border-t border-[#C7C7C7]" : ""
+              index > 0 ? "border-t border-gray-divider" : ""
             }`}
           >
             <div className="flex min-w-0 items-center gap-4">
@@ -71,14 +71,14 @@ export function Tools() {
                 }}
               />
               <div className="flex min-w-0 flex-col gap-[2px]">
-                <h2
+                <h3
                   className="font-sexsmith text-[22px] font-normal leading-tight text-[#0F0F0F] sm:text-[28px]"
                   style={{ fontFamily: "'Sexsmith', serif", margin: 0 }}
                 >
                   {tool.name}
-                </h2>
+                </h3>
                 <p
-                  className="text-[13px] leading-snug text-[#C7C7C7]"
+                  className="text-[13px] leading-snug text-gray-caption"
                   style={{ margin: 0 }}
                 >
                   {tool.description}

@@ -50,8 +50,8 @@ export function Career() {
   return (
     <section id="info" className="pb-0 pt-[40px] sm:pt-[80px]">
       <LoadFadeIn>
-        <p className="mb-[10px] text-sm text-[#C7C7C7]">Карьера</p>
-        <div className="mb-10 h-px w-full bg-[#C7C7C7]" />
+        <h2 className="mb-[10px] text-sm font-normal text-gray-caption">Карьера</h2>
+        <div className="mb-10 h-px w-full bg-gray-divider" />
       </LoadFadeIn>
 
       <div className="flex flex-col gap-0">
@@ -62,13 +62,13 @@ export function Career() {
                 <CompanyLogo src={entry.logo} alt={entry.company} />
                 <div className="min-w-0">
                   <p className="truncate font-medium text-black">{entry.company}</p>
-                  <p className="mt-0.5 truncate text-[#C7C7C7]">{entry.years}</p>
+                  <p className="mt-0.5 truncate text-gray-caption">{entry.years}</p>
                 </div>
               </div>
 
               <div className="text-right">
                 <p className="whitespace-nowrap font-medium text-black">{entry.role}</p>
-                <p className="mt-0.5 whitespace-nowrap text-[#C7C7C7]">{entry.platform}</p>
+                <p className="mt-0.5 whitespace-nowrap text-gray-caption">{entry.platform}</p>
               </div>
             </div>
           </ScrollReveal>

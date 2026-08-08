@@ -139,7 +139,10 @@ function GradualBlur(props) {
   useEffect(() => {
     if (config.target !== 'page' || config.animated !== 'scroll') return;
 
+    let rafId = null;
+
     const updateVisibility = () => {
+      rafId = null;
       const scrollTop = window.scrollY;
       const maxScroll = Math.max(
         0,
@@ -157,12 +160,20 @@ function GradualBlur(props) {
       );
     };
 
+    // Batch scroll-driven reads/writes to once per animation frame instead
+    // of once per scroll event, which can fire many times per frame.
+    const onScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(updateVisibility);
+    };
+
     updateVisibility();
-    window.addEventListener('scroll', updateVisibility, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', updateVisibility);
 
     return () => {
-      window.removeEventListener('scroll', updateVisibility);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', updateVisibility);
     };
   }, [config.target, config.animated]);

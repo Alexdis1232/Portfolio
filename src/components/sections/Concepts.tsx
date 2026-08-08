@@ -11,9 +11,14 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import { ScrollRevealH1, scrollReveal } from "@/components/ScrollReveal";
+import { ScrollRevealH2, scrollReveal } from "@/components/ScrollReveal";
 import { AnimatePresence, motion } from "framer-motion";
-import { PRIMARY_COL_WIDTH, PRIMARY_WIDE_WIDTH } from "@/config/layout";
+import {
+  CONTAINER_MAX_WIDTH,
+  PRIMARY_COL_WIDTH,
+  PRIMARY_WIDE_WIDTH,
+} from "@/config/layout";
+import { useAutoplayInView } from "@/hooks/useAutoplayInView";
 
 type LightboxMedia = { type: "image" | "video"; src: string; alt: string };
 
@@ -382,6 +387,7 @@ function BentoFrame({
 
 function Bento08Video({ src }: { src: string }) {
   const [isDesktop, setIsDesktop] = useState(false);
+  const videoRef = useAutoplayInView();
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 1024px)");
@@ -405,12 +411,12 @@ function Bento08Video({ src }: { src: string }) {
         }}
       >
         <video
+          ref={videoRef}
           src={src}
-          autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           className="block h-full w-full object-cover"
         />
       </div>
@@ -419,6 +425,8 @@ function Bento08Video({ src }: { src: string }) {
 }
 
 function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
+  const videoRef = useAutoplayInView();
+
   if (concept.frame) {
     const mediaClass = moreMediaClass[concept.number] ?? "object-contain";
 
@@ -451,8 +459,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
 
     const content = concept.video ? (
         <video
+          ref={videoRef}
           src={concept.video}
-          autoPlay
           loop
           muted
           playsInline
@@ -464,6 +472,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
         <img
           src={concept.gif ?? concept.image}
           alt={concept.title}
+          loading="lazy"
           className={mediaClass}
           style={moreMediaStyle}
         />
@@ -513,8 +522,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
 
     const content = concept.video ? (
       <video
+        ref={videoRef}
         src={concept.video}
-        autoPlay
         loop
         muted
         playsInline
@@ -526,6 +535,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
       <img
         src={concept.image}
         alt={concept.title}
+        loading="lazy"
         className={mediaClass}
         style={bentoMediaStyle}
       />
@@ -541,8 +551,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
   if (concept.video) {
     return (
       <video
+        ref={videoRef}
         src={concept.video}
-        autoPlay
         loop
         muted
         playsInline
@@ -566,6 +576,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
         <img
           src={concept.image}
           alt={concept.title}
+          loading="lazy"
           className={primaryImageClassName}
         />
       </PrimaryImageFrame>
@@ -576,6 +587,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
     <img
       src={concept.image}
       alt={concept.title}
+      loading="lazy"
       className={mediaClassName}
     />
   );
@@ -654,7 +666,7 @@ function ConceptCardItem({ concept }: { concept: ConceptCard }) {
             {concept.title}
           </h2>
           <p
-            className="text-left text-[14px] text-[#C7C7C7]"
+            className="text-left text-[14px] text-gray-caption"
             style={{ margin: 0, padding: 0 }}
           >
             {concept.subtitle}
@@ -696,6 +708,14 @@ function ConceptCardWrapper({
   );
 }
 
+/** Pulls a tall bento card up to interlock with the shorter card beside it.
+ *  Capped at the container's own max width so the offset stops growing once
+ *  the column itself has stopped growing — otherwise it outpaces the actual
+ *  card width above ~890px and starts overlapping the row above. */
+const bentoInterlockStyle = {
+  marginTop: `calc((min(100vw, ${CONTAINER_MAX_WIDTH}px) - 2rem) * -0.39)`,
+};
+
 function ConceptsMobileLayout() {
   return (
     <div className="space-y-4 lg:hidden">
@@ -714,7 +734,7 @@ function ConceptsMobileLayout() {
         <ConceptCardWrapper
           concept={bentoByNumber["(09)"]}
           mobileCentered={false}
-          style={{ marginTop: "calc((100vw - 2rem) * -0.39)" }}
+          style={bentoInterlockStyle}
         />
 
         {/* 4 ряд: Meet Point (03) под Heart + Ring bell (12) квадрат */}
@@ -726,7 +746,7 @@ function ConceptsMobileLayout() {
         <ConceptCardWrapper
           concept={moreByNumber["(10)"]}
           mobileCentered={false}
-          style={{ marginTop: "calc((100vw - 2rem) * -0.39)" }}
+          style={bentoInterlockStyle}
         />
 
         {/* 6 ряд: Discover places (05) на всю ширину */}
@@ -820,12 +840,12 @@ function ConceptsDesktopLayout() {
 export function Concepts() {
   return (
     <section id="concepts" className="pb-0 pt-12 sm:pt-16">
-      <ScrollRevealH1
+      <ScrollRevealH2
         className="mb-[28px] font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:mb-[52px] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}
       >
         Концепты
-      </ScrollRevealH1>
+      </ScrollRevealH2>
 
       <LightboxProvider>
         <ConceptsMobileLayout />
