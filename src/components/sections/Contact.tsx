@@ -67,7 +67,7 @@ export function Contact() {
       </ScrollRevealH2>
 
       <ScrollReveal className="mt-6 flex w-full flex-col items-center gap-6 sm:mt-[32px] sm:gap-[30px]">
-        <div className="-mx-4 flex w-auto gap-1 px-4 sm:mx-0 sm:w-full sm:gap-2 sm:px-0">
+        <div className="-mx-4 flex w-[calc(100%+2rem)] gap-1 px-4 sm:mx-0 sm:w-full sm:gap-2 sm:px-0">
           {contactLinks.map((item) => (
             <a
               key={item.label}
