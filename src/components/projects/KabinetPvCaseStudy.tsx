@@ -310,6 +310,46 @@ export function KabinetPvCaseStudy() {
             Оформление претензии
           </p>
         </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Автосохранение с подтверждением
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            При закрытии незавершённой претензии приложение автоматически
+            сохраняет её в черновики и показывает тост-уведомление. Сотрудник
+            видит что данные не потеряны и может вернуться к оформлению в любой
+            момент — без тревоги и лишних вопросов.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
+            {/* mobile: квадрат */}
+            <video
+              src="/kabinet_pv_drafts.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="block h-auto w-full max-w-full sm:hidden"
+            />
+            {/* desktop: горизонтальное */}
+            <video
+              src="/kabinet_pv_drafts_desktop.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="hidden h-auto w-full max-w-full sm:block"
+            />
+          </div>
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Сохранение в черновики
+          </p>
+        </ScrollReveal>
       </section>
 
     </article>
