@@ -275,7 +275,10 @@ export function KabinetPvCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Дробление сценария на шаги
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
             Сценарий был разбит на отдельные шаги чтобы снизить когнитивную
             нагрузку — сотрудник решает одну задачу за раз и не держит в голове
             всю форму целиком. Претензии разделены по статусам чтобы было понятно
