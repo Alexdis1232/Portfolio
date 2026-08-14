@@ -2,17 +2,10 @@
 
 import { useCallback } from "react";
 import { ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
-import { CURSOR_VIEW_HOVER_EVENT } from "@/components/CustomCursor";
 import { useButtonClickSound } from "@/hooks/useButtonClickSound";
 import { useProjectHoverSound } from "@/hooks/useProjectHoverSound";
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
-
-function setCursorViewHover(active: boolean) {
-  window.dispatchEvent(
-    new CustomEvent(CURSOR_VIEW_HOVER_EVENT, { detail: active }),
-  );
-}
 
 function isCoarsePointerDevice() {
   return (
@@ -101,10 +94,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
 
   const handleMouseEnter = useCallback(() => {
     if (!isCoarsePointerDevice()) playHover();
-    setCursorViewHover(true);
   }, [playHover]);
-
-  const handleMouseLeave = useCallback(() => setCursorViewHover(false), []);
 
   const cardClassName =
     "group press-bounce flex items-center rounded-[24px] bg-[#FBFBFB] px-6 py-8 active:scale-[0.98]";
@@ -118,7 +108,6 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
         className={`${cardClassName} block text-inherit no-underline`}
         onPointerDown={handlePointerDown}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         <ProjectRowContent entry={entry} />
       </a>
@@ -130,7 +119,6 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
       className={cardClassName}
       onPointerDown={handlePointerDown}
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       <ProjectRowContent entry={entry} />
     </div>
