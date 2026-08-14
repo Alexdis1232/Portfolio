@@ -37,7 +37,7 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       width={74}
       height={74}
-      className="h-[90px] w-[90px] shrink-0 rounded-2xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
+      className="h-[68px] w-[68px] shrink-0 rounded-2xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
     />
   );
 }
