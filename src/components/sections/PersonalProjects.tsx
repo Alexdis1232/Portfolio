@@ -23,7 +23,7 @@ type PersonalProjectEntry = {
 
 const personalProjectsData: PersonalProjectEntry[] = [
   {
-    name: "Поиск квартир Москва и МО",
+    name: "Аренда квартир по Москве",
     subtitle: "Бот-помощник",
     logo: "/bot_poiskzhilya.png",
   },
@@ -37,7 +37,7 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       width={74}
       height={74}
-      className="h-[68px] w-[68px] shrink-0 rounded-2xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
+      className="h-[54px] w-[54px] shrink-0 rounded-2xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
     />
   );
 }
@@ -52,7 +52,7 @@ function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
             {entry.name}
           </p>
           {entry.subtitle ? (
-            <p className="mt-[2px] truncate text-[13px] leading-[24px] text-[#C7C7C7] sm:text-[15px]">
+            <p className="truncate text-[13px] leading-[24px] text-[#C7C7C7] sm:text-[15px]">
               {entry.subtitle}
             </p>
           ) : null}
