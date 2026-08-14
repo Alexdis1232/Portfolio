@@ -1,12 +1,12 @@
 "use client";
 
-import { LoadFadeIn, ScrollReveal } from "@/components/ScrollReveal";
+import { ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
+
+const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
 type PersonalProjectEntry = {
   name: string;
   subtitle?: string;
-  role?: string;
-  platform?: string;
   logo: string;
 };
 
@@ -20,12 +20,13 @@ const personalProjectsData: PersonalProjectEntry[] = [
 
 function ProjectLogo({ src, alt }: { src: string; alt: string }) {
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt}
-      width={45}
-      height={45}
-      className="h-[45px] w-[45px] shrink-0 rounded-xl object-cover"
+      width={64}
+      height={64}
+      className="h-16 w-16 shrink-0 rounded-[12px] object-cover"
     />
   );
 }
@@ -35,38 +36,29 @@ export function PersonalProjects() {
 
   return (
     <section id="personal" className="pb-0 pt-[40px] sm:pt-[80px]">
-      <LoadFadeIn>
-        <p className="mb-[10px] text-sm text-[#C7C7C7]">Личные проекты</p>
-        <div className="mb-10 h-px w-full bg-[#C7C7C7]" />
-      </LoadFadeIn>
+      <ScrollRevealH2
+        className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+        style={sexsmithStyle}
+      >
+        Личные проекты
+      </ScrollRevealH2>
 
-      <div className="flex flex-col gap-0">
+      <div className="mt-8 flex flex-col gap-3 sm:mt-12">
         {personalProjectsData.map((entry) => (
           <ScrollReveal key={entry.name} className="w-full">
-            <div className="grid h-[76px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-[13px] sm:gap-6">
-              <div className="flex items-center gap-4">
+            <div className="flex items-center rounded-[24px] bg-[#FAFAFA] px-4 py-4">
+              <div className="flex min-w-0 items-center gap-4">
                 <ProjectLogo src={entry.logo} alt={entry.name} />
                 <div className="min-w-0">
-                  <p className="truncate font-medium text-black">{entry.name}</p>
+                  <p className="truncate text-[13px] font-medium leading-[24px] text-black">
+                    {entry.name}
+                  </p>
                   {entry.subtitle ? (
-                    <p className="mt-0.5 truncate text-[#C7C7C7]">
+                    <p className="truncate text-[13px] leading-[24px] text-[#C7C7C7]">
                       {entry.subtitle}
                     </p>
                   ) : null}
                 </div>
-              </div>
-
-              <div className="text-right">
-                {entry.role ? (
-                  <p className="whitespace-nowrap font-medium text-black">
-                    {entry.role}
-                  </p>
-                ) : null}
-                {entry.platform ? (
-                  <p className="mt-0.5 whitespace-nowrap text-[#C7C7C7]">
-                    {entry.platform}
-                  </p>
-                ) : null}
               </div>
             </div>
           </ScrollReveal>
