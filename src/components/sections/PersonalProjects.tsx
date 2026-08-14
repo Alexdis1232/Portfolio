@@ -87,7 +87,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
   const handleMouseLeave = useCallback(() => setCursorViewHover(false), []);
 
   const cardClassName =
-    "press-bounce flex items-center rounded-[24px] bg-[#FAFAFA] px-4 py-4 transition-colors duration-200 hover:bg-[#F0F0F0] active:scale-[0.98]";
+    "press-bounce flex items-center rounded-[24px] bg-[#FAFAFA] px-4 py-4 active:scale-[0.98]";
 
   if (entry.href) {
     return (
