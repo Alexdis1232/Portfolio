@@ -42,23 +42,23 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
     <img
       src={src}
       alt={alt}
-      width={64}
-      height={64}
-      className="h-16 w-16 shrink-0 rounded-[12px] object-cover"
+      width={74}
+      height={74}
+      className="h-[74px] w-[74px] shrink-0 rounded-[14px] object-cover"
     />
   );
 }
 
 function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
   return (
-    <div className="flex min-w-0 items-center gap-4">
+    <div className="flex min-w-0 items-center gap-6">
       <ProjectLogo src={entry.logo} alt={entry.name} />
       <div className="min-w-0">
-        <p className="truncate text-[13px] font-medium leading-[24px] text-black">
+        <p className="truncate text-[19px] leading-[24px] text-black">
           {entry.name}
         </p>
         {entry.subtitle ? (
-          <p className="truncate text-[13px] leading-[24px] text-[#C7C7C7]">
+          <p className="truncate text-[15px] leading-[24px] text-[#C7C7C7]">
             {entry.subtitle}
           </p>
         ) : null}
@@ -87,7 +87,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
   const handleMouseLeave = useCallback(() => setCursorViewHover(false), []);
 
   const cardClassName =
-    "press-bounce flex items-center rounded-[24px] bg-[#FAFAFA] px-4 py-4 active:scale-[0.98]";
+    "press-bounce flex items-center rounded-[24px] bg-[#FBFBFB] px-6 py-8 active:scale-[0.98]";
 
   if (entry.href) {
     return (
