@@ -11,7 +11,11 @@ type PersonalProjectEntry = {
 };
 
 const personalProjectsData: PersonalProjectEntry[] = [
-  // Заполним, когда придут иконка и название
+  {
+    name: "Поиск квартир Москва и МО",
+    subtitle: "Бот-помощник",
+    logo: "/bot_poiskzhilya.png",
+  },
 ];
 
 function ProjectLogo({ src, alt }: { src: string; alt: string }) {
