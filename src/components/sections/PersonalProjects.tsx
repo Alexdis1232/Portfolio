@@ -48,7 +48,7 @@ function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
       <div className="flex min-w-0 items-center gap-4 sm:gap-6">
         <ProjectLogo src={entry.logo} alt={entry.name} />
         <div className="min-w-0">
-          <p className="truncate text-[13px] leading-[24px] text-black sm:text-[19px]">
+          <p className="truncate text-[13px] font-medium leading-[24px] text-black sm:text-[19px]">
             {entry.name}
           </p>
           {entry.subtitle ? (
