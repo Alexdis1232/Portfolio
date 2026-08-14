@@ -64,8 +64,8 @@ function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
         className="ml-auto shrink-0 pl-4 text-[#555555] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
       >
         <svg
-          width="26"
-          height="26"
+          width="32"
+          height="32"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
