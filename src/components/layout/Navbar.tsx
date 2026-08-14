@@ -38,7 +38,7 @@ export function Navbar() {
   const playClick = useButtonClickSound();
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith("/projects/");
-  const homeLink = { href: isProjectPage ? "/" : "/#projects", label: isProjectPage ? "главная" : "проекты" };
+  const homeLink = { href: isProjectPage ? "/" : "/#projects", label: isProjectPage ? "главная" : "кейсы" };
 
   return (
     <header

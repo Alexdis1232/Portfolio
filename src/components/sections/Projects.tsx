@@ -139,7 +139,7 @@ export function Projects() {
         className="mb-[10px] font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}
       >
-        Проекты
+        Кейсы
       </h2>
 
       <div className="flex w-full flex-col gap-0">
