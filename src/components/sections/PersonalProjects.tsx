@@ -37,7 +37,7 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       width={74}
       height={74}
-      className="h-[54px] w-[54px] shrink-0 rounded-2xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
+      className="h-[54px] w-[54px] shrink-0 rounded-2xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[19px]"
     />
   );
 }
@@ -96,7 +96,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
   }, [playHover]);
 
   const cardClassName =
-    "group press-bounce flex items-center rounded-[24px] bg-[#FBFBFB] px-4 py-5 transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96] sm:px-6 sm:py-8";
+    "group press-bounce flex items-center rounded-[24px] bg-[#FFF9F2] px-4 py-5 transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96] sm:px-6 sm:py-8";
 
   if (entry.href) {
     return (
