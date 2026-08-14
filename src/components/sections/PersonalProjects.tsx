@@ -58,7 +58,7 @@ function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
           {entry.name}
         </p>
         {entry.subtitle ? (
-          <p className="truncate text-[15px] leading-[24px] text-[#C7C7C7]">
+          <p className="mt-[2px] truncate text-[15px] leading-[24px] text-[#C7C7C7]">
             {entry.subtitle}
           </p>
         ) : null}
