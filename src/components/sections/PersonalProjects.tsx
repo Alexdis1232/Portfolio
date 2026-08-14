@@ -96,7 +96,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
   }, [playHover]);
 
   const cardClassName =
-    "group press-bounce flex items-center rounded-[24px] bg-[#FBFBFB] px-6 py-8 transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96]";
+    "group press-bounce flex items-center rounded-[24px] bg-[#FBFBFB] px-4 py-5 transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96] sm:px-6 sm:py-8";
 
   if (entry.href) {
     return (
