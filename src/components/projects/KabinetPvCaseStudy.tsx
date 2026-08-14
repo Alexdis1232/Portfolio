@@ -2,6 +2,7 @@
 
 import { LoadFadeIn, ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
 import { ZoomableArea } from "@/components/ZoomableArea";
+import { useAutoplayInView } from "@/hooks/useAutoplayInView";
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
@@ -84,6 +85,9 @@ const hypotheses = [
 ];
 
 export function KabinetPvCaseStudy() {
+  const mobileVideoRef = useAutoplayInView();
+  const desktopVideoRef = useAutoplayInView();
+
   return (
     <ZoomableArea>
     <article className="pb-16 sm:pb-24">
@@ -116,7 +120,7 @@ export function KabinetPvCaseStudy() {
           <div className="flex shrink-0 flex-col gap-4 lg:gap-5">
             {projectInfo.map((item) => (
               <div key={item.label}>
-                <p className="text-[12px] text-[#C7C7C7]">{item.label}</p>
+                <p className="text-[12px] text-gray-caption">{item.label}</p>
                 <p className="mt-1 text-[15px] leading-snug text-[#0F0F0F]">
                   {item.value}
                 </p>
@@ -228,7 +232,7 @@ export function KabinetPvCaseStudy() {
                 decoding="async"
                 className="mt-10 block h-auto w-full max-w-full rounded-[16px] sm:mt-12 sm:rounded-[24px]"
               />
-              <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+              <p className="mt-3 text-center text-[15px] leading-none text-gray-caption sm:mt-6">
                 {item.caption}
               </p>
             </ScrollReveal>
@@ -290,8 +294,8 @@ export function KabinetPvCaseStudy() {
           <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
             {/* mobile: квадрат (телефон крупнее) */}
             <video
+              ref={mobileVideoRef}
               src="/kabinet_pv_video.mp4?v=3"
-              autoPlay
               loop
               muted
               playsInline
@@ -300,8 +304,8 @@ export function KabinetPvCaseStudy() {
             />
             {/* desktop: горизонтальное */}
             <video
+              ref={desktopVideoRef}
               src="/kabinet_pv_video_desktop.mp4?v=3"
-              autoPlay
               loop
               muted
               playsInline
@@ -309,7 +313,7 @@ export function KabinetPvCaseStudy() {
               className="hidden h-auto w-full max-w-full sm:block"
             />
           </div>
-          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+          <p className="mt-3 text-center text-[15px] leading-none text-gray-caption sm:mt-6">
             Оформление претензии
           </p>
         </ScrollReveal>

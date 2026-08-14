@@ -13,10 +13,6 @@ function setCursorViewHover(active: boolean) {
   window.dispatchEvent(new CustomEvent(CURSOR_VIEW_HOVER_EVENT, { detail: active }));
 }
 
-function isCoarsePointerDevice() {
-  return typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches;
-}
-
 const PROJECT_HERO_WIDTH = 470;
 const PROJECT_HERO_HEIGHT = 389;
 
@@ -70,7 +66,7 @@ function ProjectCardContent({ project }: { project: Project }) {
         <div className="mt-8 flex w-full flex-nowrap items-start justify-between gap-2 lg:mt-0">
           {project.info.map((col) => (
             <div key={col.label} className="min-w-0 shrink-0">
-              <p className="text-[12px] text-[#C7C7C7]">{col.label}</p>
+              <p className="text-[12px] text-gray-caption">{col.label}</p>
               <p className="mt-1 whitespace-nowrap text-[15px] leading-snug text-[#0F0F0F]">
                 {col.value}
               </p>
@@ -94,11 +90,6 @@ function ProjectCard({ project }: { project: Project }) {
     [playClick],
   );
 
-  const handleMouseEnterSound = useCallback(() => {
-    if (isCoarsePointerDevice()) return;
-    playHover();
-  }, [playHover]);
-
   const cardClassName =
     "grid w-full min-w-0 grid-cols-1 items-start gap-6 py-[18px] sm:gap-8 lg:grid-cols-[470px_minmax(0,1fr)] lg:gap-[36px] lg:py-[42px]";
 
@@ -109,7 +100,7 @@ function ProjectCard({ project }: { project: Project }) {
         className={`${cardClassName} press-bounce block text-inherit no-underline active:scale-[0.98]`}
         onPointerDown={handlePointerDown}
         onMouseEnter={() => {
-          handleMouseEnterSound();
+          playHover();
           setCursorViewHover(true);
         }}
         onMouseLeave={() => setCursorViewHover(false)}
@@ -123,7 +114,7 @@ function ProjectCard({ project }: { project: Project }) {
     <motion.article
       className={cardClassName}
       onPointerDown={handlePointerDown}
-      onMouseEnter={handleMouseEnterSound}
+      onMouseEnter={playHover}
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 300, damping: 26 }}
     >

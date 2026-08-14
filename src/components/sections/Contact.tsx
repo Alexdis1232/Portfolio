@@ -13,7 +13,7 @@ const EMAIL = "antonyuk10@gmail.com";
 const contactLinks = [
   { label: "telegram", href: "https://t.me/podrazhayu" },
   { label: "email", href: `mailto:${EMAIL}` },
-  { label: "linkedin", href: "https://www.linkedin.com/in/" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/alexandra-antonyuk-784493214" },
 ];
 
 export function Contact() {
@@ -67,7 +67,7 @@ export function Contact() {
       </ScrollRevealH2>
 
       <ScrollReveal className="mt-6 flex w-full flex-col items-center gap-6 sm:mt-[32px] sm:gap-[30px]">
-        <div className="flex w-screen gap-1 px-4 sm:w-full sm:gap-2 sm:px-0">
+        <div className="-mx-4 flex w-[calc(100%+2rem)] gap-1 px-4 sm:mx-0 sm:w-full sm:gap-2 sm:px-0">
           {contactLinks.map((item) => (
             <a
               key={item.label}
@@ -97,7 +97,7 @@ export function Contact() {
           ))}
         </div>
 
-        <p className="text-[14px] text-[#C7C7C7]">Alexandra Antonyuk ♥ 2025</p>
+        <p className="text-[14px] text-gray-caption">Alexandra Antonyuk ♥ 2025</p>
       </ScrollReveal>
 
       <div

@@ -40,6 +40,12 @@ export function Navbar() {
   const isProjectPage = pathname.startsWith("/projects/");
   const homeLink = { href: isProjectPage ? "/" : "/#projects", label: isProjectPage ? "главная" : "проекты" };
 
+  // The /cv route is a full-screen overlay (z-[100]) that visually covers the
+  // navbar (z-50) but wouldn't remove it from the tab order, leaving
+  // keyboard users tabbing through invisible links before reaching the
+  // overlay's own close button.
+  if (pathname === "/cv") return null;
+
   return (
     <header
       className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-6"

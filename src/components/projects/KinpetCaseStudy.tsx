@@ -1,6 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import {
   LoadFadeIn,
   ScrollReveal,
@@ -8,14 +7,7 @@ import {
 } from "@/components/ScrollReveal";
 import { KinpetKeysImage } from "@/components/projects/KinpetKeysImage";
 import { ZoomableArea } from "@/components/ZoomableArea";
-
-const KinpetBeforeAfterSlider = dynamic(
-  () =>
-    import("@/components/projects/KinpetBeforeAfterSlider").then(
-      (mod) => mod.KinpetBeforeAfterSlider,
-    ),
-  { ssr: false },
-);
+import { useAutoplayInView } from "@/hooks/useAutoplayInView";
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
@@ -81,6 +73,9 @@ const resultItems = [
 ];
 
 export function KinpetCaseStudy() {
+  const afterVideoRef = useAutoplayInView();
+  const petSearchVideoRef = useAutoplayInView();
+
   return (
     <ZoomableArea>
     <article className="pb-16 sm:pb-24">
@@ -112,7 +107,7 @@ export function KinpetCaseStudy() {
           <div className="flex shrink-0 flex-col gap-4 lg:gap-5">
             {projectInfo.map((item) => (
               <div key={item.label}>
-                <p className="text-[12px] text-[#C7C7C7]">{item.label}</p>
+                <p className="text-[12px] text-gray-caption">{item.label}</p>
                 <p className="mt-1 text-[15px] leading-snug text-[#0F0F0F]">
                   {item.value}
                 </p>
@@ -159,7 +154,7 @@ export function KinpetCaseStudy() {
           decoding="async"
           className="block h-auto w-full max-w-full"
         />
-        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+        <p className="mt-3 text-center text-[15px] leading-none text-gray-caption sm:mt-6">
           Главная / ДО
         </p>
       </ScrollReveal>
@@ -212,7 +207,7 @@ export function KinpetCaseStudy() {
           decoding="async"
           className="block h-auto w-full max-w-full"
         />
-        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+        <p className="mt-3 text-center text-[15px] leading-none text-gray-caption sm:mt-6">
           Ответы пользователей
         </p>
       </ScrollReveal>
@@ -237,7 +232,7 @@ export function KinpetCaseStudy() {
       </section>
 
       <ScrollReveal className={textToImageGap}>
-        <div className="overflow-hidden rounded-[24px] border border-[#E0E0E0] sm:rounded-[40px]">
+        <div className="overflow-hidden rounded-[24px] border border-gray-divider sm:rounded-[40px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/opros.png"
@@ -249,7 +244,7 @@ export function KinpetCaseStudy() {
             className="block h-auto w-full max-w-full"
           />
         </div>
-        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+        <p className="mt-3 text-center text-[15px] leading-none text-gray-caption sm:mt-6">
           Ответы пользователей
         </p>
       </ScrollReveal>
@@ -308,15 +303,16 @@ export function KinpetCaseStudy() {
       <ScrollReveal className={textToImageGap}>
         <div className="overflow-hidden rounded-[24px] bg-[#E8E8E8] sm:rounded-[40px]">
           <video
+            ref={afterVideoRef}
             src="/video_after_kinpet.mp4"
-            autoPlay
             muted
             loop
             playsInline
+            preload="metadata"
             className="block h-auto w-full max-w-full"
           />
         </div>
-        <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+        <p className="mt-3 text-center text-[15px] leading-none text-gray-caption sm:mt-6">
           Главная / ПОСЛЕ
         </p>
       </ScrollReveal>
@@ -336,8 +332,8 @@ export function KinpetCaseStudy() {
         <ScrollReveal>
           <div className="overflow-hidden rounded-[24px] sm:rounded-[40px]">
             <video
+              ref={petSearchVideoRef}
               src="/poisck%20pitomtsa.mp4"
-              autoPlay
               loop
               muted
               playsInline
@@ -345,7 +341,7 @@ export function KinpetCaseStudy() {
               className="block h-auto w-full max-w-full"
             />
           </div>
-          <p className="mt-[15px] text-center text-[15px] leading-none text-[#C7C7C7]">
+          <p className="mt-[15px] text-center text-[15px] leading-none text-gray-caption">
             Подбор питомца
           </p>
         </ScrollReveal>

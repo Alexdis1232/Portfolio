@@ -18,6 +18,7 @@ const config: Config = {
           pill: "#f0f0f0",
           label: "#E0E0E0",
           divider: "#E0E0E0",
+          caption: "#707070",
         },
         pink: {
           card: "#f8e8ee",
