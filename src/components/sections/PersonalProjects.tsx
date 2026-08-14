@@ -51,18 +51,38 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
 
 function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
   return (
-    <div className="flex min-w-0 items-center gap-6">
-      <ProjectLogo src={entry.logo} alt={entry.name} />
-      <div className="min-w-0">
-        <p className="truncate text-[19px] leading-[24px] text-black">
-          {entry.name}
-        </p>
-        {entry.subtitle ? (
-          <p className="mt-[2px] truncate text-[15px] leading-[24px] text-[#C7C7C7]">
-            {entry.subtitle}
+    <div className="flex w-full items-center">
+      <div className="flex min-w-0 items-center gap-6">
+        <ProjectLogo src={entry.logo} alt={entry.name} />
+        <div className="min-w-0">
+          <p className="truncate text-[19px] leading-[24px] text-black">
+            {entry.name}
           </p>
-        ) : null}
+          {entry.subtitle ? (
+            <p className="mt-[2px] truncate text-[15px] leading-[24px] text-[#C7C7C7]">
+              {entry.subtitle}
+            </p>
+          ) : null}
+        </div>
       </div>
+
+      <span
+        aria-hidden
+        className="ml-auto shrink-0 pl-4 text-[#555555] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+      >
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </span>
     </div>
   );
 }
@@ -87,7 +107,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
   const handleMouseLeave = useCallback(() => setCursorViewHover(false), []);
 
   const cardClassName =
-    "press-bounce flex items-center rounded-[24px] bg-[#FBFBFB] px-6 py-8 active:scale-[0.98]";
+    "group press-bounce flex items-center rounded-[24px] bg-[#FBFBFB] px-6 py-8 active:scale-[0.98]";
 
   if (entry.href) {
     return (
