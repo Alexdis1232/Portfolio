@@ -37,7 +37,7 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       width={74}
       height={74}
-      className="h-[45px] w-[45px] shrink-0 rounded-xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
+      className="h-[90px] w-[90px] shrink-0 rounded-2xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
     />
   );
 }
@@ -64,14 +64,13 @@ function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
         className="ml-auto shrink-0 pl-4 text-[#555555] opacity-100 transition-opacity duration-200 sm:opacity-0 sm:group-hover:opacity-100"
       >
         <svg
-          width="32"
-          height="32"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          className="h-6 w-6 sm:h-8 sm:w-8"
         >
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>
