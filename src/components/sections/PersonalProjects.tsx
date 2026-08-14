@@ -37,7 +37,7 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       width={74}
       height={74}
-      className="h-[74px] w-[74px] shrink-0 rounded-[14px] object-cover"
+      className="h-[45px] w-[45px] shrink-0 rounded-xl object-cover sm:h-[74px] sm:w-[74px] sm:rounded-[14px]"
     />
   );
 }
@@ -45,14 +45,14 @@ function ProjectLogo({ src, alt }: { src: string; alt: string }) {
 function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
   return (
     <div className="flex w-full items-center">
-      <div className="flex min-w-0 items-center gap-6">
+      <div className="flex min-w-0 items-center gap-4 sm:gap-6">
         <ProjectLogo src={entry.logo} alt={entry.name} />
         <div className="min-w-0">
-          <p className="truncate text-[19px] leading-[24px] text-black">
+          <p className="truncate text-[13px] leading-[24px] text-black sm:text-[19px]">
             {entry.name}
           </p>
           {entry.subtitle ? (
-            <p className="mt-[2px] truncate text-[15px] leading-[24px] text-[#C7C7C7]">
+            <p className="mt-[2px] truncate text-[13px] leading-[24px] text-[#C7C7C7] sm:text-[15px]">
               {entry.subtitle}
             </p>
           ) : null}
