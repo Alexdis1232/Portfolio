@@ -134,7 +134,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="w-full pb-0 pt-12 sm:pt-16">
+    <section id="projects" className="w-full pb-0 pt-12 sm:pt-[82px]">
       <h2
         className="mb-[10px] font-sexsmith text-[32px] font-normal text-[#0F0F0F] sm:text-[48px]"
         style={{ fontFamily: "'Sexsmith', serif" }}
