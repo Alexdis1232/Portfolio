@@ -31,7 +31,7 @@ const tools: ToolItem[] = [
     logo: "/rive.png",
   },
   {
-    name: "Claude | Claude Code",
+    name: "Claude",
     description: "Использую для вайбкодинга и тестирования",
     number: "(04)",
     logo: "/claude.png",
