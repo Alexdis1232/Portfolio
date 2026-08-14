@@ -61,7 +61,7 @@ function ProjectRowContent({ entry }: { entry: PersonalProjectEntry }) {
 
       <span
         aria-hidden
-        className="ml-auto shrink-0 pl-4 text-[#555555] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+        className="ml-auto shrink-0 pl-4 text-[#555555] opacity-100 transition-opacity duration-200 sm:opacity-0 sm:group-hover:opacity-100"
       >
         <svg
           width="32"
