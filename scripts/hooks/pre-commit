@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Blocks committing oversized media into public/. Mirrors the sizes we've
+# been manually enforcing all session (~500KB budget after optimization).
+#
+# Install once per clone:
+#   git config core.hooksPath scripts/hooks
+#
+# Bypass for a one-off exception:
+#   git commit --no-verify
+
+set -euo pipefail
+
+LIMIT_KB=500
+FAIL=0
+
+while IFS= read -r -d '' f; do
+  case "$f" in
+    public/*.png|public/*.jpg|public/*.jpeg|public/*.mp4|public/*.mov)
+      size_kb=$(( $(git cat-file -s ":$f" 2>/dev/null || stat -c%s "$f") / 1024 ))
+      if [ "$size_kb" -gt "$LIMIT_KB" ]; then
+        echo "✗ $f is ${size_kb}KB (limit ${LIMIT_KB}KB) — run scripts/optimize-media.sh $f first" >&2
+        FAIL=1
+      fi
+      ;;
+  esac
+done < <(git diff --cached --name-only --diff-filter=ACM -z)
+
+if [ "$FAIL" -eq 1 ]; then
+  echo "" >&2
+  echo "Commit blocked. Optimize the file(s) above, or 'git commit --no-verify' to override." >&2
+  exit 1
+fi
