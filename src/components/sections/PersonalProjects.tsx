@@ -19,6 +19,7 @@ type PersonalProjectEntry = {
   subtitle?: string;
   logo: string;
   href?: string;
+  bgColor?: string;
 };
 
 const personalProjectsData: PersonalProjectEntry[] = [
@@ -26,6 +27,13 @@ const personalProjectsData: PersonalProjectEntry[] = [
     name: "Аренда квартир по Москве",
     subtitle: "Бот-помощник",
     logo: "/bot_poiskzhilya.png",
+  },
+  {
+    name: "Загрузка видео (Video Gradder)",
+    subtitle: "Расширение Chrome",
+    logo: "/zagruzka%20video.svg",
+    href: "https://lnkd.in/p/eYmJDthy",
+    bgColor: "rgba(222, 236, 255, 0.5)",
   },
 ];
 
@@ -96,7 +104,8 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
   }, [playHover]);
 
   const cardClassName =
-    "group press-bounce flex items-center rounded-[24px] bg-[#FFF9F2] px-4 py-5 transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96] sm:px-6 sm:py-8";
+    "group press-bounce flex items-center rounded-[24px] px-4 py-5 transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96] sm:px-6 sm:py-8";
+  const cardStyle = { backgroundColor: entry.bgColor ?? "#FFF9F2" };
 
   if (entry.href) {
     return (
@@ -105,6 +114,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
         target="_blank"
         rel="noopener noreferrer"
         className={`${cardClassName} block text-inherit no-underline`}
+        style={cardStyle}
         onPointerDown={handlePointerDown}
         onMouseEnter={handleMouseEnter}
       >
@@ -116,6 +126,7 @@ function PersonalProjectCard({ entry }: { entry: PersonalProjectEntry }) {
   return (
     <div
       className={cardClassName}
+      style={cardStyle}
       onPointerDown={handlePointerDown}
       onMouseEnter={handleMouseEnter}
     >
