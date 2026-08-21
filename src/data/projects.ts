@@ -49,7 +49,7 @@ export const projects: Project[] = [
     logo: "/kinpet.png",
     company: "Kinpet",
     number: "(03)",
-    title: "Как мы повысили конверсию в подбор питомца на 8%",
+    title: "Увеличение конверсии на 8% в подбор питомца",
     info: [
       { label: "Год", value: "©2024" },
       { label: "Девайс", value: "Desktop" },
