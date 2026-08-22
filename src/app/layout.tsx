@@ -25,6 +25,22 @@ export const metadata: Metadata = {
   description: "Портфолио продуктового дизайнера",
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Саша",
+  jobTitle: "Продуктовый дизайнер",
+  description:
+    "Продуктовый дизайнер mobile-first с 3 годами опыта в B2C и B2B продуктах и уклоном в работу с AI-инструментами.",
+  url: "https://portfolio-mu-sepia-70.vercel.app",
+  knowsAbout: [
+    "Продуктовый дизайн",
+    "UX/UI дизайн",
+    "Mobile-first дизайн",
+    "AI-инструменты",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,6 +51,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} min-h-screen bg-white font-sans text-[15px] text-black antialiased sm:text-base`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <AudioUnlock />
         <CustomCursor />
         <Navbar />
