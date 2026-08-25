@@ -69,7 +69,7 @@ export function Tools() {
                   borderRadius: tool.iconRadius ?? 12,
                 }}
               />
-              <div className="flex min-w-0 w-[200px] flex-col gap-[2px]">
+              <div className="flex min-w-0 w-[200px] flex-col gap-[2px] sm:w-auto">
                 <h2
                   className="font-sexsmith text-[22px] font-normal leading-tight text-[#0F0F0F] sm:text-[28px]"
                   style={{ fontFamily: "'Sexsmith', serif", margin: 0 }}
@@ -77,7 +77,7 @@ export function Tools() {
                   {tool.name}
                 </h2>
                 <p
-                  className="text-[13px] leading-snug text-[#C7C7C7]"
+                  className="text-[13px] leading-snug text-[#C7C7C7] sm:whitespace-nowrap"
                   style={{ margin: 0 }}
                 >
                   {tool.description}
