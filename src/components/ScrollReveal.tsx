@@ -47,12 +47,7 @@ export function LoadFadeIn({
   ...rest
 }: ScrollRevealProps) {
   return (
-    <motion.div
-      className={`reveal-fade-in ${className ?? ""}`.trim()}
-      style={style}
-      {...loadFadeIn}
-      {...rest}
-    >
+    <motion.div className={className} style={style} {...loadFadeIn} {...rest}>
       {children}
     </motion.div>
   );
@@ -75,12 +70,7 @@ export function ScrollRevealH1({ children, className, style, ...rest }: HeadingP
 
 export function LoadFadeInH1({ children, className, style, ...rest }: HeadingProps) {
   return (
-    <motion.h1
-      className={`reveal-fade-in ${className ?? ""}`.trim()}
-      style={style}
-      {...loadFadeIn}
-      {...rest}
-    >
+    <motion.h1 className={className} style={style} {...loadFadeIn} {...rest}>
       {children}
     </motion.h1>
   );
