@@ -26,6 +26,7 @@ const personalProjectsData: PersonalProjectEntry[] = [
     name: "Аренда квартир по Москве",
     subtitle: "Бот-помощник",
     logo: "/bot_poiskzhilya.png",
+    href: "https://t.me/sashaanya_rooms_bot",
   },
 ];
 
