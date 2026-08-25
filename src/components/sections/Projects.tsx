@@ -20,7 +20,7 @@ function isCoarsePointerDevice() {
 const PROJECT_HERO_WIDTH = 470;
 const PROJECT_HERO_HEIGHT = 389;
 
-function ProjectCardContent({ project }: { project: Project }) {
+function ProjectCardContent({ project, index }: { project: Project; index: number }) {
   return (
     <>
       <motion.img
@@ -28,6 +28,8 @@ function ProjectCardContent({ project }: { project: Project }) {
         alt={project.heroAlt}
         width={PROJECT_HERO_WIDTH}
         height={PROJECT_HERO_HEIGHT}
+        loading={index === 0 ? "eager" : "lazy"}
+        decoding="async"
         whileHover={{ rotate: 10 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className="aspect-[470/389] h-auto w-full rounded-[24px] object-cover sm:rounded-[40px] lg:h-[389px] lg:w-[470px] lg:max-w-none lg:shrink-0"
@@ -82,7 +84,7 @@ function ProjectCardContent({ project }: { project: Project }) {
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const playClick = useButtonClickSound();
   const playHover = useProjectHoverSound();
 
@@ -114,7 +116,7 @@ function ProjectCard({ project }: { project: Project }) {
         }}
         onMouseLeave={() => setCursorViewHover(false)}
       >
-        <ProjectCardContent project={project} />
+        <ProjectCardContent project={project} index={index} />
       </Link>
     );
   }
@@ -127,7 +129,7 @@ function ProjectCard({ project }: { project: Project }) {
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 300, damping: 26 }}
     >
-      <ProjectCardContent project={project} />
+      <ProjectCardContent project={project} index={index} />
     </motion.article>
   );
 }
@@ -143,9 +145,9 @@ export function Projects() {
       </h2>
 
       <div className="flex w-full flex-col gap-0">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <ScrollReveal key={project.number} className="w-full">
-            <ProjectCard project={project} />
+            <ProjectCard project={project} index={index} />
           </ScrollReveal>
         ))}
       </div>

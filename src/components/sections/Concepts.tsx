@@ -464,6 +464,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
         <img
           src={concept.gif ?? concept.image}
           alt={concept.title}
+          loading="lazy"
+          decoding="async"
           className={mediaClass}
           style={moreMediaStyle}
         />
@@ -526,6 +528,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
       <img
         src={concept.image}
         alt={concept.title}
+        loading="lazy"
+        decoding="async"
         className={mediaClass}
         style={bentoMediaStyle}
       />
@@ -566,6 +570,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
         <img
           src={concept.image}
           alt={concept.title}
+          loading="lazy"
+          decoding="async"
           className={primaryImageClassName}
         />
       </PrimaryImageFrame>
@@ -576,6 +582,8 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
     <img
       src={concept.image}
       alt={concept.title}
+      loading="lazy"
+      decoding="async"
       className={mediaClassName}
     />
   );
