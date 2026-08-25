@@ -13,7 +13,7 @@ export const scrollReveal = {
 
 /** Только fade при первой загрузке (Hero, навбар и т.п.) */
 export const loadFadeIn = {
-  initial: { opacity: 1 },
+  initial: { opacity: 0 },
   animate: { opacity: 1 },
   transition: { duration: 0.6, ease: "easeOut" as const },
 };

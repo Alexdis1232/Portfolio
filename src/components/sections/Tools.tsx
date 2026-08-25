@@ -26,7 +26,7 @@ const tools: ToolItem[] = [
   },
   {
     name: "Rive",
-    description: "Создаю микроанимации",
+    description: "Создаю микроанимации для интерфейсов",
     number: "(03)",
     logo: "/rive.png",
   },
@@ -69,7 +69,7 @@ export function Tools() {
                   borderRadius: tool.iconRadius ?? 12,
                 }}
               />
-              <div className="flex min-w-0 w-[145px] flex-col gap-[2px]">
+              <div className="flex min-w-0 w-[200px] flex-col gap-[2px]">
                 <h2
                   className="font-sexsmith text-[22px] font-normal leading-tight text-[#0F0F0F] sm:text-[28px]"
                   style={{ fontFamily: "'Sexsmith', serif", margin: 0 }}
