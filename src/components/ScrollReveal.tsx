@@ -5,10 +5,10 @@ import type { ReactNode } from "react";
 
 /** Scale + fade при скролле */
 export const scrollReveal = {
-  initial: { opacity: 0, scale: 0.9, y: 16 },
-  whileInView: { opacity: 1, scale: 1, y: 0 },
-  viewport: { once: true, amount: 0.08 },
-  transition: { duration: 0.7, ease: "easeOut" as const },
+  initial: { opacity: 0, scale: 0.97 },
+  whileInView: { opacity: 1, scale: 1 },
+  viewport: { once: true, amount: 0.08, margin: "0px 0px -80px 0px" },
+  transition: { duration: 0.45, ease: "easeOut" as const },
 };
 
 /** Только fade при первой загрузке (Hero, навбар и т.п.) */
