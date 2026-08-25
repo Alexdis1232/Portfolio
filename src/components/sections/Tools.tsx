@@ -69,7 +69,7 @@ export function Tools() {
                   borderRadius: tool.iconRadius ?? 12,
                 }}
               />
-              <div className="flex min-w-0 flex-col gap-[2px]">
+              <div className="flex min-w-0 max-w-[220px] flex-col gap-[2px]">
                 <h2
                   className="font-sexsmith text-[22px] font-normal leading-tight text-[#0F0F0F] sm:text-[28px]"
                   style={{ fontFamily: "'Sexsmith', serif", margin: 0 }}
