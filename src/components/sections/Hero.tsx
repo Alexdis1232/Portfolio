@@ -11,6 +11,7 @@ export function Hero() {
             <div className="hero-video-inner h-[210px] w-[210px] sm:h-[250px] sm:w-[250px]">
               <video
                 src="/mevideo.mp4"
+                poster="/mevideo-poster.jpg"
                 autoPlay
                 loop
                 muted
