@@ -33,18 +33,20 @@ export function Hero() {
             <br />
             с 3 годами опыта
             <br />
-            в B2C и B2B продуктах:
+            в B2C и B2B продуктах
             <br />
-            E-commerce и PetTech.
+            и уклоном в работу
+            <br />
+            с AI-инструментами.
           </span>
           <span className="hidden sm:inline">
             Я Саша — Продуктовый дизайнер
             <br />
             mobile-first, с 3 годами опыта
             <br />
-            в B2C и B2B продуктах: E-commerce
+            в B2C и B2B продуктах и уклоном
             <br />
-            и PetTech.
+            в работу с AI-инструментами.
           </span>
         </LoadFadeInH1>
       </div>
