@@ -15,7 +15,7 @@ export const scrollReveal = {
 export const loadFadeIn = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  transition: { duration: 0.6, ease: "easeOut" as const },
+  transition: { duration: 0.3, ease: "easeOut" as const },
 };
 
 type ScrollRevealProps = HTMLMotionProps<"div"> & {
