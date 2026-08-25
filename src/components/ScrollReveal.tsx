@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 /** Scale + fade при скролле */
 export const scrollReveal = {
-  initial: { opacity: 1, scale: 0.96 },
+  initial: { opacity: 0, scale: 0.96 },
   whileInView: { opacity: 1, scale: 1 },
   viewport: { once: true, amount: 0.08 },
   transition: { duration: 0.6, ease: "easeOut" as const },
