@@ -14,6 +14,14 @@ const projectInfo = [
   { label: "Год", value: "©2025" },
 ];
 
+const resultItems = [
+  {
+    key: "errors",
+    label: "Пользовательские ошибки",
+    value: "-35%",
+  },
+];
+
 const contextBlocks = [
   {
     label: "Целевая аудитория:",
@@ -476,6 +484,50 @@ export function KabinetPvCaseStudy() {
           <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
             После отрисовки дизайна передала финальные макеты в разработку.
           </p>
+        </ScrollReveal>
+      </section>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Результаты
+        </ScrollRevealH2>
+
+        <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8">
+          <ScrollReveal className="w-full">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Перенос сценария создания претензий в мобильное приложение
+              позволил сотрудникам ПВЗ работать с претензиями не переключаясь
+              на десктоп. Пошаговый сценарий и разделение статусов сократили
+              время прохождения задачи и снизили количество пользовательских
+              ошибок на 35%.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        <ScrollReveal className="mt-10 sm:mt-12">
+          <div className="grid w-full grid-cols-2 gap-3">
+            {resultItems.map((item) => (
+              <div
+                key={item.key}
+                className="min-w-0 rounded-[20px] bg-[#F5F5F5] px-3 py-4 text-left sm:rounded-[24px] sm:px-6 sm:py-6"
+              >
+                <p className="text-[12px] leading-[1.4] text-[#0F0F0F] sm:text-[19px] sm:leading-[1.65]">
+                  {item.label}
+                </p>
+                <div className="mt-2 sm:mt-3">
+                  <span
+                    className="font-sexsmith text-[26px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+                    style={sexsmithStyle}
+                  >
+                    {item.value}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </ScrollReveal>
       </section>
 
