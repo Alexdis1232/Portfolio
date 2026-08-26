@@ -442,6 +442,9 @@ export function KabinetPvCaseStudy() {
             decoding="async"
             className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
           />
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Выбор количества товаров
+          </p>
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
@@ -478,6 +481,9 @@ export function KabinetPvCaseStudy() {
             decoding="async"
             className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
           />
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Количество черновиков
+          </p>
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
