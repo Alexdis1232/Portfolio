@@ -39,7 +39,7 @@ function MoreCasesLink() {
   return (
     <Link
       href="/projects/kabinetpv"
-      className="press-bounce flex h-[72px] w-full items-center justify-center gap-2 rounded-full bg-[#F0F0F0] text-[17px] tracking-[-0.02em] text-black no-underline transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96]"
+      className="press-bounce flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#F0F0F0] text-[13px] tracking-[-0.02em] text-black no-underline transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96] sm:h-[72px] sm:text-[18px]"
       onPointerDown={handlePointerDown}
       onMouseEnter={handleMouseEnter}
     >
