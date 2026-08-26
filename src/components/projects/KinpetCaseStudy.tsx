@@ -134,7 +134,7 @@ const resultItems = [
 export function KinpetCaseStudy() {
   return (
     <ZoomableArea>
-    <article className="pb-16 sm:pb-24">
+    <article className="pb-[19px] sm:pb-[44px]">
       <LoadFadeIn className="pt-[100px]">
         <img
           src="/kinpet.png"
