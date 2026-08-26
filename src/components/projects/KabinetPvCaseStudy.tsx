@@ -1,7 +1,75 @@
 "use client";
 
+import Link from "next/link";
+import { useCallback } from "react";
 import { LoadFadeIn, ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
 import { ZoomableArea } from "@/components/ZoomableArea";
+import { useButtonClickSound } from "@/hooks/useButtonClickSound";
+import { useProjectHoverSound } from "@/hooks/useProjectHoverSound";
+
+function isCoarsePointerDevice() {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: none), (pointer: coarse)").matches
+  );
+}
+
+const caseNavPillClass =
+  "press-bounce flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#F0F0F0] text-[13px] tracking-[-0.02em] text-black no-underline transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96] sm:h-[72px] sm:text-[18px]";
+
+const arrowIcon = (direction: "left" | "right") => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    {direction === "left" ? (
+      <path d="M19 12H5M11 6l-6 6 6 6" />
+    ) : (
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    )}
+  </svg>
+);
+
+function CaseNav() {
+  const playClick = useButtonClickSound();
+  const playHover = useProjectHoverSound();
+
+  const handlePointerDown = useCallback(
+    (event: React.PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      playClick();
+    },
+    [playClick],
+  );
+
+  const handleMouseEnter = useCallback(() => {
+    if (!isCoarsePointerDevice()) playHover();
+  }, [playHover]);
+
+  return (
+    <div className="flex w-full gap-3">
+      <Link
+        href="/projects/kinpet"
+        className={caseNavPillClass}
+        onPointerDown={handlePointerDown}
+        onMouseEnter={handleMouseEnter}
+      >
+        {arrowIcon("left")}
+        Назад
+      </Link>
+      <span className={`${caseNavPillClass} cursor-default opacity-60 hover:scale-100 active:scale-100`}>
+        Ещё кейсы
+        {arrowIcon("right")}
+      </span>
+    </div>
+  );
+}
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
@@ -94,7 +162,7 @@ const hypotheses = [
 export function KabinetPvCaseStudy() {
   return (
     <ZoomableArea>
-    <article className="pb-16 sm:pb-24">
+    <article className="pb-[19px] sm:pb-[44px]">
       <LoadFadeIn className="pt-[100px]">
         <img
           src="/kabinetpv.png"
@@ -537,6 +605,19 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
       </section>
 
+      <ScrollReveal
+        className="mt-16 sm:mt-20"
+        viewport={{ once: true, amount: 0.08 }}
+      >
+        <CaseNav />
+      </ScrollReveal>
+
+      <ScrollReveal
+        className="mt-8 flex justify-center sm:mt-10"
+        viewport={{ once: true, amount: 0.08 }}
+      >
+        <p className="text-[14px] text-[#C7C7C7]">Alexandra Antonyuk ♥ 2025</p>
+      </ScrollReveal>
     </article>
     </ZoomableArea>
   );
