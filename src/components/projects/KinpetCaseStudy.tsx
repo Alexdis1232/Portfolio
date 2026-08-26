@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useCallback } from "react";
 import {
   LoadFadeIn,
   ScrollReveal,
@@ -8,6 +10,55 @@ import {
 } from "@/components/ScrollReveal";
 import { KinpetKeysImage } from "@/components/projects/KinpetKeysImage";
 import { ZoomableArea } from "@/components/ZoomableArea";
+import { useButtonClickSound } from "@/hooks/useButtonClickSound";
+import { useProjectHoverSound } from "@/hooks/useProjectHoverSound";
+
+function isCoarsePointerDevice() {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: none), (pointer: coarse)").matches
+  );
+}
+
+function MoreCasesLink() {
+  const playClick = useButtonClickSound();
+  const playHover = useProjectHoverSound();
+
+  const handlePointerDown = useCallback(
+    (event: React.PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      playClick();
+    },
+    [playClick],
+  );
+
+  const handleMouseEnter = useCallback(() => {
+    if (!isCoarsePointerDevice()) playHover();
+  }, [playHover]);
+
+  return (
+    <Link
+      href="/projects/kabinetpv"
+      className="press-bounce flex h-[72px] w-full items-center justify-center gap-2 rounded-full bg-[#F0F0F0] text-[17px] tracking-[-0.02em] text-black no-underline transition-transform duration-200 hover:scale-[0.98] active:scale-[0.96]"
+      onPointerDown={handlePointerDown}
+      onMouseEnter={handleMouseEnter}
+    >
+      Ещё кейсы
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </svg>
+    </Link>
+  );
+}
 
 const KinpetBeforeAfterSlider = dynamic(
   () =>
@@ -430,6 +481,10 @@ export function KinpetCaseStudy() {
           </div>
         </ScrollReveal>
       </section>
+
+      <ScrollReveal className="mt-16 sm:mt-20">
+        <MoreCasesLink />
+      </ScrollReveal>
     </article>
     </ZoomableArea>
   );
