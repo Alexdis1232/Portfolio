@@ -482,11 +482,17 @@ export function KinpetCaseStudy() {
         </ScrollReveal>
       </section>
 
-      <ScrollReveal className="mt-16 sm:mt-20">
+      <ScrollReveal
+        className="mt-16 sm:mt-20"
+        viewport={{ once: true, amount: 0.08 }}
+      >
         <MoreCasesLink />
       </ScrollReveal>
 
-      <ScrollReveal className="mt-8 flex justify-center sm:mt-10">
+      <ScrollReveal
+        className="mt-8 flex justify-center sm:mt-10"
+        viewport={{ once: true, amount: 0.08 }}
+      >
         <p className="text-[14px] text-[#C7C7C7]">Alexandra Antonyuk ♥ 2025</p>
       </ScrollReveal>
     </article>
