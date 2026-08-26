@@ -471,6 +471,12 @@ export function KabinetPvCaseStudy() {
             className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
           />
         </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            После отрисовки дизайна передала финальные макеты в разработку.
+          </p>
+        </ScrollReveal>
       </section>
 
     </article>
