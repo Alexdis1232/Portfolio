@@ -381,17 +381,7 @@ export function KabinetPvCaseStudy() {
             Черновики
           </p>
         </ScrollReveal>
-      </section>
-
-      <section className="mt-16 sm:mt-20">
-        <ScrollRevealH2
-          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
-          style={sexsmithStyle}
-        >
-          Юзабилити-тестирование
-        </ScrollRevealH2>
-
-        <ScrollReveal className="mt-6 sm:mt-8">
+        <ScrollReveal className="mt-12 sm:mt-16">
           <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
             Следующим этапом было юзабилити-тестирование. Провела
             модерируемое юзабилити-тестирование с 7 респондентами. Все
