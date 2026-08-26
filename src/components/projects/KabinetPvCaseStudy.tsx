@@ -369,13 +369,23 @@ export function KabinetPvCaseStudy() {
         <ScrollReveal className={textToImageGap}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            src="/chernoviki%20mobilka.png"
+            alt="Кабинет ПВ — вкладка черновиков в списке претензий"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/chernoviki.png"
             alt="Кабинет ПВ — вкладка черновиков в списке претензий"
             width={1780}
             height={1070}
             loading="lazy"
             decoding="async"
-            className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
           />
           <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
             Черновики
@@ -406,13 +416,23 @@ export function KabinetPvCaseStudy() {
         <ScrollReveal className={textToImageGap}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            src="/do%20posle%20caunter%20mobilka.png"
+            alt="Кабинет ПВ — счётчик количества товара до и после"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/do%20posle%20caunter.png"
             alt="Кабинет ПВ — счётчик количества товара до и после"
             width={1780}
             height={1070}
             loading="lazy"
             decoding="async"
-            className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
           />
         </ScrollReveal>
 
@@ -432,13 +452,23 @@ export function KabinetPvCaseStudy() {
         <ScrollReveal className={textToImageGap}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            src="/do%20posle%20chernoviki%20mobilka.png"
+            alt="Кабинет ПВ — бейдж со счётчиком черновиков до и после"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/do%20posle%20chernoviki.png"
             alt="Кабинет ПВ — бейдж со счётчиком черновиков до и после"
             width={1780}
             height={1070}
             loading="lazy"
             decoding="async"
-            className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
           />
         </ScrollReveal>
       </section>
