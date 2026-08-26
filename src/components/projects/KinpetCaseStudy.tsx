@@ -485,6 +485,10 @@ export function KinpetCaseStudy() {
       <ScrollReveal className="mt-16 sm:mt-20">
         <MoreCasesLink />
       </ScrollReveal>
+
+      <ScrollReveal className="mt-8 flex justify-center sm:mt-10">
+        <p className="text-[14px] text-[#C7C7C7]">Alexandra Antonyuk ♥ 2025</p>
+      </ScrollReveal>
     </article>
     </ZoomableArea>
   );
