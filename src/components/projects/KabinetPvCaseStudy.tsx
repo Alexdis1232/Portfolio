@@ -353,6 +353,34 @@ export function KabinetPvCaseStudy() {
             Сохранение в черновики
           </p>
         </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Разделение статусов
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            Чтобы сотрудник сразу понимал какие претензии требуют действия —
+            разделила список на две вкладки: черновики и утверждённые. Это
+            убирает необходимость просматривать всё подряд в поисках
+            незавершённых записей.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/chernoviki.png"
+            alt="Кабинет ПВ — вкладка черновиков в списке претензий"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+          />
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Черновики
+          </p>
+        </ScrollReveal>
       </section>
 
     </article>
