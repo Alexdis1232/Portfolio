@@ -383,6 +383,76 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
       </section>
 
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Юзабилити-тестирование
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            Следующим этапом было юзабилити-тестирование. Провела
+            модерируемое юзабилити-тестирование с 7 респондентами. Все
+            участники выполняли задачи фактически без ошибок, однако тест
+            помог подсветить точки для улучшения. По результатам внесла два
+            изменения:
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Размер каунтера
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            Сотрудники иногда промахивались по кнопкам — увеличила размер
+            степпера и добавила отображение максимально допустимого
+            количества товара, чтобы сразу было понятно в каких пределах
+            можно изменять значение.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/do%20posle%20caunter.png"
+            alt="Кабинет ПВ — счётчик количества товара до и после"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+          />
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Счётчик черновиков
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            В ходе теста стало понятно что сотрудники не всегда замечали
+            незавершённые претензии — вкладка «Черновики» не давала никакого
+            сигнала. Добавила бейдж с количеством черновиков чтобы сотрудник
+            сразу видел есть ли незавершённые претензии и не забывал
+            вернуться к ним.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/do%20posle%20chernoviki.png"
+            alt="Кабинет ПВ — бейдж со счётчиком черновиков до и после"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:rounded-[24px]"
+          />
+        </ScrollReveal>
+      </section>
+
     </article>
     </ZoomableArea>
   );
