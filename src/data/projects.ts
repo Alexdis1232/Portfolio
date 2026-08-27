@@ -16,6 +16,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "faberlic",
     heroImage: "/faberlichero.png",
     heroAlt: "Faberlic project preview",
     logo: "/faberlic.png",
