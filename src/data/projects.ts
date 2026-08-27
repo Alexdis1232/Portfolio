@@ -36,11 +36,11 @@ export const projects: Project[] = [
     logo: "/kabinetpv.png",
     company: "Кабинет ПВ",
     number: "(02)",
-    title: "Как редизайн сценария снял нагрузку сотрудникам на 75%",
+    title: "Как редизайн сценария снял нагрузку сотрудникам на 35%",
     info: [
       { label: "Год", value: "©2025" },
       { label: "Девайс", value: "Mobile" },
-      { label: "Направление", value: "B2E" },
+      { label: "Направление", value: "B2B" },
     ],
   },
   {

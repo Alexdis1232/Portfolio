@@ -77,7 +77,7 @@ const textToImageGap = "mt-10 sm:mt-12";
 
 const projectInfo = [
   { label: "Роль", value: "Продуктовый дизайнер" },
-  { label: "Направление", value: "B2E" },
+  { label: "Направление", value: "B2B" },
   { label: "Формат", value: "mobile" },
   { label: "Год", value: "©2025" },
 ];
