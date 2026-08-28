@@ -63,10 +63,15 @@ function CaseNav() {
         {arrowIcon("left")}
         Назад
       </Link>
-      <span className={`${caseNavPillClass} cursor-default opacity-60 hover:scale-100 active:scale-100`}>
+      <Link
+        href="/projects/faberlic"
+        className={caseNavPillClass}
+        onPointerDown={handlePointerDown}
+        onMouseEnter={handleMouseEnter}
+      >
         Ещё кейсы
         {arrowIcon("right")}
-      </span>
+      </Link>
     </div>
   );
 }
