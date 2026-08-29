@@ -148,8 +148,8 @@ export function FaberlicCaseStudy() {
           <img
             src="/keys%20faberlic.png"
             alt="Faberlic — ключевые экраны мобильного приложения"
-            width={890}
-            height={536}
+            width={1780}
+            height={1069}
             loading="lazy"
             decoding="async"
             className="block h-full w-full object-cover object-center sm:h-auto"
@@ -467,7 +467,7 @@ export function FaberlicCaseStudy() {
             src="/onbording.png"
             alt="Faberlic — экраны онбординга"
             width={1780}
-            height={1070}
+            height={1216}
             loading="lazy"
             decoding="async"
             className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
