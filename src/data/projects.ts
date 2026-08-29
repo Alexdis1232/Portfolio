@@ -54,7 +54,7 @@ export const projects: Project[] = [
     info: [
       { label: "Год", value: "©2024" },
       { label: "Девайс", value: "Desktop" },
-      { label: "Направление", value: "B2C" },
+      { label: "Направление", value: "C2C, B2C" },
     ],
   },
 ];

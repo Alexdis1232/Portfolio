@@ -78,7 +78,7 @@ const paragraphStackGap = "gap-3";
 
 const projectInfo = [
   { label: "Роль", value: "Продуктовый дизайнер" },
-  { label: "Направление", value: "B2C" },
+  { label: "Направление", value: "C2C, B2C" },
   { label: "Формат", value: "desktop" },
   { label: "Год", value: "©2024" },
 ];
