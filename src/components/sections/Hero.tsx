@@ -36,9 +36,9 @@ export function Hero() {
             <br />
             продуктах в сферах
             <br />
-            e-Commerce и Pettech, с уклоном
+            e-Commerce и Pettech, с фокусом
             <br />
-            в работу с AI-инструментами.
+            на AI-инструменты.
           </span>
           <span className="hidden sm:inline">
             Я Саша — Продуктовый дизайнер
@@ -47,7 +47,7 @@ export function Hero() {
             <br />
             продуктах в сферах e-Commerce и Pettech,
             <br />
-            с уклоном в работу с AI-инструментами.
+            с фокусом на AI-инструменты.
           </span>
         </LoadFadeInH1>
       </div>
