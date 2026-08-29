@@ -36,7 +36,7 @@ export function Hero() {
             <br />
             продуктах в сферах
             <br />
-            eCom и Petcare, с уклоном
+            e-Commerce и Pettech, с уклоном
             <br />
             в работу с AI-инструментами.
           </span>
@@ -45,7 +45,7 @@ export function Hero() {
             <br />
             с 3 годами опыта в B2C и B2B
             <br />
-            продуктах в сферах eCom и Petcare,
+            продуктах в сферах e-Commerce и Pettech,
             <br />
             с уклоном в работу с AI-инструментами.
           </span>
