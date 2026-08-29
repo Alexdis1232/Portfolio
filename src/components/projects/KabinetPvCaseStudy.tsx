@@ -559,6 +559,44 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Быстрое утверждение из списка
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            Чтобы сотрудник мог обработать несколько претензий быстрее —
+            добавила контекстное меню по нажатию на три точки прямо в
+            карточке черновика. Теперь не нужно открывать каждую претензию по
+            отдельности — утвердить или удалить можно сразу из списка.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/utverditchernovik%20mobilka.png"
+            alt="Кабинет ПВ — быстрое утверждение черновика из списка"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/utverditchernovik.png"
+            alt="Кабинет ПВ — быстрое утверждение черновика из списка"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
+          />
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Быстрое утверждение
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
           <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
             После отрисовки дизайна передала финальные макеты в разработку.
           </p>
