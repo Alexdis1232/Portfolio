@@ -30,24 +30,24 @@ export function Hero() {
           <span className="sm:hidden">
             Я Саша — Продуктовый
             <br />
-            дизайнер mobile-first,
+            дизайнер с 3 годами
             <br />
-            с 3 годами опыта
+            опыта в B2C и B2B
             <br />
-            в B2C и B2B продуктах
+            продуктах в сферах
             <br />
-            и уклоном в работу
+            eCom и Petcare, с уклоном
             <br />
-            с AI-инструментами.
+            в работу с AI-инструментами.
           </span>
           <span className="hidden sm:inline">
             Я Саша — Продуктовый дизайнер
             <br />
-            mobile-first, с 3 годами опыта
+            с 3 годами опыта в B2C и B2B
             <br />
-            в B2C и B2B продуктах и уклоном
+            продуктах в сферах eCom и Petcare,
             <br />
-            в работу с AI-инструментами.
+            с уклоном в работу с AI-инструментами.
           </span>
         </LoadFadeInH1>
       </div>
