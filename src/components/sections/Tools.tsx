@@ -19,22 +19,22 @@ const tools: ToolItem[] = [
     logo: "/figma.png",
   },
   {
+    name: "Claude",
+    description: "Использую для вайбкодинга и тестирования",
+    number: "(02)",
+    logo: "/claude.png",
+  },
+  {
     name: "Protopie",
     description: "Делаю прототипы для тестирования макетов",
-    number: "(02)",
+    number: "(03)",
     logo: "/protopie.png",
   },
   {
     name: "Rive",
     description: "Создаю микроанимации для интерфейсов",
-    number: "(03)",
-    logo: "/rive.png",
-  },
-  {
-    name: "Claude",
-    description: "Использую для вайбкодинга и тестирования",
     number: "(04)",
-    logo: "/claude.png",
+    logo: "/rive.png",
   },
 ];
 
