@@ -362,8 +362,7 @@ export function KabinetPvCaseStudy() {
           <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
             Сценарий был разбит на отдельные шаги чтобы снизить когнитивную
             нагрузку — сотрудник решает одну задачу за раз и не держит в голове
-            всю форму целиком. Претензии разделены по статусам чтобы было понятно
-            что требует действия прямо сейчас.
+            всю форму целиком.
           </p>
         </ScrollReveal>
 
@@ -587,7 +586,7 @@ export function KabinetPvCaseStudy() {
         </div>
 
         <ScrollReveal className="mt-10 sm:mt-12">
-          <div className="grid w-full grid-cols-2 gap-3">
+          <div className="grid w-full grid-cols-1 gap-3">
             {resultItems.map((item) => (
               <div
                 key={item.key}
