@@ -22,7 +22,7 @@ export const projects: Project[] = [
     logo: "/faberlic.png",
     company: "Faberlic",
     number: "(01)",
-    title: "Как замотивировать пользователей повышать скидку",
+    title: "Как замотивировать пользователей повышать скидку на заказ",
     info: [
       { label: "Год", value: "©2025" },
       { label: "Девайс", value: "Mobile" },
