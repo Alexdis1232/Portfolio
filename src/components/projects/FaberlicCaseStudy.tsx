@@ -65,6 +65,40 @@ const projectInfo = [
   { label: "Год", value: "©2025" },
 ];
 
+const contextBlocks = [
+  {
+    label: "Целевая аудитория:",
+    text: "Консультанты, покупатели.",
+  },
+  {
+    label: "Что делала:",
+    text: "Работала над скидками заказов в личном кабинете.",
+  },
+  {
+    label: "Проблема:",
+    text: "Faberlic перешла на новую систему дифференцированных скидок, но в приложении не было никакого инструмента который объяснял бы механику и показывал прогресс — консультант не понимал как работает система и что нужно сделать чтобы получить скидку выше.",
+  },
+  {
+    label: "Задача:",
+    text: "Спроектировать с нуля как консультант видит свой прогресс и понимает сколько нужно набрать до следующего уровня 20–26%.",
+  },
+  {
+    label: "Цель:",
+    text: "Завлечь консультантов в новую систему скидок и мотивировать делать больше заказов за период — чтобы достигать следующего уровня скидки и увеличивать средний чек.",
+  },
+];
+
+const audienceInsights = [
+  "Когда я планирую заказ в новом периоде, я хочу понимать сколько мне осталось до следующего уровня скидки, чтобы принять решение — добирать товары.",
+  "Когда я делаю заказы в периоде, я хочу видеть свой текущий прогресс, чтобы в следующем периоде сохранить скидку и не снизить её от начального уровня.",
+];
+
+const progressHypotheses = [
+  "Если вынести прогресс по баллам на главный экран, тогда консультант будет чаще проверять сколько осталось → потому что информация доступна без лишних действий.",
+  "Если показать баллы и процент скидки в одном блоке, тогда пользователь сразу поймёт связь между своими действиями и скидкой → потому что не нужно сопоставлять данные из разных мест.",
+  "Если показать все уровни скидки на одной шкале (20% → 26% → VIP), тогда пользователь будет знать к чему стремиться, потому что видит полную картину а не только текущий уровень.",
+];
+
 export function FaberlicCaseStudy() {
   return (
     <ZoomableArea>
@@ -109,6 +143,231 @@ export function FaberlicCaseStudy() {
       </LoadFadeIn>
 
       <section className="mt-[52px] sm:mt-[68px]">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Контекст
+        </ScrollRevealH2>
+
+        <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
+          {contextBlocks.map((block) => (
+            <ScrollReveal key={block.label} className="w-full">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+                {block.label}
+              </p>
+              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+                {block.text}
+              </p>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Исследование
+        </ScrollRevealH2>
+
+        <div className="mt-6 flex w-full flex-col gap-8 sm:mt-8 sm:gap-10">
+          <ScrollReveal className="w-full">
+            <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+              Анализ аудитории
+            </p>
+            <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Приложением пользуются две аудитории — консультанты и обычные
+              покупатели. Консультанты думают как предприниматели: им важно
+              понять при каком объёме заказа они получат максимальную выгоду.
+              Покупатели хотят просто купить дешевле. Для обеих аудиторий
+              экран со скидками — инструмент мотивации, а не просто
+              информация.
+            </p>
+            <p className="mt-4 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Далее мне нужно было определить в какой момент и зачем
+              консультанту нужна информация о прогрессе. Это и даст понимание
+              как должен выглядеть экран:
+            </p>
+          </ScrollReveal>
+
+          <div className="flex w-full flex-col gap-6 sm:gap-8">
+            {audienceInsights.map((text) => (
+              <ScrollReveal
+                key={text}
+                className="flex w-full items-start gap-4 sm:gap-5"
+              >
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/lump.png"
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
+                  />
+                </div>
+                <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+                  {text}
+                </p>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal className="w-full">
+            <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+              Анализ рынка
+            </p>
+            <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Изучила непрямых конкурентов — Wildberries, Ozon, Яндекс
+              Маркет: персональные скидки есть, но скрыты от пользователя и
+              непрозрачны. Рассмотрела прямого конкурента Oriflame — механика
+              скидки за период такая же, но баллы и процент скидки разнесены
+              по разным местам, связь между ними не очевидна.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal className="w-full">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              Приоритизировали по усилиям разработки и бизнес-ценности
+              гипотезы и выбрали 3 для реализации:
+            </p>
+          </ScrollReveal>
+
+          <div className="flex w-full flex-col gap-6 sm:gap-8">
+            {progressHypotheses.map((text) => (
+              <ScrollReveal
+                key={text}
+                className="flex w-full items-start gap-4 sm:gap-5"
+              >
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/lump.png"
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
+                  />
+                </div>
+                <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+                  {text}
+                </p>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Решение
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Дизайн. Юзабилити тест
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            Отрисовала итоговые 2 варианта для юзабилити теста с двумя
+            вариантами отображения скидки. По результатам пользователи
+            выбрали <span className="font-bold">Вариант А</span> — линейная
+            шкала с прогрессом оказалась понятнее: сразу видно где ты
+            находишься и сколько осталось до следующего уровня.{" "}
+            <span className="font-bold">Вариант Б</span> воспринимался как
+            набор отдельных кликабельных элементов — чтобы узнать сколько
+            баллов осталось, нужно было открывать шторку через «Подробнее»,
+            что создавало лишний шаг.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/AB%20test%20progress%20mobilka.png"
+            alt="Faberlic — юзабилити тест вариантов прогресса скидки"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/AB%20test%20progress.png"
+            alt="Faberlic — юзабилити тест вариантов прогресса скидки"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
+          />
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Варианты юзабилити теста
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Итоговый вариант
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            На основе результатов теста доработала Вариант А — добавила
+            шторку с детальной информацией: текущая скидка, количество
+            набранных баллов и условие для перехода на следующий уровень.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/skidki%20progress%20mobilka.png"
+            alt="Faberlic — итоговый экран прогресса скидки"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/skidki%20progress.png"
+            alt="Faberlic — итоговый экран прогресса скидки"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
+          />
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Итоговый вариант
+          </p>
+        </ScrollReveal>
+      </section>
+
+      <section className="mt-16 sm:mt-20">
+        <ScrollRevealH2
+          className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
+          style={sexsmithStyle}
+        >
+          Результаты
+        </ScrollRevealH2>
+
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            Функционал находится в продакшене, данные продолжают собираться.
+            Ключевой метрикой успеха будет рост доли пользователей которые
+            достигают скидки 26% за период — это покажет что механика
+            прогресса мотивирует делать больше заказов.
+          </p>
+        </ScrollReveal>
+      </section>
+
+      <section className="mt-16 sm:mt-20">
         <ScrollRevealH2
           className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
           style={sexsmithStyle}
