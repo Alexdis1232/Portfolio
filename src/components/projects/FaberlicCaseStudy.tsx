@@ -142,6 +142,21 @@ export function FaberlicCaseStudy() {
         </div>
       </LoadFadeIn>
 
+      <ScrollReveal className={textToImageGap}>
+        <div className="aspect-square overflow-hidden rounded-[24px] sm:aspect-auto sm:rounded-[40px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/keys%20faberlic.png"
+            alt="Faberlic — ключевые экраны мобильного приложения"
+            width={890}
+            height={536}
+            loading="lazy"
+            decoding="async"
+            className="block h-full w-full object-cover object-center sm:h-auto"
+          />
+        </div>
+      </ScrollReveal>
+
       <section className="mt-[52px] sm:mt-[68px]">
         <ScrollRevealH2
           className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
@@ -418,6 +433,47 @@ export function FaberlicCaseStudy() {
           />
           <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
             Личные данные
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Онбординг
+          </p>
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+            Перед проектированием провела быстрый опрос среди консультантов в
+            группе Telegram — спросила какие возможности приложения новички
+            узнают слишком поздно. На основе ответов отобрала три ключевых
+            момента и оформила их в онбординг-экраны. Минимум текста — только
+            самое важное, чтобы не перегружать пользователя с первых шагов. По
+            итогу метрика Time on Screen составила 4 секунды, что говорит о
+            заинтересованности пользователей.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/onbording%20mobilka.png"
+            alt="Faberlic — экраны онбординга"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/onbording.png"
+            alt="Faberlic — экраны онбординга"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
+          />
+          <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
+            Онбординг
           </p>
         </ScrollReveal>
 
