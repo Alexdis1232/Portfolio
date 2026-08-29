@@ -586,7 +586,7 @@ export function KabinetPvCaseStudy() {
             src="/utverditchernovik.png"
             alt="Кабинет ПВ — быстрое утверждение черновика из списка"
             width={1780}
-            height={1070}
+            height={1216}
             loading="lazy"
             decoding="async"
             className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
