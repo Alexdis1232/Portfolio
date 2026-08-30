@@ -22,7 +22,7 @@ export const projects: Project[] = [
     logo: "/faberlic.png",
     company: "Faberlic",
     number: "(01)",
-    title: "Как привлечь пользователей делать больше заказов персональной скидкой",
+    title: "Как привлекла пользователей делать больше заказов персональной скидкой",
     info: [
       { label: "Год", value: "©2025" },
       { label: "Девайс", value: "Mobile" },
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     logo: "/kinpet.png",
     company: "Kinpet",
     number: "(03)",
-    title: "Увеличение конверсии на 8% в подбор питомца",
+    title: "Как увеличила конверсию на 8% в подбор питомца",
     info: [
       { label: "Год", value: "©2024" },
       { label: "Девайс", value: "Desktop" },
