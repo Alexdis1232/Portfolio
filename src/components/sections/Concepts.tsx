@@ -183,22 +183,22 @@ type ConceptCard = {
 };
 
 const primaryConcepts: ConceptCard[] = [
-  { image: "/01.png", title: "AI Outfits", number: "(01)", subtitle: "Screen" },
+  { image: "/01.webp", title: "AI Outfits", number: "(01)", subtitle: "Screen" },
   {
-    image: "/02.png",
+    image: "/02.webp",
     title: "Smart navigator",
     number: "(02)",
     subtitle: "Screen",
   },
-  { image: "/03.png", title: "Meet Point", number: "(03)", subtitle: "Screen" },
+  { image: "/03.webp", title: "Meet Point", number: "(03)", subtitle: "Screen" },
   {
-    image: "/04.png",
+    image: "/04.webp",
     title: "Quick Trip",
     number: "(04)",
     subtitle: "Screen",
   },
   {
-    image: "/05.png",
+    image: "/05.webp",
     title: "Discover places",
     number: "(05)",
     subtitle: "Screen",
@@ -225,7 +225,7 @@ const bentoConcepts: ConceptCard[] = [
     bento: "square",
   },
   {
-    image: "/09.png",
+    image: "/09.webp",
     title: "Language Coach",
     number: "(09)",
     subtitle: "Screen",
@@ -246,7 +246,7 @@ const bentoByNumber = Object.fromEntries(
 
 const moreConcepts: ConceptCard[] = [
   {
-    image: "/10.png",
+    image: "/10.webp",
     title: "Smart Home",
     number: "(10)",
     subtitle: "Screen",
@@ -274,7 +274,7 @@ const moreConcepts: ConceptCard[] = [
     frame: "square",
   },
   {
-    image: "/14.png",
+    image: "/14.webp",
     title: "League of Legends landing page",
     number: "(14)",
     subtitle: "Screen",

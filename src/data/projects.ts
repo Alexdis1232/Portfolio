@@ -16,9 +16,9 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    heroImage: "/faberlichero.png",
+    heroImage: "/faberlichero.webp",
     heroAlt: "Faberlic project preview",
-    logo: "/faberlic.png",
+    logo: "/faberlic.webp",
     company: "Faberlic",
     number: "(01)",
     title: "Application for order processing and business management",
@@ -30,9 +30,9 @@ export const projects: Project[] = [
   },
   {
     slug: "kabinetpv",
-    heroImage: "/kabinetpvhero.png",
+    heroImage: "/kabinetpvhero.webp",
     heroAlt: "Кабинет ПВ project preview",
-    logo: "/kabinetpv.png",
+    logo: "/kabinetpv.webp",
     company: "Кабинет ПВ",
     number: "(02)",
     title: "Как редизайн сценария снял нагрузку сотрудникам на 75%",
@@ -44,9 +44,9 @@ export const projects: Project[] = [
   },
   {
     slug: "kinpet",
-    heroImage: "/kinpethero.png",
+    heroImage: "/kinpethero.webp",
     heroAlt: "Kinpet project preview",
-    logo: "/kinpet.png",
+    logo: "/kinpet.webp",
     company: "Kinpet",
     number: "(03)",
     title: "Как мы повысили конверсию в подбор питомца на 8%",

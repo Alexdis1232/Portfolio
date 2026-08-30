@@ -81,7 +81,7 @@ export function KinpetCaseStudy() {
     <article className="pb-16 sm:pb-24">
       <LoadFadeIn className="pt-[100px]">
         <img
-          src="/kinpet.png"
+          src="/kinpet.webp"
           alt="Kinpet"
           width={80}
           height={80}
@@ -146,7 +146,7 @@ export function KinpetCaseStudy() {
       <ScrollReveal className="mt-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/before.png"
+          src="/before.webp"
           alt="Kinpet — главная до редизайна"
           width={890}
           height={536}
@@ -199,7 +199,7 @@ export function KinpetCaseStudy() {
       <ScrollReveal className={textToImageGap}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/interview.png"
+          src="/interview.webp"
           alt="Ответы пользователей на глубинных интервью"
           width={890}
           height={536}
@@ -235,7 +235,7 @@ export function KinpetCaseStudy() {
         <div className="overflow-hidden rounded-[24px] border border-gray-divider sm:rounded-[40px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/opros.png"
+            src="/opros.webp"
             alt="Результаты опроса — на что ориентируются при поиске питомца"
             width={890}
             height={536}

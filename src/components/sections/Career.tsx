@@ -16,7 +16,7 @@ const careerData: CareerEntry[] = [
     years: "2025-Сейчас",
     role: "Продуктовый дизайнер",
     platform: "mobile",
-    logo: "/faberlic.png",
+    logo: "/faberlic.webp",
   },
   {
     company: "AGIMA",

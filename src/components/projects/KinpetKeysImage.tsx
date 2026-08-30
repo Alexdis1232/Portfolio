@@ -1,4 +1,4 @@
-const KINPET_KEYS_SRC = "/kinpetkeys.png?v=2";
+const KINPET_KEYS_SRC = "/kinpetkeys.webp";
 
 type KinpetKeysImageProps = {
   className?: string;

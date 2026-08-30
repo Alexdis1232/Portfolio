@@ -15,7 +15,7 @@ export function PhotoCollage() {
       style={{ transformOrigin: "center" }}
     >
       <img
-        src="/collageblock.jpg?v=6"
+        src="/collageblock.webp"
         alt=""
         loading="eager"
         decoding="async"
