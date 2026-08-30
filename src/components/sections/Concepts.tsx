@@ -729,8 +729,8 @@ function ConceptsMobileLayout() {
         <ConceptCardWrapper concept={primaryByNumber["(03)"]} mobileCentered={false} />
         <ConceptCardWrapper concept={moreByNumber["(12)"]} mobileCentered={false} />
 
-        {/* 5 ряд: Voice assistant (11) под Meet Point + Smart Home (10) */}
-        <ConceptCardWrapper concept={moreByNumber["(11)"]} mobileCentered={false} />
+        {/* 5 ряд: Vita (13) под Meet Point + Smart Home (10) */}
+        <ConceptCardWrapper concept={moreByNumber["(13)"]} mobileCentered={false} />
         <ConceptCardWrapper
           concept={moreByNumber["(10)"]}
           mobileCentered={false}
@@ -796,7 +796,7 @@ function ConceptsDesktopLayout() {
             mobileCentered={false}
           />
           <ConceptCardWrapper
-            concept={moreByNumber["(13)"]}
+            concept={moreByNumber["(11)"]}
             mobileCentered={false}
             className="self-start"
           />
@@ -804,7 +804,7 @@ function ConceptsDesktopLayout() {
         <div className="flex min-w-0 flex-col gap-6">
           <div className="grid grid-cols-2 gap-6">
             <ConceptCardWrapper
-              concept={moreByNumber["(11)"]}
+              concept={moreByNumber["(13)"]}
               mobileCentered={false}
               className="self-start"
             />
