@@ -146,13 +146,23 @@ export function FaberlicCaseStudy() {
         <div className="aspect-square overflow-hidden rounded-[24px] sm:aspect-auto sm:rounded-[40px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/keys%20faberlic.png"
+            src="/faberlic%20keys%20mobilka.png"
             alt="Faberlic — ключевые экраны мобильного приложения"
-            width={1780}
-            height={1069}
+            width={1080}
+            height={894}
             loading="lazy"
             decoding="async"
-            className="block h-full w-full object-cover object-center sm:h-auto"
+            className="block h-full w-full object-cover object-center sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/faberlic%20keys.png"
+            alt="Faberlic — ключевые экраны мобильного приложения"
+            width={1780}
+            height={1070}
+            loading="lazy"
+            decoding="async"
+            className="hidden h-auto w-full object-cover object-center sm:block"
           />
         </div>
       </ScrollReveal>
