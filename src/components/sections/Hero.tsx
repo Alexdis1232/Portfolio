@@ -36,7 +36,7 @@ export function Hero() {
             <br />
             продуктах в сферах
             <br />
-            e-Commerce и Pettech, с фокусом
+            e-Commerce и Pettech, с фокусом
             <br />
             на AI-инструменты.
           </span>
@@ -47,7 +47,7 @@ export function Hero() {
             <br />
             продуктах в сферах e-Commerce и Pettech,
             <br />
-            с фокусом на AI-инструменты.
+            с фокусом на AI-инструменты.
           </span>
         </LoadFadeInH1>
       </div>
