@@ -153,7 +153,7 @@ export function KinpetCaseStudy() {
               Сервис Kinpet
             </h1>
 
-            <p className="mt-6 max-w-[640px] text-[15px] leading-[1.65] text-[#848484]">
+            <p className="mt-6 max-w-[640px] text-[15px] leading-[1.65] text-[#6D6868]">
               Kinpet — веб-сервис, где публикуют объявления о продаже собак и
               кошек, а также отдают питомцев бесплатно в добрые руки. С широким
               выбором пород и возрастов из любого уголка России.
@@ -164,7 +164,7 @@ export function KinpetCaseStudy() {
             {projectInfo.map((item) => (
               <div key={item.label}>
                 <p className="text-[12px] text-[#C7C7C7]">{item.label}</p>
-                <p className="mt-1 text-[15px] leading-snug text-[#848484]">
+                <p className="mt-1 text-[15px] leading-snug text-[#6D6868]">
                   {item.value}
                 </p>
               </div>
@@ -191,7 +191,7 @@ export function KinpetCaseStudy() {
               <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -224,7 +224,7 @@ export function KinpetCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="w-full text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+          <p className="w-full text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
             Чтобы понять, почему пользователи уходят с первого экрана поиска, я
             провела{" "}
             <span className="font-bold">6 глубинных интервью</span> с целевой
@@ -245,7 +245,7 @@ export function KinpetCaseStudy() {
                 className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
               />
             </div>
-            <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+            <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
               {text}
             </p>
           </ScrollReveal>
@@ -270,7 +270,7 @@ export function KinpetCaseStudy() {
 
       <section className={`mt-[44px] flex w-full flex-col ${paragraphStackGap} sm:mt-[60px]`}>
         <ScrollReveal className="w-full">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
             Далее я провела{" "}
             <span className="font-bold">количественный немодерируемый опрос</span>
             , чтобы выяснить: на что пользователи в первую очередь
@@ -279,7 +279,7 @@ export function KinpetCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="w-full">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
             Опрос показал, что кроме типа питомца и города, 67% пользователей
             ориентируются на цену, а 48% — на возраст, что играет ключевую
             роль при выборе питомца.
@@ -307,7 +307,7 @@ export function KinpetCaseStudy() {
 
       <section className="mt-[44px] flex w-full flex-col gap-8 sm:mt-[60px] sm:gap-10">
         <ScrollReveal className="w-full">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
             На основе всех данных составила{" "}
             <span className="font-bold">гипотезы:</span>
           </p>
@@ -324,7 +324,7 @@ export function KinpetCaseStudy() {
                 className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
               />
             </div>
-            <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+            <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
               {text}
             </p>
           </ScrollReveal>
@@ -346,7 +346,7 @@ export function KinpetCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-4 sm:mt-6">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
             Был пересобран первый экран так, чтобы пользователь мог сразу задать
             нужный контекст поиска. Добавили фильтр — чтобы пользователь сразу
             мог заложить нужные ему параметры, вывели в поиск тип объявления,
@@ -377,7 +377,7 @@ export function KinpetCaseStudy() {
           <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Подбор питомца
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#848484] sm:mt-6 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Для пользователей, не определившихся с выбором, был добавлен сценарий
             «Подбор питомца», который снижает барьер входа в поиск, помогая
             сформировать критерии и перейти к просмотру объявлений.
@@ -402,7 +402,7 @@ export function KinpetCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
             Таким образом, пользователь пошагово формирует запрос с помощью
             подсказок и без необходимости принимать сложные решения на старте.
             После прохождения опроса он попадает на страницу с релевантными
@@ -421,14 +421,14 @@ export function KinpetCaseStudy() {
 
         <div className={`mt-6 flex w-full flex-col ${paragraphStackGap} sm:mt-8`}>
           <ScrollReveal className="w-full">
-            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
               Спустя месяц после внедрения изменений были собраны данные
               продуктовой аналитики для оценки эффективности решения.
             </p>
           </ScrollReveal>
 
           <ScrollReveal className="w-full">
-            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
               Пересобрав точку входа в поиск мы снизили Drop-off Rate и увеличили
               конверсию в просмотр объявлений. Пользователи стали быстрее
               находить релевантные объявления благодаря фильтрам на старте —
@@ -445,7 +445,7 @@ export function KinpetCaseStudy() {
                 key={item.key}
                 className="min-w-0 rounded-[20px] bg-[#F5F5F5] px-3 py-4 text-left sm:rounded-[24px] sm:px-6 sm:py-6"
               >
-                <p className="text-[12px] leading-[1.4] text-[#848484] sm:text-[19px] sm:leading-[1.65]">
+                <p className="text-[12px] leading-[1.4] text-[#6D6868] sm:text-[19px] sm:leading-[1.65]">
                   {item.label}
                 </p>
                 {item.value ? (
@@ -465,7 +465,7 @@ export function KinpetCaseStudy() {
                     >
                       {item.from}
                     </span>
-                    <span className="flex shrink-0 items-center self-center text-[16px] leading-none text-[#848484] sm:text-[30px]">
+                    <span className="flex shrink-0 items-center self-center text-[16px] leading-none text-[#6D6868] sm:text-[30px]">
                       →
                     </span>
                     <span
