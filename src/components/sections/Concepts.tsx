@@ -668,7 +668,7 @@ function ConceptCardItem({ concept }: { concept: ConceptCard }) {
             {concept.subtitle}
           </p>
         </div>
-        <span className="shrink-0 text-[16px] text-[#0F0F0F]">
+        <span className="shrink-0 text-[16px] text-[#848484]">
           {displayNumberMap[concept.number] ?? concept.number}
         </span>
       </div>

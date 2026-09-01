@@ -186,7 +186,7 @@ export function KabinetPvCaseStudy() {
               Кабинет ПВ
             </h1>
 
-            <p className="mt-6 max-w-[640px] text-[15px] leading-[1.65] text-[#0F0F0F]">
+            <p className="mt-6 max-w-[640px] text-[15px] leading-[1.65] text-[#848484]">
               Кабинет ПВ — приложение для сотрудников пунктов выдачи Faberlic.
               Оно помогает оформлять заказы и возвраты, подписывать документы в
               электронном виде и использовать сканер штрихкодов для
@@ -198,7 +198,7 @@ export function KabinetPvCaseStudy() {
             {projectInfo.map((item) => (
               <div key={item.label}>
                 <p className="text-[12px] text-[#C7C7C7]">{item.label}</p>
-                <p className="mt-1 text-[15px] leading-snug text-[#0F0F0F]">
+                <p className="mt-1 text-[15px] leading-snug text-[#848484]">
                   {item.value}
                 </p>
               </div>
@@ -236,7 +236,7 @@ export function KabinetPvCaseStudy() {
               <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -258,7 +258,7 @@ export function KabinetPvCaseStudy() {
                 Ограничения
               </p>
             </div>
-            <p className="mt-3 text-[15px] leading-[1.65] text-[#0F0F0F] sm:text-[19px]">
+            <p className="mt-3 text-[15px] leading-[1.65] text-[#848484] sm:text-[19px]">
               Изменение бэкенда было недоступно — решение разрабатывалось в
               рамках существующей логики и данных.
             </p>
@@ -276,7 +276,7 @@ export function KabinetPvCaseStudy() {
 
         <div className="mt-6 flex w-full flex-col gap-6 sm:mt-8">
           <ScrollReveal className="w-full">
-            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
               Прямые интервью не проводились — в качестве источника данных
               использовалась обратная связь от сотрудников ПВЗ, предоставленная
               командой поддержки. На основе этих данных были выявлены основные
@@ -285,7 +285,7 @@ export function KabinetPvCaseStudy() {
           </ScrollReveal>
 
           <ScrollReveal className="w-full">
-            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
               Параллельно изучила старую десктопную версию сценария — и сразу
               стало понятно откуда берутся проблемы.
             </p>
@@ -298,7 +298,7 @@ export function KabinetPvCaseStudy() {
               <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 {index + 1}. {item.title}
               </p>
-              <p className="mt-2 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-3 sm:text-[19px]">
+              <p className="mt-2 text-[15px] leading-[1.65] text-[#848484] sm:mt-3 sm:text-[19px]">
                 {item.text}
               </p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -317,7 +317,7 @@ export function KabinetPvCaseStudy() {
         </div>
 
         <ScrollReveal className="mt-16 sm:mt-20">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
             Далее, разобравшись с проблемами и их следствиями, я вывела такие{" "}
             <span className="font-bold">гипотезы:</span>
           </p>
@@ -339,7 +339,7 @@ export function KabinetPvCaseStudy() {
                   className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
                 />
               </div>
-              <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+              <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
                 {h.text}
               </p>
             </ScrollReveal>
@@ -359,7 +359,7 @@ export function KabinetPvCaseStudy() {
           <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Дробление сценария на шаги
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#848484] sm:mt-6 sm:text-[19px]">
             Сценарий был разбит на отдельные шаги чтобы снизить когнитивную
             нагрузку — сотрудник решает одну задачу за раз и не держит в голове
             всю форму целиком.
@@ -398,7 +398,7 @@ export function KabinetPvCaseStudy() {
           <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Автосохранение с подтверждением
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#848484] sm:mt-6 sm:text-[19px]">
             При закрытии незавершённой претензии приложение автоматически
             сохраняет её в черновики и показывает тост-уведомление. Сотрудник
             видит что данные не потеряны и может вернуться к оформлению в любой
@@ -438,7 +438,7 @@ export function KabinetPvCaseStudy() {
           <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Разделение статусов
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#848484] sm:mt-6 sm:text-[19px]">
             Чтобы сотрудник сразу понимал какие претензии требуют действия —
             разделила список на две вкладки: черновики и утверждённые. Это
             убирает необходимость просматривать всё подряд в поисках
@@ -472,7 +472,7 @@ export function KabinetPvCaseStudy() {
           </p>
         </ScrollReveal>
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
             Следующим этапом было юзабилити-тестирование. Провела
             модерируемое юзабилити-тестирование с 7 респондентами. Все
             участники выполняли задачи фактически без ошибок, однако тест
@@ -485,7 +485,7 @@ export function KabinetPvCaseStudy() {
           <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Размер каунтера
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#848484] sm:mt-6 sm:text-[19px]">
             Сотрудники иногда промахивались по кнопкам — увеличила размер
             степпера и добавила отображение максимально допустимого
             количества товара, чтобы сразу было понятно в каких пределах
@@ -523,7 +523,7 @@ export function KabinetPvCaseStudy() {
           <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Счётчик черновиков
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#848484] sm:mt-6 sm:text-[19px]">
             В ходе теста стало понятно что сотрудники не всегда замечали
             незавершённые претензии — вкладка «Черновики» не давала никакого
             сигнала. Добавила бейдж с количеством черновиков чтобы сотрудник
@@ -562,7 +562,7 @@ export function KabinetPvCaseStudy() {
           <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Быстрое утверждение из списка
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#0F0F0F] sm:mt-6 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#848484] sm:mt-6 sm:text-[19px]">
             Чтобы сотрудник мог обработать несколько претензий быстрее —
             добавила контекстное меню по нажатию на три точки прямо в
             карточке черновика. Теперь не нужно открывать каждую претензию по
@@ -597,7 +597,7 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
             После отрисовки дизайна передала финальные макеты в разработку.
           </p>
         </ScrollReveal>
@@ -613,7 +613,7 @@ export function KabinetPvCaseStudy() {
 
         <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8">
           <ScrollReveal className="w-full">
-            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#0F0F0F]">
+            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#848484]">
               Перенос сценария создания претензий в мобильное приложение
               позволил сотрудникам ПВЗ работать с претензиями не переключаясь
               на десктоп. Пошаговый сценарий и разделение статусов сократили
@@ -630,7 +630,7 @@ export function KabinetPvCaseStudy() {
                 key={item.key}
                 className="min-w-0 rounded-[20px] bg-[#F5F5F5] px-3 py-4 text-left sm:rounded-[24px] sm:px-6 sm:py-6"
               >
-                <p className="text-[12px] leading-[1.4] text-[#0F0F0F] sm:text-[19px] sm:leading-[1.65]">
+                <p className="text-[12px] leading-[1.4] text-[#848484] sm:text-[19px] sm:leading-[1.65]">
                   {item.label}
                 </p>
                 <div className="mt-2 sm:mt-3">

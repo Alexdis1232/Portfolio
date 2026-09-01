@@ -9,7 +9,7 @@ export default function NotFound() {
       >
         Страница не найдена
       </h1>
-      <p className="max-w-[480px] text-[15px] leading-[1.65] text-[#0F0F0F]">
+      <p className="max-w-[480px] text-[15px] leading-[1.65] text-[#848484]">
         Такой страницы нет. Посмотрите главную — там кейсы, проекты и
         контакты Саши, продуктового дизайнера mobile-first.
       </p>

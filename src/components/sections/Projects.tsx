@@ -46,9 +46,9 @@ function ProjectCardContent({ project, index }: { project: Project; index: numbe
                 height={34}
                 className="h-[34px] w-[34px] rounded-lg object-cover"
               />
-              <span className="text-[15px] text-[#0F0F0F]">{project.company}</span>
+              <span className="text-[15px] text-[#848484]">{project.company}</span>
             </div>
-            <span className="shrink-0 text-[15px] text-[#0F0F0F]">
+            <span className="shrink-0 text-[15px] text-[#848484]">
               {project.number}
             </span>
           </div>
@@ -73,7 +73,7 @@ function ProjectCardContent({ project, index }: { project: Project; index: numbe
           {project.info.map((col) => (
             <div key={col.label} className="min-w-0 shrink-0">
               <p className="text-[12px] text-[#C7C7C7]">{col.label}</p>
-              <p className="mt-1 whitespace-nowrap text-[15px] leading-snug text-[#0F0F0F]">
+              <p className="mt-1 whitespace-nowrap text-[15px] leading-snug text-[#848484]">
                 {col.value}
               </p>
             </div>

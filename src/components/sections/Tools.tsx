@@ -84,7 +84,7 @@ export function Tools() {
                 </p>
               </div>
             </div>
-            <span className="shrink-0 text-[13px] text-[#0F0F0F]">{tool.number}</span>
+            <span className="shrink-0 text-[13px] text-[#848484]">{tool.number}</span>
           </ScrollReveal>
         ))}
       </div>
