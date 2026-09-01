@@ -13,7 +13,7 @@ const EMAIL = "antonyuk10@gmail.com";
 const contactLinks = [
   { label: "telegram", href: "https://t.me/podrazhayu" },
   { label: "email", href: `mailto:${EMAIL}` },
-  { label: "linkedin", href: "https://www.linkedin.com/in/" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/alexandra-antonyuk-784493214" },
 ];
 
 export function Contact() {
