@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import dynamic from "next/dynamic";
+import { Analytics } from "@vercel/analytics/react";
 import { AudioUnlock } from "@/components/AudioUnlock";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Container } from "@/components/layout/Container";
@@ -100,6 +101,7 @@ export default function RootLayout({
             />
           </div>
         </noscript>
+        <Analytics />
       </body>
     </html>
   );
