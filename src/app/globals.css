@@ -52,6 +52,21 @@ body::before {
   );
 }
 
+@media (max-width: 639px) {
+  body::before {
+    -webkit-mask-image: radial-gradient(
+      ellipse 95% 55% at 50% 35%,
+      black 25%,
+      transparent 80%
+    );
+    mask-image: radial-gradient(
+      ellipse 95% 55% at 50% 35%,
+      black 25%,
+      transparent 80%
+    );
+  }
+}
+
 main {
   padding-bottom: 10px;
 }
