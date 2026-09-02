@@ -74,11 +74,6 @@ export default function RootLayout({
           opacity={0.85}
         />
         <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "744f21b732f5487f97cb70615cc5fc85"}'
-        />
-        <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(m,e,t,r,i,k,a){
