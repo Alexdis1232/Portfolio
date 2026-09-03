@@ -436,7 +436,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
               width: "100%",
               height: "100%",
               objectFit: "contain",
-              transform: "scale(1.5)",
+              transform: "scale(1.1)",
               transformOrigin: "center center",
             }
           : concept.number === "(13)"
