@@ -44,7 +44,7 @@ function ProjectCardContent({ project, index }: { project: Project; index: numbe
           className="aspect-[470/389] h-auto w-full rounded-[24px] object-cover sm:rounded-[40px] lg:h-[389px] lg:w-[470px] lg:max-w-none lg:shrink-0"
         />
         {inProgress ? (
-          <span className="absolute left-3 top-3 rounded-full bg-[#C7C7C7] px-3 py-1.5 text-[13px] font-medium text-[#0F0F0F] sm:hidden">
+          <span className="absolute left-3 top-3 rounded-full bg-[#F0F0F0] px-3 py-1.5 text-[13px] font-medium text-[#0F0F0F] sm:hidden">
             В процессе...
           </span>
         ) : null}

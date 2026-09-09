@@ -79,7 +79,7 @@ export function CustomCursor() {
           height: viewHover ? CURSOR_VIEW_SIZE : CURSOR_SIZE,
           backgroundColor: viewHover
             ? variant === "disabled"
-              ? "#C7C7C7"
+              ? "#F0F0F0"
               : "#0F0F0F"
             : "rgba(15,15,15,0)",
         }}
