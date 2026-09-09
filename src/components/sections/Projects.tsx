@@ -6,12 +6,18 @@ import { useCallback } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useButtonClickSound } from "@/hooks/useButtonClickSound";
 import { useProjectHoverSound } from "@/hooks/useProjectHoverSound";
-import { CURSOR_VIEW_HOVER_EVENT } from "@/components/CustomCursor";
+import {
+  CURSOR_VIEW_HOVER_EVENT,
+  type CursorViewHoverDetail,
+} from "@/components/CustomCursor";
 import { projects, type Project } from "@/data/projects";
 
-function setCursorViewHover(active: boolean) {
-  window.dispatchEvent(new CustomEvent(CURSOR_VIEW_HOVER_EVENT, { detail: active }));
+function setCursorViewHover(active: boolean, variant?: "disabled") {
+  const detail: CursorViewHoverDetail = variant ? { active, variant } : active;
+  window.dispatchEvent(new CustomEvent(CURSOR_VIEW_HOVER_EVENT, { detail }));
 }
+
+const IN_PROGRESS_SLUGS = new Set(["faberlic"]);
 
 function isCoarsePointerDevice() {
   return typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches;
@@ -21,19 +27,28 @@ const PROJECT_HERO_WIDTH = 470;
 const PROJECT_HERO_HEIGHT = 389;
 
 function ProjectCardContent({ project, index }: { project: Project; index: number }) {
+  const inProgress = Boolean(project.slug && IN_PROGRESS_SLUGS.has(project.slug));
+
   return (
     <>
-      <motion.img
-        src={project.heroImage}
-        alt={project.heroAlt}
-        width={PROJECT_HERO_WIDTH}
-        height={PROJECT_HERO_HEIGHT}
-        loading={index === 0 ? "eager" : "lazy"}
-        decoding="async"
-        whileHover={{ rotate: 10 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="aspect-[470/389] h-auto w-full rounded-[24px] object-cover sm:rounded-[40px] lg:h-[389px] lg:w-[470px] lg:max-w-none lg:shrink-0"
-      />
+      <div className="relative sm:contents">
+        <motion.img
+          src={project.heroImage}
+          alt={project.heroAlt}
+          width={PROJECT_HERO_WIDTH}
+          height={PROJECT_HERO_HEIGHT}
+          loading={index === 0 ? "eager" : "lazy"}
+          decoding="async"
+          whileHover={{ rotate: 10 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="aspect-[470/389] h-auto w-full rounded-[24px] object-cover sm:rounded-[40px] lg:h-[389px] lg:w-[470px] lg:max-w-none lg:shrink-0"
+        />
+        {inProgress ? (
+          <span className="absolute left-3 top-3 rounded-full bg-[#C7C7C7] px-3 py-1.5 text-[13px] font-medium text-[#0F0F0F] sm:hidden">
+            В процессе...
+          </span>
+        ) : null}
+      </div>
 
       <div className="flex min-w-0 w-full flex-col justify-between lg:min-h-[389px]">
         <div className="min-w-0">
@@ -103,6 +118,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   const cardClassName =
     "grid w-full min-w-0 grid-cols-1 items-start gap-6 py-[18px] sm:gap-8 lg:grid-cols-[470px_minmax(0,1fr)] lg:gap-[36px] lg:py-[42px]";
+
+  const inProgress = Boolean(project.slug && IN_PROGRESS_SLUGS.has(project.slug));
+
+  if (inProgress) {
+    return (
+      <motion.article
+        className={cardClassName}
+        onPointerDown={handlePointerDown}
+        onMouseEnter={() => setCursorViewHover(true, "disabled")}
+        onMouseLeave={() => setCursorViewHover(false)}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 300, damping: 26 }}
+      >
+        <ProjectCardContent project={project} index={index} />
+      </motion.article>
+    );
+  }
 
   if (project.slug) {
     return (

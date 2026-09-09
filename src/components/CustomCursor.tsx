@@ -8,9 +8,14 @@ const CURSOR_SIZE = 15;
 const CURSOR_VIEW_SIZE = 90;
 export const CURSOR_VIEW_HOVER_EVENT = "cursor:view-hover";
 
+export type CursorViewHoverDetail =
+  | boolean
+  | { active: boolean; variant?: "disabled" };
+
 export function CustomCursor() {
   const rootRef = useRef<HTMLDivElement>(null);
   const [viewHover, setViewHover] = useState(false);
+  const [variant, setVariant] = useState<"default" | "disabled">("default");
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,7 +45,14 @@ export function CustomCursor() {
     };
 
     const handleViewHover = (event: Event) => {
-      setViewHover(Boolean((event as CustomEvent<boolean>).detail));
+      const detail = (event as CustomEvent<CursorViewHoverDetail>).detail;
+      if (typeof detail === "object" && detail !== null) {
+        setViewHover(detail.active);
+        setVariant(detail.variant === "disabled" ? "disabled" : "default");
+      } else {
+        setViewHover(Boolean(detail));
+        setVariant("default");
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
@@ -65,7 +77,11 @@ export function CustomCursor() {
         animate={{
           width: viewHover ? CURSOR_VIEW_SIZE : CURSOR_SIZE,
           height: viewHover ? CURSOR_VIEW_SIZE : CURSOR_SIZE,
-          backgroundColor: viewHover ? "#0F0F0F" : "rgba(15,15,15,0)",
+          backgroundColor: viewHover
+            ? variant === "disabled"
+              ? "#C7C7C7"
+              : "#0F0F0F"
+            : "rgba(15,15,15,0)",
         }}
         transition={{ type: "spring", stiffness: 260, damping: 15, mass: 0.7 }}
         className="relative flex items-center justify-center rounded-full"
@@ -89,9 +105,11 @@ export function CustomCursor() {
           initial={false}
           animate={{ opacity: viewHover ? 1 : 0, scale: viewHover ? 1 : 0.4 }}
           transition={{ duration: 0.15, delay: viewHover ? 0.1 : 0 }}
-          className="absolute whitespace-nowrap text-[12px] font-medium lowercase tracking-wide text-white"
+          className={`absolute whitespace-nowrap text-[12px] font-medium lowercase tracking-wide ${
+            variant === "disabled" ? "text-[#0F0F0F]" : "text-white"
+          }`}
         >
-          перейти
+          {variant === "disabled" ? "в процессе" : "перейти"}
         </motion.span>
       </motion.div>
     </div>
