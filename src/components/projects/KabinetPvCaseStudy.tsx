@@ -63,15 +63,6 @@ function CaseNav() {
         {arrowIcon("left")}
         Назад
       </Link>
-      <Link
-        href="/projects/faberlic"
-        className={caseNavPillClass}
-        onPointerDown={handlePointerDown}
-        onMouseEnter={handleMouseEnter}
-      >
-        Ещё кейсы
-        {arrowIcon("right")}
-      </Link>
     </div>
   );
 }
