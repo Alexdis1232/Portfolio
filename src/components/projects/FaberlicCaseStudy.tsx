@@ -97,15 +97,12 @@ const contextBlocks = [
   },
 ];
 
-const audienceInsights = [
-  "Когда я планирую заказ в новом периоде, я хочу понимать сколько мне осталось до следующего уровня скидки, чтобы принять решение — добирать товары.",
-  "Когда я делаю заказы в периоде, я хочу видеть свой текущий прогресс, чтобы в следующем периоде сохранить скидку и не снизить её от начального уровня.",
-];
-
-const progressHypotheses = [
-  "Если вынести прогресс по баллам на главный экран, тогда консультант будет чаще проверять сколько осталось → потому что информация доступна без лишних действий.",
-  "Если показать баллы и процент скидки в одном блоке, тогда пользователь сразу поймёт связь между своими действиями и скидкой → потому что не нужно сопоставлять данные из разных мест.",
-  "Если показать все уровни скидки на одной шкале (20% → 26% → VIP), тогда пользователь будет знать к чему стремиться, потому что видит полную картину а не только текущий уровень.",
+const faberlicHypotheses = [
+  "Если показать сколько баллов накоплено и сколько осталось до скидки 26% — пользователь поймёт что нужно сделать чтобы повысить свою выгоду и будет мотивирован делать заказы.",
+  "Если указать до какого числа действует текущая скидка — пользователь будет понимать когда нужно успеть сделать заказ и не потеряет выгоду из-за незнания сроков.",
+  "Если указать до какого числа действует текущая скидка — пользователь будет понимать когда нужно успеть сделать заказ и не потеряет выгоду из-за незнания сроков.",
+  "Если показывать прогресс-бар с баллами прямо в профиле для всех пользователей — каждый будет видеть свой статус без дополнительных действий и захочет его улучшить.",
+  "Если вынести счётчик накопленных баллов как отдельный элемент интерфейса — пользователь всегда будет знать свой текущий результат и сможет ориентироваться в своём прогрессе.",
 ];
 
 export function FaberlicCaseStudy() {
@@ -236,91 +233,65 @@ export function FaberlicCaseStudy() {
           Исследование
         </ScrollRevealH2>
 
-        <div className="mt-6 flex w-full flex-col gap-8 sm:mt-8 sm:gap-10">
-          <ScrollReveal className="w-full">
-            <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
-              Анализ аудитории
-            </p>
-            <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
-              Приложением пользуются две аудитории — консультанты и обычные
-              покупатели. Консультанты думают как предприниматели: им важно
-              понять при каком объёме заказа они получат максимальную выгоду.
-              Покупатели хотят просто купить дешевле. Для обеих аудиторий
-              экран со скидками — инструмент мотивации, а не просто
-              информация
-            </p>
-            <p className="mt-4 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
-              Далее мне нужно было определить в какой момент и зачем
-              консультанту нужна информация о прогрессе. Это и даст понимание
-              как должен выглядеть экран:
-            </p>
-          </ScrollReveal>
+        <ScrollReveal className="mt-6 sm:mt-8">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
+            Скидка работает для обеих аудиторий, но по-разному. Покупателям
+            вполне хватает базовых 20% — они не гонятся за объёмом. А вот
+            консультантам важно держать руку на пульсе: пропустив нужное
+            количество баллов — ты теряешь скидку и статус.
+          </p>
+        </ScrollReveal>
 
-          <div className="flex w-full flex-col gap-6 sm:gap-8">
-            {audienceInsights.map((text) => (
-              <ScrollReveal
-                key={text}
-                className="flex w-full items-start gap-4 sm:gap-5"
-              >
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/lump.png"
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
-                  />
-                </div>
-                <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
-                  {text}
-                </p>
-              </ScrollReveal>
-            ))}
-          </div>
+        <ScrollReveal className={textToImageGap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/personi%20mobilka.png"
+            alt="Faberlic — портреты аудиторий: покупатель и консультант"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full max-w-full rounded-[16px] sm:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/personi.png"
+            alt="Faberlic — портреты аудиторий: покупатель и консультант"
+            width={1780}
+            height={1217}
+            loading="lazy"
+            decoding="async"
+            className="hidden h-auto w-full max-w-full rounded-[24px] sm:block"
+          />
+        </ScrollReveal>
 
-          <ScrollReveal className="w-full">
-            <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
-              Анализ рынка
-            </p>
-            <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
-              Изучила непрямых конкурентов — Wildberries, Ozon, Яндекс
-              Маркет: персональные скидки есть, но скрыты от пользователя и
-              непрозрачны. Рассмотрела прямого конкурента Oriflame — механика
-              скидки за период такая же, но баллы и процент скидки разнесены
-              по разным местам, связь между ними не очевидна
-            </p>
-          </ScrollReveal>
+        <ScrollReveal className="mt-12 sm:mt-16">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+            Гипотезы
+          </p>
+        </ScrollReveal>
 
-          <ScrollReveal className="w-full">
-            <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
-              Приоритизировали по усилиям разработки и бизнес-ценности
-              гипотезы и выбрали 3 для реализации:
-            </p>
-          </ScrollReveal>
-
-          <div className="flex w-full flex-col gap-6 sm:gap-8">
-            {progressHypotheses.map((text) => (
-              <ScrollReveal
-                key={text}
-                className="flex w-full items-start gap-4 sm:gap-5"
-              >
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/lump.png"
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
-                  />
-                </div>
-                <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
-                  {text}
-                </p>
-              </ScrollReveal>
-            ))}
-          </div>
+        <div className="mt-6 flex w-full flex-col gap-6 sm:mt-8 sm:gap-8">
+          {faberlicHypotheses.map((text, index) => (
+            <ScrollReveal
+              key={`${index}-${text.slice(0, 20)}`}
+              className="flex w-full items-start gap-4 sm:gap-5"
+            >
+              <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFF9E0] sm:h-14 sm:w-14">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/lump.png"
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="h-3.5 w-3.5 object-contain sm:h-7 sm:w-7"
+                />
+              </div>
+              <p className="min-w-0 flex-1 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
+                {text}
+              </p>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
