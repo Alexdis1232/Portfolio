@@ -65,26 +65,35 @@ const projectInfo = [
   { label: "Год", value: "©2025" },
 ];
 
+const discountIntro =
+  "Faberlic отказался от системы кэшбэка и вернулся к схеме фиксированных скидок — 20% и 26%.";
+
+const discountCards = [
+  {
+    percent: "20%",
+    title: "Скидка для всех новичков сразу после регистрации",
+    condition: "быть авторизованным пользователем",
+  },
+  {
+    percent: "26%",
+    title: "Максимальная скидка на продукцию",
+    condition:
+      "набрать 50 баллов за текущий период (1 балл = 100 рублей). Если не выполнить в следующем периоде — скидка снизится до 20%. Восстановить можно в любой момент, снова набрав 50 баллов.",
+  },
+];
+
 const contextBlocks = [
+  {
+    label: "Задача:",
+    text: "Спроектировать визуальное отображение скидок, чтобы пользователи могли легко отслеживать свою скидку, ориентировались в сроках окончания каждого периода не потеряв выгоду.",
+  },
+  {
+    label: "Бизнес-цель:",
+    text: "Увеличение LTV и среднего чека покупателя за счет наглядной демонстрации упущенной выгоды, а также повышение возвращаемости клиентов (Retention) при повторных заказах.",
+  },
   {
     label: "Целевая аудитория:",
     text: "Консультанты, покупатели.",
-  },
-  {
-    label: "Что делала:",
-    text: "Работала над скидками заказов в личном кабинете.",
-  },
-  {
-    label: "Проблема:",
-    text: "Faberlic перешла на новую систему дифференцированных скидок, но в приложении не было никакого инструмента который объяснял бы механику и показывал прогресс — консультант не понимал как работает система и что нужно сделать чтобы получить скидку выше.",
-  },
-  {
-    label: "Задача:",
-    text: "Спроектировать с нуля как консультант видит свой прогресс и понимает сколько нужно набрать до следующего уровня 20–26%.",
-  },
-  {
-    label: "Цель:",
-    text: "Завлечь консультантов в новую систему скидок и мотивировать делать больше заказов за период — чтобы достигать следующего уровня скидки и увеличивать средний чек.",
   },
 ];
 
@@ -175,7 +184,37 @@ export function FaberlicCaseStudy() {
           Контекст
         </ScrollRevealH2>
 
-        <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
+        <ScrollReveal className="mt-10 sm:mt-12">
+          <p className="text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
+            {discountIntro}
+          </p>
+        </ScrollReveal>
+
+        <div className="mt-6 flex w-full flex-col gap-4 sm:mt-8 sm:gap-5">
+          {discountCards.map((card) => (
+            <ScrollReveal
+              key={card.percent}
+              className="w-full rounded-[20px] bg-[#F5F5F5] px-4 py-5 sm:rounded-[24px] sm:px-6 sm:py-6"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FBDCE6] text-[13px] font-bold text-[#D6336C] sm:h-14 sm:w-14 sm:text-[15px]">
+                  {card.percent}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+                    {card.title}
+                  </p>
+                  <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
+                    <span className="font-bold text-[#0F0F0F]">Условие: </span>
+                    {card.condition}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <div className="mt-8 flex w-full flex-col gap-8 sm:mt-10 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
               <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
