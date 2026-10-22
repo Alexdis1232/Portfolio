@@ -29,11 +29,11 @@ export const metadata: Metadata = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Саша",
+  name: "Александра Антонюк",
   jobTitle: "Продуктовый дизайнер",
   description:
-    "Продуктовый дизайнер mobile-first с 3 годами опыта в B2C и B2B продуктах и уклоном в работу с AI-инструментами.",
-  url: "https://portfolio-mu-sepia-70.vercel.app",
+    "Продуктовый дизайнер с 3 годами опыта в B2C и B2B продуктах в сферах e-Commerce и Pettech, с фокусом на AI-инструменты.",
+  url: "https://alexantonyuk.site",
   knowsAbout: [
     "Продуктовый дизайн",
     "UX/UI дизайн",
