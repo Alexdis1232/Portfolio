@@ -361,7 +361,7 @@ export function KabinetPvCaseStudy() {
           <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
             {/* mobile: квадрат (телефон крупнее) */}
             <video
-              src="/kabinet_pv_video.mp4?v=3"
+              src="/kabinet_pv_video.mp4?v=4"
               autoPlay
               loop
               muted
@@ -371,7 +371,7 @@ export function KabinetPvCaseStudy() {
             />
             {/* desktop: горизонтальное */}
             <video
-              src="/kabinet_pv_video_desktop.mp4?v=3"
+              src="/kabinet_pv_video_desktop.mp4?v=4"
               autoPlay
               loop
               muted
@@ -401,7 +401,7 @@ export function KabinetPvCaseStudy() {
           <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
             {/* mobile: квадрат */}
             <video
-              src="/kabinet_pv_drafts.mp4"
+              src="/kabinet_pv_drafts.mp4?v=2"
               autoPlay
               loop
               muted
@@ -411,7 +411,7 @@ export function KabinetPvCaseStudy() {
             />
             {/* desktop: горизонтальное */}
             <video
-              src="/kabinet_pv_drafts_desktop.mp4"
+              src="/kabinet_pv_drafts_desktop.mp4?v=2"
               autoPlay
               loop
               muted
