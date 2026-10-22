@@ -361,7 +361,7 @@ export function KabinetPvCaseStudy() {
           <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
             {/* mobile: квадрат (телефон крупнее) */}
             <video
-              src="/kabinet_pv_video.mp4?v=4"
+              src="/kabinet_pv_video.mp4?v=5"
               autoPlay
               loop
               muted
@@ -371,7 +371,7 @@ export function KabinetPvCaseStudy() {
             />
             {/* desktop: горизонтальное */}
             <video
-              src="/kabinet_pv_video_desktop.mp4?v=4"
+              src="/kabinet_pv_video_desktop.mp4?v=5"
               autoPlay
               loop
               muted
