@@ -492,7 +492,7 @@ export function KabinetPvCaseStudy() {
 
         <ScrollReveal className="mt-16 sm:mt-20">
           <ScrollRevealH2
-            className="font-sexsmith text-[26px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[36px]"
+            className="font-sexsmith text-[32px] font-normal leading-[1.1] text-[#0F0F0F] sm:text-[48px]"
             style={sexsmithStyle}
           >
             Юзабилити-тест
