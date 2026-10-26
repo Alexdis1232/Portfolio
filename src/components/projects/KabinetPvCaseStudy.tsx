@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback } from "react";
 import { LoadFadeIn, ScrollReveal, ScrollRevealH2 } from "@/components/ScrollReveal";
+import { ResponsiveVideo } from "@/components/ResponsiveVideo";
 import { ZoomableArea } from "@/components/ZoomableArea";
 import { useButtonClickSound } from "@/hooks/useButtonClickSound";
 import { useProjectHoverSound } from "@/hooks/useProjectHoverSound";
@@ -349,25 +350,9 @@ export function KabinetPvCaseStudy() {
 
         <ScrollReveal className={textToImageGap}>
           <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
-            {/* mobile: квадрат (телефон крупнее) */}
-            <video
-              src="/kabinet_pv_video.mp4?v=5"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="block h-auto w-full max-w-full sm:hidden"
-            />
-            {/* desktop: горизонтальное */}
-            <video
-              src="/kabinet_pv_video_desktop.mp4?v=5"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="hidden h-auto w-full max-w-full sm:block"
+            <ResponsiveVideo
+              mobileSrc="/kabinet_pv_video.mp4?v=5"
+              desktopSrc="/kabinet_pv_video_desktop.mp4?v=5"
             />
           </div>
           <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
@@ -389,25 +374,9 @@ export function KabinetPvCaseStudy() {
 
         <ScrollReveal className={textToImageGap}>
           <div className="overflow-hidden rounded-[16px] sm:rounded-[24px]">
-            {/* mobile: квадрат */}
-            <video
-              src="/kabinet_pv_drafts.mp4?v=2"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="block h-auto w-full max-w-full sm:hidden"
-            />
-            {/* desktop: горизонтальное */}
-            <video
-              src="/kabinet_pv_drafts_desktop.mp4?v=2"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="hidden h-auto w-full max-w-full sm:block"
+            <ResponsiveVideo
+              mobileSrc="/kabinet_pv_drafts.mp4?v=2"
+              desktopSrc="/kabinet_pv_drafts_desktop.mp4?v=2"
             />
           </div>
           <p className="mt-3 text-center text-[15px] leading-none text-[#C7C7C7] sm:mt-6">
