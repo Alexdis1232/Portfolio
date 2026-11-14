@@ -271,10 +271,10 @@ export function KabinetPvCaseStudy() {
         </div>
 
         <div className="mt-10 flex w-full flex-col gap-16 sm:mt-12 sm:gap-20">
-          {oldVersionProblems.map((item, index) => (
+          {oldVersionProblems.map((item) => (
             <ScrollReveal key={item.image} className="w-full">
               <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
-                {index + 1}. {item.title}
+                {item.title}
               </p>
               <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
                 {item.text}
