@@ -276,7 +276,7 @@ export function KabinetPvCaseStudy() {
               <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {index + 1}. {item.title}
               </p>
-              <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-3 sm:text-[19px]">
+              <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
                 {item.text}
               </p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
