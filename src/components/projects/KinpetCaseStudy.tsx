@@ -191,7 +191,7 @@ export function KinpetCaseStudy() {
               <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:mt-9 sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:mt-8 sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -377,7 +377,7 @@ export function KinpetCaseStudy() {
           <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Подбор питомца
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
             Для пользователей, не определившихся с выбором, был добавлен сценарий
             «Подбор питомца», который снижает барьер входа в поиск, помогая
             сформировать критерии и перейти к просмотру объявлений

@@ -201,7 +201,7 @@ export function FaberlicCaseStudy() {
                   <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                     {card.title}
                   </p>
-                  <p className="mt-2 sm:mt-9 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
+                  <p className="mt-2 sm:mt-8 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
                     <span className="font-bold text-[#0F0F0F]">Условие: </span>
                     {card.condition}
                   </p>
@@ -217,7 +217,7 @@ export function FaberlicCaseStudy() {
               <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:mt-9 sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:mt-8 sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -307,7 +307,7 @@ export function FaberlicCaseStudy() {
           <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Дизайн. Юзабилити тест
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
             Отрисовала итоговые 2 варианта для юзабилити теста с двумя
             вариантами отображения скидки. По результатам пользователи
             выбрали <span className="font-bold">Вариант А</span> — линейная
@@ -350,7 +350,7 @@ export function FaberlicCaseStudy() {
           <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Итоговый вариант
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
             На основе результатов теста доработала Вариант А — добавила
             шторку с детальной информацией: текущая скидка, количество
             набранных баллов и условие для перехода на следующий уровень
@@ -417,7 +417,7 @@ export function FaberlicCaseStudy() {
           <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Личные данные
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
             Переработала экран с личными данными — разделила его на две
             части: нередактируемые поля и редактируемые. Это упростило
             навигацию и <span className="font-bold">сократило длину экрана на 10%</span>. Также добавила
@@ -460,7 +460,7 @@ export function FaberlicCaseStudy() {
           <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Онбординг
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
             Перед проектированием провела быстрый опрос среди консультантов в
             группе Telegram — спросила какие возможности приложения новички
             узнают слишком поздно. На основе ответов отобрала три ключевых
@@ -501,7 +501,7 @@ export function FaberlicCaseStudy() {
           <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Карточки &quot;Мои события&quot;
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
             Спроектировала экраны с визуальным отображением статистики
             консультанта за период. Пользователям важно не только видеть
             свои результаты, но и делиться ими в соцсетях. Таким образом
@@ -539,7 +539,7 @@ export function FaberlicCaseStudy() {
           <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             3D. Визуальная айдентика
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-9 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
             Отвечала за 3D-иконки в приложении — писала промпты и
             генерировала их с помощью AI-инструментов. Формировала единый
             визуальный стиль делая интерфейс более живым и узнаваемым
