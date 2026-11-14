@@ -233,7 +233,7 @@ export function KabinetPvCaseStudy() {
                 Ограничения
               </p>
             </div>
-            <p className="mt-3 sm:mt-8 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
+            <p className="mt-3 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
               Изменение бэкенда было недоступно — решение разрабатывалось в
               рамках существующей логики и данных
             </p>
