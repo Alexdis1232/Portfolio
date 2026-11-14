@@ -198,7 +198,7 @@ export function FaberlicCaseStudy() {
                   {card.percent}
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+                  <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
                     {card.title}
                   </p>
                   <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
@@ -214,7 +214,7 @@ export function FaberlicCaseStudy() {
         <div className="mt-8 flex w-full flex-col gap-8 sm:mt-10 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
-              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+              <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
                 {block.label}
               </p>
               <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
@@ -266,7 +266,7 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+          <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
             Гипотезы
           </p>
         </ScrollReveal>
@@ -304,7 +304,7 @@ export function FaberlicCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+          <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
             Дизайн. Юзабилити тест
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
@@ -347,7 +347,7 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+          <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
             Итоговый вариант
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
@@ -414,7 +414,7 @@ export function FaberlicCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-10 sm:mt-12">
-          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+          <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
             Личные данные
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
@@ -457,7 +457,7 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+          <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
             Онбординг
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
@@ -498,7 +498,7 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+          <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
             Карточки &quot;Мои события&quot;
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
@@ -536,7 +536,7 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
+          <p className="text-[17px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[22px]">
             3D. Визуальная айдентика
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
