@@ -71,7 +71,7 @@ const KinpetBeforeAfterSlider = dynamic(
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
 /** Отступ между текстовым блоком и картинкой ниже: 40px mobile / 48px desktop */
-const textToImageGap = "mt-10 sm:mt-9";
+const textToImageGap = "mt-10 sm:mt-12";
 const blockStackGap = "gap-10 sm:gap-12";
 /** Отступ между соседними текстовыми абзацами */
 const paragraphStackGap = "gap-3";
@@ -188,10 +188,10 @@ export function KinpetCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
-              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:mt-8 sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -340,7 +340,7 @@ export function KinpetCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Поиск. Фильтры
           </p>
         </ScrollReveal>
@@ -374,10 +374,10 @@ export function KinpetCaseStudy() {
 
       <section className={`${textToImageGap} flex flex-col ${blockStackGap}`}>
         <ScrollReveal>
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Подбор питомца
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Для пользователей, не определившихся с выбором, был добавлен сценарий
             «Подбор питомца», который снижает барьер входа в поиск, помогая
             сформировать критерии и перейти к просмотру объявлений

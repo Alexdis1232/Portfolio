@@ -56,7 +56,7 @@ function BackToKabinetPv() {
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
-const textToImageGap = "mt-10 sm:mt-9";
+const textToImageGap = "mt-10 sm:mt-12";
 
 const projectInfo = [
   { label: "Роль", value: "Продуктовый дизайнер" },
@@ -198,10 +198,10 @@ export function FaberlicCaseStudy() {
                   {card.percent}
                 </div>
                 <div className="min-w-0">
-                  <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+                  <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                     {card.title}
                   </p>
-                  <p className="mt-2 sm:mt-8 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
+                  <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
                     <span className="font-bold text-[#0F0F0F]">Условие: </span>
                     {card.condition}
                   </p>
@@ -214,10 +214,10 @@ export function FaberlicCaseStudy() {
         <div className="mt-8 flex w-full flex-col gap-8 sm:mt-10 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
-              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:mt-8 sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -266,7 +266,7 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Гипотезы
           </p>
         </ScrollReveal>
@@ -304,10 +304,10 @@ export function FaberlicCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Дизайн. Юзабилити тест
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Отрисовала итоговые 2 варианта для юзабилити теста с двумя
             вариантами отображения скидки. По результатам пользователи
             выбрали <span className="font-bold">Вариант А</span> — линейная
@@ -347,10 +347,10 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Итоговый вариант
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             На основе результатов теста доработала Вариант А — добавила
             шторку с детальной информацией: текущая скидка, количество
             набранных баллов и условие для перехода на следующий уровень
@@ -414,10 +414,10 @@ export function FaberlicCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-10 sm:mt-12">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Личные данные
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Переработала экран с личными данными — разделила его на две
             части: нередактируемые поля и редактируемые. Это упростило
             навигацию и <span className="font-bold">сократило длину экрана на 10%</span>. Также добавила
@@ -457,10 +457,10 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Онбординг
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Перед проектированием провела быстрый опрос среди консультантов в
             группе Telegram — спросила какие возможности приложения новички
             узнают слишком поздно. На основе ответов отобрала три ключевых
@@ -498,10 +498,10 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Карточки &quot;Мои события&quot;
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Спроектировала экраны с визуальным отображением статистики
             консультанта за период. Пользователям важно не только видеть
             свои результаты, но и делиться ими в соцсетях. Таким образом
@@ -536,10 +536,10 @@ export function FaberlicCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             3D. Визуальная айдентика
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Отвечала за 3D-иконки в приложении — писала промпты и
             генерировала их с помощью AI-инструментов. Формировала единый
             визуальный стиль делая интерфейс более живым и узнаваемым

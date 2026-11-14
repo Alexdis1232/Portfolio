@@ -70,7 +70,7 @@ function CaseNav() {
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
-const textToImageGap = "mt-10 sm:mt-9";
+const textToImageGap = "mt-10 sm:mt-12";
 
 const projectInfo = [
   { label: "Роль", value: "Продуктовый дизайнер" },
@@ -208,10 +208,10 @@ export function KabinetPvCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
-              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:mt-8 sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -273,10 +273,10 @@ export function KabinetPvCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-16 sm:mt-12 sm:gap-20">
           {oldVersionProblems.map((item) => (
             <ScrollReveal key={item.image} className="w-full">
-              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 {item.title}
               </p>
-              <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+              <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-3 sm:text-[19px]">
                 {item.text}
               </p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -334,10 +334,10 @@ export function KabinetPvCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Дробление на шаги
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Принцип прогрессивного раскрытия — показывать только нужное в
             данный момент. Разбила сценарий на шаги: сотрудник решает одну
             задачу за раз и не держит весь контекст в голове
@@ -357,10 +357,10 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Автосохранение с подтверждением
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Принцип сохранения контекста. При закрытии незавершённой претензии
             приложение автоматически сохраняет её в черновики и показывает
             тост-уведомление — сотрудник видит что данные не потеряны и может
@@ -381,10 +381,10 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Разделение статусов
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Принцип борьбы с визуальным шумом. Разделила список на две
             вкладки: черновики и утверждённые — сотрудник сразу видит что
             требует действия и не просматривает всё подряд
@@ -418,10 +418,10 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Быстрое утверждение из списка
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             Чтобы сотрудник мог обработать несколько претензий быстрее —
             добавила контекстное меню по нажатию на три точки прямо в
             карточке черновика. Теперь не нужно открывать каждую претензию по
@@ -462,7 +462,7 @@ export function KabinetPvCaseStudy() {
           >
             Юзабилити-тест
           </ScrollRevealH2>
-          <p className="mt-4 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868] sm:mt-8">
+          <p className="mt-4 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868] sm:mt-6">
             Провела модерируемое юзабилити-тестирование с 7 респондентами
             после первой итерации — чтобы проверить подтвердились ли гипотезы
             и выявить точки где возникают трудности. Модерируемый формат
@@ -475,10 +475,10 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Размер каунтера
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             В ходе теста выяснилось что респонденты не понимали какое
             максимальное количество товара доступно — число была не на виду.
             Добавила отображение максимального количества прямо в каунтере —
@@ -515,10 +515,10 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
+          <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
             Счётчик черновиков
           </p>
-          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
+          <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">
             В ходе теста стало понятно что респонденты не всегда замечали
             незавершённые претензии — вкладка «Черновики» не давала никакого
             сигнала. Добавила количество черновиков чтобы сотрудник сразу
