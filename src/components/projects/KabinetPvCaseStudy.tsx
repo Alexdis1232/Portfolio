@@ -229,7 +229,7 @@ export function KabinetPvCaseStudy() {
                 height={36}
                 className="h-6 w-6 shrink-0 object-contain sm:h-[36px] sm:w-[36px]"
               />
-              <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+              <p className="text-[15px] font-bold leading-[1.4] text-[#0F0F0F] sm:text-[19px]">
                 Ограничения
               </p>
             </div>
