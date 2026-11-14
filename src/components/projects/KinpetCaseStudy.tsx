@@ -188,7 +188,7 @@ export function KinpetCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
-              <p className="font-helvetica text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+              <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {block.label}
               </p>
               <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
@@ -340,7 +340,7 @@ export function KinpetCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="font-helvetica text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Поиск. Фильтры
           </p>
         </ScrollReveal>
@@ -374,7 +374,7 @@ export function KinpetCaseStudy() {
 
       <section className={`${textToImageGap} flex flex-col ${blockStackGap}`}>
         <ScrollReveal>
-          <p className="font-helvetica text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Подбор питомца
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-6 sm:text-[19px]">

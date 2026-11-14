@@ -12,7 +12,6 @@ const config: Config = {
         sexsmith: ["Sexsmith", "Georgia", "serif"],
         serif: ["var(--font-playfair)", "Georgia", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        helvetica: ["'Helvetica Neue'", "Helvetica", "Arial", "sans-serif"],
       },
       colors: {
         gray: {
