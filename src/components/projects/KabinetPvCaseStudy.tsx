@@ -70,7 +70,7 @@ function CaseNav() {
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
-const textToImageGap = "mt-10 sm:mt-12";
+const textToImageGap = "mt-10 sm:mt-9";
 
 const projectInfo = [
   { label: "Роль", value: "Продуктовый дизайнер" },
@@ -211,7 +211,7 @@ export function KabinetPvCaseStudy() {
               <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:mt-9 sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
@@ -233,7 +233,7 @@ export function KabinetPvCaseStudy() {
                 Ограничения
               </p>
             </div>
-            <p className="mt-3 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
+            <p className="mt-3 sm:mt-9 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
               Изменение бэкенда было недоступно — решение разрабатывалось в
               рамках существующей логики и данных
             </p>
@@ -462,7 +462,7 @@ export function KabinetPvCaseStudy() {
           >
             Юзабилити-тест
           </ScrollRevealH2>
-          <p className="mt-4 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868] sm:mt-6">
+          <p className="mt-4 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868] sm:mt-9">
             Провела модерируемое юзабилити-тестирование с 7 респондентами
             после первой итерации — чтобы проверить подтвердились ли гипотезы
             и выявить точки где возникают трудности. Модерируемый формат

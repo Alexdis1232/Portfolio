@@ -56,7 +56,7 @@ function BackToKabinetPv() {
 
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
-const textToImageGap = "mt-10 sm:mt-12";
+const textToImageGap = "mt-10 sm:mt-9";
 
 const projectInfo = [
   { label: "Роль", value: "Продуктовый дизайнер" },
@@ -201,7 +201,7 @@ export function FaberlicCaseStudy() {
                   <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                     {card.title}
                   </p>
-                  <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
+                  <p className="mt-2 sm:mt-9 text-[15px] leading-[1.65] text-[#6D6868] sm:text-[19px]">
                     <span className="font-bold text-[#0F0F0F]">Условие: </span>
                     {card.condition}
                   </p>
@@ -217,7 +217,7 @@ export function FaberlicCaseStudy() {
               <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:mt-9 sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>

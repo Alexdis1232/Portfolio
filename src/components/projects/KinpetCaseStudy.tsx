@@ -71,7 +71,7 @@ const KinpetBeforeAfterSlider = dynamic(
 const sexsmithStyle = { fontFamily: "'Sexsmith', serif" } as const;
 
 /** Отступ между текстовым блоком и картинкой ниже: 40px mobile / 48px desktop */
-const textToImageGap = "mt-10 sm:mt-12";
+const textToImageGap = "mt-10 sm:mt-9";
 const blockStackGap = "gap-10 sm:gap-12";
 /** Отступ между соседними текстовыми абзацами */
 const paragraphStackGap = "gap-3";
@@ -191,7 +191,7 @@ export function KinpetCaseStudy() {
               <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {block.label}
               </p>
-              <p className="mt-3 text-[15px] sm:text-[19px] leading-[1.65] text-[#6D6868]">
+              <p className="mt-3 text-[15px] sm:mt-9 sm:text-[19px] leading-[1.65] text-[#6D6868]">
                 {block.text}
               </p>
             </ScrollReveal>
