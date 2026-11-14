@@ -85,23 +85,23 @@ const projectInfo = [
 
 const contextBlocks = [
   {
-    label: "Целевая аудитория:",
+    label: "Целевая аудитория",
     text: "Покупатели, продавцы, владельцы организаций, приюты.",
   },
   {
-    label: "Что делала:",
+    label: "Что делала",
     text: "Работала над ключевым сценарием — поиском питомца.",
   },
   {
-    label: "Проблема:",
+    label: "Проблема",
     text: "Анализ выявил, что 45% пользователей покидают первый экран, не переходя к просмотру объявлений — сценарий обрывается на старте.",
   },
   {
-    label: "Задача:",
+    label: "Задача",
     text: "Переработать точку входа в поиск питомца — сделать так, чтобы пользователи не уходили с первого экрана, а переходили к просмотру объявлений.",
   },
   {
-    label: "Цель:",
+    label: "Цель",
     text: "Увеличить конверсию в просмотр объявлений.",
   },
 ];
@@ -188,7 +188,7 @@ export function KinpetCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
-              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
                 {block.label}
               </p>
               <p className="mt-3 text-[15px] sm:mt-8 sm:text-[19px] leading-[1.65] text-[#6D6868]">
@@ -340,7 +340,7 @@ export function KinpetCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
             Поиск. Фильтры
           </p>
         </ScrollReveal>
@@ -374,7 +374,7 @@ export function KinpetCaseStudy() {
 
       <section className={`${textToImageGap} flex flex-col ${blockStackGap}`}>
         <ScrollReveal>
-          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[26px]">
             Подбор питомца
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
