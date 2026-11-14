@@ -208,7 +208,7 @@ export function KabinetPvCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-10">
           {contextBlocks.map((block) => (
             <ScrollReveal key={block.label} className="w-full">
-              <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {block.label}
               </p>
               <p className="mt-3 text-[15px] sm:mt-8 sm:text-[19px] leading-[1.65] text-[#6D6868]">
@@ -273,7 +273,7 @@ export function KabinetPvCaseStudy() {
         <div className="mt-10 flex w-full flex-col gap-16 sm:mt-12 sm:gap-20">
           {oldVersionProblems.map((item) => (
             <ScrollReveal key={item.image} className="w-full">
-              <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+              <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
                 {item.title}
               </p>
               <p className="mt-2 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
@@ -334,7 +334,7 @@ export function KabinetPvCaseStudy() {
         </ScrollRevealH2>
 
         <ScrollReveal className="mt-6 sm:mt-8">
-          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Дробление на шаги
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
@@ -357,7 +357,7 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Автосохранение с подтверждением
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
@@ -381,7 +381,7 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Разделение статусов
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
@@ -418,7 +418,7 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Быстрое утверждение из списка
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
@@ -475,7 +475,7 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Размер каунтера
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
@@ -515,7 +515,7 @@ export function KabinetPvCaseStudy() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-12 sm:mt-16">
-          <p className="font-sans text-[17px] font-normal leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
+          <p className="font-sans text-[17px] font-medium leading-[1.4] text-[#0F0F0F] sm:text-[28px]">
             Счётчик черновиков
           </p>
           <p className="mt-4 text-[15px] leading-[1.65] text-[#6D6868] sm:mt-8 sm:text-[19px]">
