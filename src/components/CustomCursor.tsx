@@ -78,13 +78,18 @@ export function CustomCursor() {
           width: viewHover ? CURSOR_VIEW_SIZE : CURSOR_SIZE,
           height: viewHover ? CURSOR_VIEW_SIZE : CURSOR_SIZE,
           backgroundColor: viewHover
-            ? variant === "disabled"
-              ? "#F0F0F0"
-              : "#0F0F0F"
-            : "rgba(15,15,15,0)",
+            ? "rgba(255,255,255,0.24)"
+            : "rgba(255,255,255,0)",
+          borderColor: viewHover
+            ? "rgba(255,255,255,0.3)"
+            : "rgba(255,255,255,0)",
         }}
         transition={{ type: "spring", stiffness: 260, damping: 15, mass: 0.7 }}
-        className="relative flex items-center justify-center rounded-full"
+        className="relative flex items-center justify-center rounded-full border"
+        style={{
+          backdropFilter: viewHover ? "blur(16px)" : undefined,
+          WebkitBackdropFilter: viewHover ? "blur(16px)" : undefined,
+        }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <motion.img
