@@ -110,9 +110,7 @@ export function CustomCursor() {
           initial={false}
           animate={{ opacity: viewHover ? 1 : 0, scale: viewHover ? 1 : 0.4 }}
           transition={{ duration: 0.15, delay: viewHover ? 0.1 : 0 }}
-          className={`absolute whitespace-nowrap text-[12px] font-medium lowercase tracking-wide ${
-            variant === "disabled" ? "text-[#0F0F0F]" : "text-white"
-          }`}
+          className="absolute whitespace-nowrap text-[12px] font-medium lowercase tracking-wide text-[#0F0F0F]"
         >
           {variant === "disabled" ? "в процессе" : "перейти"}
         </motion.span>
