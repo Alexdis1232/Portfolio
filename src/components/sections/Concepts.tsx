@@ -248,10 +248,10 @@ const moreConcepts: ConceptCard[] = [
     frame: "screen",
   },
   {
-    image: "/11.png",
-    title: "Voice assistant",
+    video: "/13.mp4",
+    title: "Vita",
     number: "(11)",
-    subtitle: "Icon",
+    subtitle: "Animation",
     frame: "square",
   },
   {
@@ -262,10 +262,10 @@ const moreConcepts: ConceptCard[] = [
     frame: "square",
   },
   {
-    video: "/13.mp4",
-    title: "Vita",
+    image: "/11.png",
+    title: "Voice assistant",
     number: "(13)",
-    subtitle: "Animation",
+    subtitle: "Icon",
     frame: "square",
   },
   {
@@ -428,7 +428,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
     const mediaClass = moreMediaClass[concept.number] ?? "object-contain";
 
     const moreMediaStyle: CSSProperties | undefined =
-      concept.number === "(11)"
+      concept.number === "(13)"
         ? {
             width: "100%",
             height: "100%",
@@ -444,7 +444,7 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
               transform: "scale(1.1)",
               transformOrigin: "center center",
             }
-          : concept.number === "(13)"
+          : concept.number === "(11)"
             ? {
                 width: "100%",
                 height: "100%",
@@ -740,8 +740,8 @@ function ConceptsMobileLayout() {
         <ConceptCardWrapper concept={primaryByNumber["(03)"]} mobileCentered={false} />
         <ConceptCardWrapper concept={moreByNumber["(12)"]} mobileCentered={false} />
 
-        {/* 5 ряд: Vita (13) под Meet Point + Smart Home (10) */}
-        <ConceptCardWrapper concept={moreByNumber["(13)"]} mobileCentered={false} />
+        {/* 5 ряд: Vita (11) под Meet Point + Smart Home (10) */}
+        <ConceptCardWrapper concept={moreByNumber["(11)"]} mobileCentered={false} />
         <ConceptCardWrapper
           concept={moreByNumber["(10)"]}
           mobileCentered={false}
