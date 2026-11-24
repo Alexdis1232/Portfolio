@@ -269,8 +269,8 @@ const moreConcepts: ConceptCard[] = [
     frame: "square",
   },
   {
-    image: "/14.png",
-    title: "League of Legends landing page",
+    image: "/Bank for business.png",
+    title: "Bank for business",
     number: "(14)",
     subtitle: "Screen",
     frame: "wide",
@@ -298,15 +298,20 @@ const moreMediaClass: Record<string, string> = {
 };
 
 const displayNumberMap: Record<string, string> = {
-  "(04)": "(03)",
-  "(06)": "(04)",
-  "(07)": "(05)",
-  "(09)": "(06)",
-  "(03)": "(07)",
-  "(12)": "(11)",
-  "(11)": "(10)",
-  "(10)": "(11)",
-  "(05)": "(12)",
+  "(04)": "(01)",
+  "(14)": "(02)",
+  "(01)": "(03)",
+  "(02)": "(04)",
+  "(03)": "(05)",
+  "(06)": "(06)",
+  "(07)": "(07)",
+  "(08)": "(08)",
+  "(09)": "(09)",
+  "(10)": "(10)",
+  "(11)": "(11)",
+  "(12)": "(12)",
+  "(13)": "(13)",
+  "(05)": "(14)",
 };
 
 function ConceptFrame({
@@ -712,6 +717,12 @@ function ConceptsMobileLayout() {
         <ConceptCardWrapper concept={primaryByNumber["(02)"]} mobileCentered={false} />
       </div>
 
+      <ConceptCardWrapper
+        concept={moreByNumber["(14)"]}
+        className="col-span-2 w-full"
+        mobileCentered={false}
+      />
+
       <div className="grid w-full grid-cols-2 items-start gap-4">
         {/* 2 ряд: Quick Trip (04) 161×294 + Quran book (06) 161×161 */}
         <ConceptCardWrapper concept={primaryByNumber["(04)"]} mobileCentered={false} />
@@ -754,12 +765,18 @@ function ConceptsDesktopLayout() {
   return (
     <div className="hidden lg:block">
       <div className="grid grid-cols-3 items-start gap-6">
-        {primaryConcepts.map((concept) => (
+        {[
+          primaryByNumber["(04)"],
+          moreByNumber["(14)"],
+          primaryByNumber["(01)"],
+          primaryByNumber["(02)"],
+          primaryByNumber["(03)"],
+        ].map((concept) => (
           <ConceptCardWrapper
             key={concept.number}
             concept={concept}
             mobileCentered={false}
-            className={concept.number === "(05)" ? "col-span-2" : undefined}
+            className={concept.number === "(14)" ? "col-span-2" : undefined}
           />
         ))}
       </div>
@@ -815,7 +832,7 @@ function ConceptsDesktopLayout() {
             />
           </div>
           <ConceptCardWrapper
-            concept={moreByNumber["(14)"]}
+            concept={primaryByNumber["(05)"]}
             mobileCentered={false}
             className="self-start"
           />
