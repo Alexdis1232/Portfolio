@@ -269,7 +269,7 @@ const moreConcepts: ConceptCard[] = [
     frame: "square",
   },
   {
-    image: "/Bank for business.png",
+    image: "/Bank for business — card.png",
     title: "Bank for business",
     number: "(14)",
     subtitle: "Screen",
@@ -336,11 +336,7 @@ function ConceptFrame({
           boxSizing: "border-box",
         }}
       >
-        {number === "(12)" ? (
-          <div className="relative h-full w-full overflow-hidden">{children}</div>
-        ) : (
-          children
-        )}
+        {children}
       </div>
     );
   }
@@ -441,8 +437,6 @@ function ConceptCardMedia({ concept }: { concept: ConceptCard }) {
               width: "100%",
               height: "100%",
               objectFit: "contain",
-              transform: "scale(1.1)",
-              transformOrigin: "center center",
             }
           : concept.number === "(11)"
             ? {
@@ -781,8 +775,8 @@ function ConceptsDesktopLayout() {
         ))}
       </div>
 
-      <div className="mt-6 grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)] items-start gap-6">
-        <div className="flex min-w-0 flex-col gap-6">
+      <div className="mt-6 grid grid-cols-3 items-start gap-6">
+        <div className="col-span-2 flex min-w-0 flex-col gap-6">
           <div className="grid grid-cols-2 gap-6">
             <ConceptCardWrapper
               concept={bentoByNumber["(06)"]}
@@ -806,7 +800,7 @@ function ConceptsDesktopLayout() {
         />
       </div>
 
-      <div className="mt-6 grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-start gap-6">
+      <div className="mt-6 grid grid-cols-3 items-start gap-6">
         <div className="flex min-w-0 flex-col gap-6">
           <ConceptCardWrapper
             concept={moreByNumber["(10)"]}
@@ -818,7 +812,7 @@ function ConceptsDesktopLayout() {
             className="self-start"
           />
         </div>
-        <div className="flex min-w-0 flex-col gap-6">
+        <div className="col-span-2 flex min-w-0 flex-col gap-6">
           <div className="grid grid-cols-2 gap-6">
             <ConceptCardWrapper
               concept={moreByNumber["(13)"]}
